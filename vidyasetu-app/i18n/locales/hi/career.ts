@@ -1,0 +1,41 @@
+export default {
+  title: "करियर",
+  search: {
+    placeholder: "करियर खोजें...",
+    noResults: "कोई करियर नहीं मिला",
+    results_one: "{{count}} करियर मिला",
+    results_other: "{{count}} करियर मिले",
+  },
+  details: {
+    overview: "अवलोकन",
+    skills: "आवश्यक कौशल",
+    education: "शिक्षा आवश्यकताएं",
+    salary: "वेतन सीमा",
+    growth: "करियर वृद्धि",
+    companies: "शीर्ष कंपनियां",
+  },
+  card: {
+    viewDetails: "विवरण देखें",
+    saveCareer: "करियर सहेजें",
+    saved: "सहेजा गया",
+    match: "{{percent}}% मैच",
+  },
+  recommendations: {
+    title: "आपके लिए सिफारिशें",
+    subtitle: "आपके आकलन के आधार पर",
+    empty: "सिफारिशें पाने के लिए आकलन पूरा करें",
+    topMatch: "सर्वश्रेष्ठ मैच",
+    goodMatch: "अच्छा मैच",
+    considerThis: "इस पर विचार करें",
+  },
+  categories: {
+    technology: "प्रौद्योगिकी",
+    healthcare: "स्वास्थ्य सेवा",
+    business: "व्यवसाय",
+    creative: "रचनात्मक",
+    education: "शिक्षा",
+    engineering: "इंजीनियरिंग",
+    science: "विज्ञान",
+    arts: "कला और मानविकी",
+  },
+} as const;

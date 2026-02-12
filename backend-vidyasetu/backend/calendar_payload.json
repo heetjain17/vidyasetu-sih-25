@@ -1,0 +1,22 @@
+{
+  "email": "heetjain17@gmail.com",
+  "exam_id": "exam_001",
+  "exam_name": "JEE Main 2025 Test",
+  "events": [
+    {
+      "title": "JEE Registration Starts",
+      "date": "2024-11-01T10:00:00Z",
+      "description": "Online application form available"
+    },
+    {
+      "title": "JEE Main Exam Date",
+      "date": "2025-01-24T09:00:00Z",
+      "description": "Paper 1 (B.E./B.Tech)"
+    },
+    {
+      "title": "JEE Result Declaration",
+      "date": "2025-02-12T10:00:00Z",
+      "description": "Score release"
+    }
+  ]
+}

@@ -1,0 +1,1190 @@
+[
+  {
+    "Title": "Accountants and Auditors",
+    "Realistic": 1.14,
+    "Investigative": 3.57,
+    "Artistic": 1.09,
+    "Social": 2.13,
+    "Enterprising": 3.86,
+    "Conventional": 7
+  },
+  {
+    "Title": "Actors",
+    "Realistic": 2.31,
+    "Investigative": 2.13,
+    "Artistic": 7,
+    "Social": 4.1,
+    "Enterprising": 4,
+    "Conventional": 1.67
+  },
+  {
+    "Title": "Administrative Law Judges, Adjudicators, and Hearing Officers",
+    "Realistic": 1.04,
+    "Investigative": 4.01,
+    "Artistic": 1.57,
+    "Social": 3.04,
+    "Enterprising": 5.24,
+    "Conventional": 5.39
+  },
+  {
+    "Title": "Advanced Tech & Systems Specialists",
+    "Realistic": 6.52,
+    "Investigative": 4.94,
+    "Artistic": 1.37,
+    "Social": 1.28,
+    "Enterprising": 1.33,
+    "Conventional": 4.97
+  },
+  {
+    "Title": "Aerospace Engineers",
+    "Realistic": 5.37,
+    "Investigative": 6.14,
+    "Artistic": 2.45,
+    "Social": 1.28,
+    "Enterprising": 2.58,
+    "Conventional": 4.63
+  },
+  {
+    "Title": "Agricultural Inspectors",
+    "Realistic": 5.33,
+    "Investigative": 4.06,
+    "Artistic": 1,
+    "Social": 1.9,
+    "Enterprising": 3.13,
+    "Conventional": 5.15
+  },
+  {
+    "Title": "Agricultural Technology and Operations",
+    "Realistic": 6.33,
+    "Investigative": 4.33,
+    "Artistic": 1.41,
+    "Social": 1.45,
+    "Enterprising": 2.01,
+    "Conventional": 4.41
+  },
+  {
+    "Title": "Airfield Operations Specialists",
+    "Realistic": 4.73,
+    "Investigative": 3.51,
+    "Artistic": 1,
+    "Social": 2.49,
+    "Enterprising": 4.48,
+    "Conventional": 5.03
+  },
+  {
+    "Title": "Airline Pilots, Copilots, and Flight Engineers",
+    "Realistic": 4.74,
+    "Investigative": 3.17,
+    "Artistic": 1.43,
+    "Social": 2.49,
+    "Enterprising": 3.79,
+    "Conventional": 4.69
+  },
+  {
+    "Title": "Anthropologists and Archeologists",
+    "Realistic": 4.55,
+    "Investigative": 6.74,
+    "Artistic": 3.89,
+    "Social": 3.32,
+    "Enterprising": 1.56,
+    "Conventional": 3.54
+  },
+  {
+    "Title": "Applied and Decorative Arts",
+    "Realistic": 5.13,
+    "Investigative": 1.69,
+    "Artistic": 6.42,
+    "Social": 2.38,
+    "Enterprising": 2.93,
+    "Conventional": 2.62
+  },
+  {
+    "Title": "Architects",
+    "Realistic": 5.21,
+    "Investigative": 4.18,
+    "Artistic": 4.55,
+    "Social": 2.51,
+    "Enterprising": 3.45,
+    "Conventional": 4.12
+  },
+  {
+    "Title": "Archivists",
+    "Realistic": 2.78,
+    "Investigative": 4.58,
+    "Artistic": 2.95,
+    "Social": 3.1,
+    "Enterprising": 1.92,
+    "Conventional": 6.02
+  },
+  {
+    "Title": "Astronomers",
+    "Realistic": 4.85,
+    "Investigative": 7,
+    "Artistic": 3.24,
+    "Social": 2.81,
+    "Enterprising": 1.99,
+    "Conventional": 3.97
+  },
+  {
+    "Title": "Athletic Trainers",
+    "Realistic": 5.54,
+    "Investigative": 4.39,
+    "Artistic": 1.09,
+    "Social": 5.7,
+    "Enterprising": 2.27,
+    "Conventional": 3.32
+  },
+  {
+    "Title": "Atmospheric and Space Scientists",
+    "Realistic": 4.82,
+    "Investigative": 6.35,
+    "Artistic": 2.72,
+    "Social": 2.45,
+    "Enterprising": 2.69,
+    "Conventional": 4.48
+  },
+  {
+    "Title": "Audio and Video Technicians",
+    "Realistic": 4.4,
+    "Investigative": 2.23,
+    "Artistic": 4.65,
+    "Social": 1.9,
+    "Enterprising": 2.4,
+    "Conventional": 4.02
+  },
+  {
+    "Title": "Automotive Engineers",
+    "Realistic": 6.48,
+    "Investigative": 5.7,
+    "Artistic": 2.44,
+    "Social": 1.29,
+    "Enterprising": 2.04,
+    "Conventional": 4.11
+  },
+  {
+    "Title": "Aviation Inspectors",
+    "Realistic": 5.57,
+    "Investigative": 4.09,
+    "Artistic": 1,
+    "Social": 1.43,
+    "Enterprising": 2.59,
+    "Conventional": 5.73
+  },
+  {
+    "Title": "Bioinformatics Scientists",
+    "Realistic": 3.74,
+    "Investigative": 7,
+    "Artistic": 2.56,
+    "Social": 1.63,
+    "Enterprising": 1.27,
+    "Conventional": 5.03
+  },
+  {
+    "Title": "Biological Researchers",
+    "Realistic": 5.25,
+    "Investigative": 6.92,
+    "Artistic": 2.31,
+    "Social": 2.47,
+    "Enterprising": 2.05,
+    "Conventional": 4.01
+  },
+  {
+    "Title": "Biological Technicians",
+    "Realistic": 5.6,
+    "Investigative": 5.57,
+    "Artistic": 1.24,
+    "Social": 1.98,
+    "Enterprising": 1.18,
+    "Conventional": 5.37
+  },
+  {
+    "Title": "Biologists",
+    "Realistic": 4.15,
+    "Investigative": 6.97,
+    "Artistic": 2.32,
+    "Social": 2.56,
+    "Enterprising": 2.93,
+    "Conventional": 4.5
+  },
+  {
+    "Title": "Biostatisticians",
+    "Realistic": 2.58,
+    "Investigative": 7,
+    "Artistic": 2.65,
+    "Social": 2.67,
+    "Enterprising": 1.86,
+    "Conventional": 4.73
+  },
+  {
+    "Title": "Blockchain Engineers",
+    "Realistic": 3.4,
+    "Investigative": 5.28,
+    "Artistic": 2.07,
+    "Social": 1.57,
+    "Enterprising": 3.39,
+    "Conventional": 5.69
+  },
+  {
+    "Title": "Budget Analysts",
+    "Realistic": 1,
+    "Investigative": 3.81,
+    "Artistic": 1.53,
+    "Social": 2.2,
+    "Enterprising": 4.76,
+    "Conventional": 6.92
+  },
+  {
+    "Title": "Business Intelligence Analysts",
+    "Realistic": 1.12,
+    "Investigative": 5.46,
+    "Artistic": 1.95,
+    "Social": 1.88,
+    "Enterprising": 4.46,
+    "Conventional": 5.61
+  },
+  {
+    "Title": "CAD Technicians",
+    "Realistic": 5.65,
+    "Investigative": 3.89,
+    "Artistic": 3.86,
+    "Social": 1.36,
+    "Enterprising": 1.56,
+    "Conventional": 5
+  },
+  {
+    "Title": "Captains, Mates, and Pilots of Water Vessels",
+    "Realistic": 5.61,
+    "Investigative": 2.64,
+    "Artistic": 1,
+    "Social": 1.88,
+    "Enterprising": 4.23,
+    "Conventional": 4.56
+  },
+  {
+    "Title": "Career Counselors",
+    "Realistic": 1,
+    "Investigative": 3.31,
+    "Artistic": 3.42,
+    "Social": 7,
+    "Enterprising": 4.21,
+    "Conventional": 3.38
+  },
+  {
+    "Title": "Cartographers and Photogrammetrists",
+    "Realistic": 4.61,
+    "Investigative": 5.15,
+    "Artistic": 3.56,
+    "Social": 1.77,
+    "Enterprising": 1.63,
+    "Conventional": 5.33
+  },
+  {
+    "Title": "Chefs and Head Cooks",
+    "Realistic": 5.68,
+    "Investigative": 1.43,
+    "Artistic": 2.49,
+    "Social": 3.02,
+    "Enterprising": 3.74,
+    "Conventional": 4.31
+  },
+  {
+    "Title": "Chief Executives",
+    "Realistic": 1.3,
+    "Investigative": 3.24,
+    "Artistic": 2.08,
+    "Social": 3.52,
+    "Enterprising": 6.88,
+    "Conventional": 5
+  },
+  {
+    "Title": "Choreographers",
+    "Realistic": 3.67,
+    "Investigative": 2.08,
+    "Artistic": 7,
+    "Social": 4.08,
+    "Enterprising": 3.8,
+    "Conventional": 1.88
+  },
+  {
+    "Title": "Climate Change Policy Analysts",
+    "Realistic": 1.37,
+    "Investigative": 6.73,
+    "Artistic": 3.11,
+    "Social": 3.17,
+    "Enterprising": 4.69,
+    "Conventional": 4.06
+  },
+  {
+    "Title": "Coaches and Scouts",
+    "Realistic": 4.26,
+    "Investigative": 2.15,
+    "Artistic": 2.43,
+    "Social": 5.31,
+    "Enterprising": 5.13,
+    "Conventional": 3.44
+  },
+  {
+    "Title": "Computer Hardware Engineers",
+    "Realistic": 5.79,
+    "Investigative": 5.64,
+    "Artistic": 1.84,
+    "Social": 1.79,
+    "Enterprising": 1.88,
+    "Conventional": 5.28
+  },
+  {
+    "Title": "Computer Network Architects",
+    "Realistic": 4.06,
+    "Investigative": 5.33,
+    "Artistic": 2.24,
+    "Social": 2.19,
+    "Enterprising": 3.17,
+    "Conventional": 5.07
+  },
+  {
+    "Title": "Computer Programmers",
+    "Realistic": 3.31,
+    "Investigative": 5.18,
+    "Artistic": 2.62,
+    "Social": 2.01,
+    "Enterprising": 2.04,
+    "Conventional": 5.8
+  },
+  {
+    "Title": "Computer Systems Expert",
+    "Realistic": 3.84,
+    "Investigative": 6.07,
+    "Artistic": 1.98,
+    "Social": 1.97,
+    "Enterprising": 2.54,
+    "Conventional": 5.66
+  },
+  {
+    "Title": "Cost Estimators",
+    "Realistic": 3.1,
+    "Investigative": 3.25,
+    "Artistic": 1.05,
+    "Social": 1.66,
+    "Enterprising": 4.71,
+    "Conventional": 6.44
+  },
+  {
+    "Title": "Creative and Media Directors",
+    "Realistic": 2.11,
+    "Investigative": 2.15,
+    "Artistic": 6.47,
+    "Social": 3.33,
+    "Enterprising": 5.46,
+    "Conventional": 3.37
+  },
+  {
+    "Title": "Creative Arts and Design Professionals",
+    "Realistic": 3.89,
+    "Investigative": 2.74,
+    "Artistic": 7,
+    "Social": 2.19,
+    "Enterprising": 2.54,
+    "Conventional": 2.78
+  },
+  {
+    "Title": "Credit Analysts",
+    "Realistic": 1,
+    "Investigative": 3.83,
+    "Artistic": 1,
+    "Social": 2.42,
+    "Enterprising": 4.5,
+    "Conventional": 6.89
+  },
+  {
+    "Title": "Customs and Border Protection Officers",
+    "Realistic": 3.41,
+    "Investigative": 2.64,
+    "Artistic": 1,
+    "Social": 2.62,
+    "Enterprising": 4.32,
+    "Conventional": 5.27
+  },
+  {
+    "Title": "Customs Brokers",
+    "Realistic": 2.43,
+    "Investigative": 1.53,
+    "Artistic": 1,
+    "Social": 2.2,
+    "Enterprising": 5.07,
+    "Conventional": 6.13
+  },
+  {
+    "Title": "Data and Research Analysts",
+    "Realistic": 2.51,
+    "Investigative": 6.34,
+    "Artistic": 2.29,
+    "Social": 2.29,
+    "Enterprising": 2.73,
+    "Conventional": 5.45
+  },
+  {
+    "Title": "Data Scientists",
+    "Realistic": 2.16,
+    "Investigative": 6.99,
+    "Artistic": 2.59,
+    "Social": 1.66,
+    "Enterprising": 1.71,
+    "Conventional": 5.4
+  },
+  {
+    "Title": "Database Architects",
+    "Realistic": 2.69,
+    "Investigative": 5.68,
+    "Artistic": 2.22,
+    "Social": 1.93,
+    "Enterprising": 2.75,
+    "Conventional": 5.99
+  },
+  {
+    "Title": "Digital Designers",
+    "Realistic": 2.62,
+    "Investigative": 4.48,
+    "Artistic": 5.45,
+    "Social": 2.28,
+    "Enterprising": 3.58,
+    "Conventional": 4.13
+  },
+  {
+    "Title": "Early Childhood and Special Education",
+    "Realistic": 2.59,
+    "Investigative": 3.3,
+    "Artistic": 3.9,
+    "Social": 7,
+    "Enterprising": 2.21,
+    "Conventional": 3.49
+  },
+  {
+    "Title": "Economists",
+    "Realistic": 1.54,
+    "Investigative": 7,
+    "Artistic": 2.49,
+    "Social": 2.22,
+    "Enterprising": 3.8,
+    "Conventional": 4.34
+  },
+  {
+    "Title": "Editors",
+    "Realistic": 1,
+    "Investigative": 3.11,
+    "Artistic": 5.16,
+    "Social": 2.51,
+    "Enterprising": 4.03,
+    "Conventional": 4.85
+  },
+  {
+    "Title": "Energy & Industrial Technicians",
+    "Realistic": 6.63,
+    "Investigative": 3.74,
+    "Artistic": 1.18,
+    "Social": 1.46,
+    "Enterprising": 1.5,
+    "Conventional": 4.75
+  },
+  {
+    "Title": "Environmental Compliance Inspectors",
+    "Realistic": 4.57,
+    "Investigative": 4.77,
+    "Artistic": 1.05,
+    "Social": 2.35,
+    "Enterprising": 3.21,
+    "Conventional": 5.84
+  },
+  {
+    "Title": "Farm and Health Managers",
+    "Realistic": 4.55,
+    "Investigative": 3.78,
+    "Artistic": 1.3,
+    "Social": 2.45,
+    "Enterprising": 5.23,
+    "Conventional": 4.72
+  },
+  {
+    "Title": "Financial Consultant",
+    "Realistic": 1.18,
+    "Investigative": 3.38,
+    "Artistic": 1.44,
+    "Social": 3.05,
+    "Enterprising": 5.77,
+    "Conventional": 5.53
+  },
+  {
+    "Title": "Fraud Examiners, Investigators and Analysts",
+    "Realistic": 1.85,
+    "Investigative": 4.54,
+    "Artistic": 1.11,
+    "Social": 1.84,
+    "Enterprising": 4.63,
+    "Conventional": 6.09
+  },
+  {
+    "Title": "Geneticists",
+    "Realistic": 3.95,
+    "Investigative": 7,
+    "Artistic": 3.04,
+    "Social": 2.96,
+    "Enterprising": 1.69,
+    "Conventional": 4.41
+  },
+  {
+    "Title": "Geographers",
+    "Realistic": 5.19,
+    "Investigative": 6.73,
+    "Artistic": 3.7,
+    "Social": 2.69,
+    "Enterprising": 2.15,
+    "Conventional": 3.71
+  },
+  {
+    "Title": "Geoscientists",
+    "Realistic": 5.66,
+    "Investigative": 7,
+    "Artistic": 2.7,
+    "Social": 2.23,
+    "Enterprising": 1.67,
+    "Conventional": 4.16
+  },
+  {
+    "Title": "Health Education Specialists",
+    "Realistic": 1.64,
+    "Investigative": 5.3,
+    "Artistic": 2.53,
+    "Social": 6.16,
+    "Enterprising": 3.2,
+    "Conventional": 3.98
+  },
+  {
+    "Title": "Histology Technicians",
+    "Realistic": 6.45,
+    "Investigative": 5.4,
+    "Artistic": 1.27,
+    "Social": 2.13,
+    "Enterprising": 1,
+    "Conventional": 5.12
+  },
+  {
+    "Title": "Historians",
+    "Realistic": 2.42,
+    "Investigative": 5.19,
+    "Artistic": 3.61,
+    "Social": 3.21,
+    "Enterprising": 2.4,
+    "Conventional": 4.97
+  },
+  {
+    "Title": "HR Generalist",
+    "Realistic": 1.22,
+    "Investigative": 2.18,
+    "Artistic": 1.38,
+    "Social": 3.63,
+    "Enterprising": 5.54,
+    "Conventional": 5.9
+  },
+  {
+    "Title": "Hydrologic Technicians",
+    "Realistic": 5.55,
+    "Investigative": 4.96,
+    "Artistic": 1,
+    "Social": 1.53,
+    "Enterprising": 1.41,
+    "Conventional": 5.33
+  },
+  {
+    "Title": "Intelligence Analysts",
+    "Realistic": 2.35,
+    "Investigative": 5.88,
+    "Artistic": 2.18,
+    "Social": 1.91,
+    "Enterprising": 3.63,
+    "Conventional": 5.51
+  },
+  {
+    "Title": "Interpreters and Translators",
+    "Realistic": 1.89,
+    "Investigative": 3.16,
+    "Artistic": 4.4,
+    "Social": 3.51,
+    "Enterprising": 1.88,
+    "Conventional": 4.64
+  },
+  {
+    "Title": "Judges, Magistrate Judges, and Magistrates",
+    "Realistic": 2.37,
+    "Investigative": 3.75,
+    "Artistic": 2.21,
+    "Social": 4,
+    "Enterprising": 5.25,
+    "Conventional": 4.11
+  },
+  {
+    "Title": "K-12 School Teachers",
+    "Realistic": 2.66,
+    "Investigative": 3.27,
+    "Artistic": 3.92,
+    "Social": 7,
+    "Enterprising": 2.58,
+    "Conventional": 3.62
+  },
+  {
+    "Title": "Landscape Architects",
+    "Realistic": 5.42,
+    "Investigative": 4.69,
+    "Artistic": 4.57,
+    "Social": 2.63,
+    "Enterprising": 3.66,
+    "Conventional": 3.71
+  },
+  {
+    "Title": "Lawyers",
+    "Realistic": 1.17,
+    "Investigative": 4.52,
+    "Artistic": 2.32,
+    "Social": 3.45,
+    "Enterprising": 5.54,
+    "Conventional": 4.54
+  },
+  {
+    "Title": "Legal Secretaries and Administrative Assistants",
+    "Realistic": 1.52,
+    "Investigative": 3.16,
+    "Artistic": 1.59,
+    "Social": 3.01,
+    "Enterprising": 4.28,
+    "Conventional": 6.61
+  },
+  {
+    "Title": "Legislators",
+    "Realistic": 1.54,
+    "Investigative": 3.35,
+    "Artistic": 2.7,
+    "Social": 3.69,
+    "Enterprising": 5.52,
+    "Conventional": 3.62
+  },
+  {
+    "Title": "Logisticians",
+    "Realistic": 3.2,
+    "Investigative": 4.42,
+    "Artistic": 1.04,
+    "Social": 1.7,
+    "Enterprising": 4.37,
+    "Conventional": 6.05
+  },
+  {
+    "Title": "Manufacturing Engineers",
+    "Realistic": 5.18,
+    "Investigative": 4.67,
+    "Artistic": 2.1,
+    "Social": 1.51,
+    "Enterprising": 3.06,
+    "Conventional": 4.48
+  },
+  {
+    "Title": "Marine Engineers and Naval Architects",
+    "Realistic": 5.72,
+    "Investigative": 5.48,
+    "Artistic": 2.34,
+    "Social": 1.43,
+    "Enterprising": 3.43,
+    "Conventional": 4.44
+  },
+  {
+    "Title": "Market Research Analysts and Marketing Specialists",
+    "Realistic": 1.07,
+    "Investigative": 4.6,
+    "Artistic": 2.56,
+    "Social": 2.48,
+    "Enterprising": 5.52,
+    "Conventional": 4.62
+  },
+  {
+    "Title": "Materials Engineers",
+    "Realistic": 5.89,
+    "Investigative": 5.83,
+    "Artistic": 2.54,
+    "Social": 1.37,
+    "Enterprising": 2.06,
+    "Conventional": 4.11
+  },
+  {
+    "Title": "Mathematicians",
+    "Realistic": 3,
+    "Investigative": 7,
+    "Artistic": 3.23,
+    "Social": 1.97,
+    "Enterprising": 1.16,
+    "Conventional": 5.27
+  },
+  {
+    "Title": "Mechatronics Engineers",
+    "Realistic": 5.86,
+    "Investigative": 5.67,
+    "Artistic": 2.42,
+    "Social": 1.46,
+    "Enterprising": 1.6,
+    "Conventional": 4.92
+  },
+  {
+    "Title": "Media Programming Directors",
+    "Realistic": 1.28,
+    "Investigative": 2.22,
+    "Artistic": 3.92,
+    "Social": 3.71,
+    "Enterprising": 6.75,
+    "Conventional": 4.74
+  },
+  {
+    "Title": "Medical Counselors",
+    "Realistic": 1.35,
+    "Investigative": 5.27,
+    "Artistic": 2.81,
+    "Social": 6.26,
+    "Enterprising": 2.77,
+    "Conventional": 3.63
+  },
+  {
+    "Title": "Medical Scientists",
+    "Realistic": 4.43,
+    "Investigative": 7,
+    "Artistic": 2.3,
+    "Social": 3.24,
+    "Enterprising": 2.23,
+    "Conventional": 3.95
+  },
+  {
+    "Title": "Meeting, Convention, and Event Planners",
+    "Realistic": 1,
+    "Investigative": 1.43,
+    "Artistic": 2.44,
+    "Social": 4.52,
+    "Enterprising": 7,
+    "Conventional": 5.27
+  },
+  {
+    "Title": "Motion Picture Projectionists",
+    "Realistic": 5.42,
+    "Investigative": 1.95,
+    "Artistic": 2.98,
+    "Social": 2.02,
+    "Enterprising": 2.08,
+    "Conventional": 4.58
+  },
+  {
+    "Title": "Musicians and Singers",
+    "Realistic": 2.87,
+    "Investigative": 1.53,
+    "Artistic": 6.66,
+    "Social": 3.4,
+    "Enterprising": 3.41,
+    "Conventional": 2.17
+  },
+  {
+    "Title": "Nanosystems Engineers",
+    "Realistic": 5.38,
+    "Investigative": 6.09,
+    "Artistic": 2.43,
+    "Social": 1.36,
+    "Enterprising": 2.52,
+    "Conventional": 4.08
+  },
+  {
+    "Title": "Neuroscience Specialists",
+    "Realistic": 3.15,
+    "Investigative": 7,
+    "Artistic": 2.58,
+    "Social": 5.44,
+    "Enterprising": 2.11,
+    "Conventional": 3.44
+  },
+  {
+    "Title": "News Analysts, Reporters, and Journalists",
+    "Realistic": 1.47,
+    "Investigative": 4.16,
+    "Artistic": 5.09,
+    "Social": 2.8,
+    "Enterprising": 3.96,
+    "Conventional": 3.63
+  },
+  {
+    "Title": "Nuclear Technicians",
+    "Realistic": 5.75,
+    "Investigative": 4.57,
+    "Artistic": 1,
+    "Social": 1.83,
+    "Enterprising": 2.26,
+    "Conventional": 5.07
+  },
+  {
+    "Title": "Office Administrator",
+    "Realistic": 2.28,
+    "Investigative": 1.66,
+    "Artistic": 1.13,
+    "Social": 2.72,
+    "Enterprising": 3.72,
+    "Conventional": 6.57
+  },
+  {
+    "Title": "Office and General Managers",
+    "Realistic": 2.42,
+    "Investigative": 3.2,
+    "Artistic": 1.44,
+    "Social": 3.22,
+    "Enterprising": 5.94,
+    "Conventional": 5.61
+  },
+  {
+    "Title": "Pharmacy Technicians / Aides",
+    "Realistic": 3.84,
+    "Investigative": 2.32,
+    "Artistic": 1,
+    "Social": 3.25,
+    "Enterprising": 3.21,
+    "Conventional": 6.91
+  },
+  {
+    "Title": "Photographers",
+    "Realistic": 5.49,
+    "Investigative": 2.29,
+    "Artistic": 5.18,
+    "Social": 1.85,
+    "Enterprising": 2.3,
+    "Conventional": 3.43
+  },
+  {
+    "Title": "Photonics Engineers",
+    "Realistic": 5.82,
+    "Investigative": 5.91,
+    "Artistic": 2.73,
+    "Social": 1.4,
+    "Enterprising": 1.72,
+    "Conventional": 4.12
+  },
+  {
+    "Title": "Physicists",
+    "Realistic": 4.95,
+    "Investigative": 7,
+    "Artistic": 2.76,
+    "Social": 2.11,
+    "Enterprising": 1.82,
+    "Conventional": 4.86
+  },
+  {
+    "Title": "Police and Sheriff's Patrol Officers",
+    "Realistic": 5.37,
+    "Investigative": 2.75,
+    "Artistic": 1.07,
+    "Social": 3.43,
+    "Enterprising": 4.09,
+    "Conventional": 4.35
+  },
+  {
+    "Title": "Political Scientists",
+    "Realistic": 1,
+    "Investigative": 6.62,
+    "Artistic": 3.78,
+    "Social": 3.47,
+    "Enterprising": 3.7,
+    "Conventional": 3.6
+  },
+  {
+    "Title": "Project and Technical Managers",
+    "Realistic": 2.95,
+    "Investigative": 3.73,
+    "Artistic": 1.75,
+    "Social": 2.49,
+    "Enterprising": 5.36,
+    "Conventional": 5.4
+  },
+  {
+    "Title": "Property and Hospitality Managers",
+    "Realistic": 3.14,
+    "Investigative": 2.2,
+    "Artistic": 1.55,
+    "Social": 3.37,
+    "Enterprising": 6.27,
+    "Conventional": 5.17
+  },
+  {
+    "Title": "Public Relations Specialists",
+    "Realistic": 1,
+    "Investigative": 2.79,
+    "Artistic": 4.72,
+    "Social": 3.94,
+    "Enterprising": 5.81,
+    "Conventional": 3.47
+  },
+  {
+    "Title": "Radiologic Technologists and Technicians",
+    "Realistic": 6.25,
+    "Investigative": 4.63,
+    "Artistic": 1,
+    "Social": 3.58,
+    "Enterprising": 1,
+    "Conventional": 4.87
+  },
+  {
+    "Title": "Records Manager",
+    "Realistic": 1.89,
+    "Investigative": 2.29,
+    "Artistic": 1.55,
+    "Social": 3.48,
+    "Enterprising": 3.83,
+    "Conventional": 6.54
+  },
+  {
+    "Title": "Recreational Therapists",
+    "Realistic": 3.88,
+    "Investigative": 4.03,
+    "Artistic": 3.12,
+    "Social": 6.69,
+    "Enterprising": 2.32,
+    "Conventional": 2.67
+  },
+  {
+    "Title": "Regulatory Affairs Specialists",
+    "Realistic": 1.48,
+    "Investigative": 3.33,
+    "Artistic": 1,
+    "Social": 2.46,
+    "Enterprising": 4.46,
+    "Conventional": 6.32
+  },
+  {
+    "Title": "Sales and Marketing Managers",
+    "Realistic": 1.44,
+    "Investigative": 2.39,
+    "Artistic": 2.76,
+    "Social": 3.91,
+    "Enterprising": 6.48,
+    "Conventional": 4.41
+  },
+  {
+    "Title": "Sales Engineers",
+    "Realistic": 3.16,
+    "Investigative": 3.66,
+    "Artistic": 1.79,
+    "Social": 2.87,
+    "Enterprising": 5.81,
+    "Conventional": 4.49
+  },
+  {
+    "Title": "School Psychologists",
+    "Realistic": 1,
+    "Investigative": 5,
+    "Artistic": 3.31,
+    "Social": 6.77,
+    "Enterprising": 2.82,
+    "Conventional": 4.01
+  },
+  {
+    "Title": "Search Marketing Strategists",
+    "Realistic": 1,
+    "Investigative": 3.81,
+    "Artistic": 3.23,
+    "Social": 2.7,
+    "Enterprising": 5.53,
+    "Conventional": 4.69
+  },
+  {
+    "Title": "Skincare Specialists",
+    "Realistic": 5.8,
+    "Investigative": 2.06,
+    "Artistic": 2.92,
+    "Social": 4.06,
+    "Enterprising": 3.01,
+    "Conventional": 3.15
+  },
+  {
+    "Title": "Sociologists",
+    "Realistic": 1.61,
+    "Investigative": 6.43,
+    "Artistic": 3.96,
+    "Social": 4.42,
+    "Enterprising": 3.08,
+    "Conventional": 3.57
+  },
+  {
+    "Title": "Software Developers",
+    "Realistic": 3.93,
+    "Investigative": 5.86,
+    "Artistic": 2.26,
+    "Social": 1.88,
+    "Enterprising": 1.87,
+    "Conventional": 5.46
+  },
+  {
+    "Title": "Sound Engineering Technicians",
+    "Realistic": 5.04,
+    "Investigative": 2.6,
+    "Artistic": 4.44,
+    "Social": 1.79,
+    "Enterprising": 1.92,
+    "Conventional": 4.26
+  },
+  {
+    "Title": "Space & Product Designers",
+    "Realistic": 4.21,
+    "Investigative": 3.36,
+    "Artistic": 6.07,
+    "Social": 2.57,
+    "Enterprising": 3.65,
+    "Conventional": 3.5
+  },
+  {
+    "Title": "Statisticians",
+    "Realistic": 2.51,
+    "Investigative": 4.5,
+    "Artistic": 1.25,
+    "Social": 1.43,
+    "Enterprising": 1.78,
+    "Conventional": 6.64
+  },
+  {
+    "Title": "Sustainability Specialists",
+    "Realistic": 2.06,
+    "Investigative": 5.2,
+    "Artistic": 2.5,
+    "Social": 2.95,
+    "Enterprising": 5.09,
+    "Conventional": 4.41
+  },
+  {
+    "Title": "Teaching and Classroom Support Staff",
+    "Realistic": 2.49,
+    "Investigative": 2.8,
+    "Artistic": 2.54,
+    "Social": 6.72,
+    "Enterprising": 2.56,
+    "Conventional": 4.31
+  },
+  {
+    "Title": "Training and Development Specialists",
+    "Realistic": 1.97,
+    "Investigative": 3.92,
+    "Artistic": 3.09,
+    "Social": 5.66,
+    "Enterprising": 3.76,
+    "Conventional": 3.93
+  },
+  {
+    "Title": "Transit and Railroad Police",
+    "Realistic": 5.87,
+    "Investigative": 2.42,
+    "Artistic": 1,
+    "Social": 2.55,
+    "Enterprising": 3.28,
+    "Conventional": 5.06
+  },
+  {
+    "Title": "Treasurers and Controllers",
+    "Realistic": 1,
+    "Investigative": 2.4,
+    "Artistic": 1.28,
+    "Social": 2.7,
+    "Enterprising": 6.22,
+    "Conventional": 6.15
+  },
+  {
+    "Title": "Umpires, Referees, and Other Sports Officials",
+    "Realistic": 4.38,
+    "Investigative": 1.65,
+    "Artistic": 1.09,
+    "Social": 3.34,
+    "Enterprising": 5.69,
+    "Conventional": 4.64
+  },
+  {
+    "Title": "University & College Instructors (Arts & Humanities)",
+    "Realistic": 2.81,
+    "Investigative": 5.06,
+    "Artistic": 3.95,
+    "Social": 6.85,
+    "Enterprising": 2.57,
+    "Conventional": 3.4
+  },
+  {
+    "Title": "University & College Instructors (Social Sciences & Professional)",
+    "Realistic": 2.57,
+    "Investigative": 5.19,
+    "Artistic": 3.4,
+    "Social": 6.78,
+    "Enterprising": 2.88,
+    "Conventional": 3.54
+  },
+  {
+    "Title": "University & College Instructors (STEM & Technical)",
+    "Realistic": 3.8,
+    "Investigative": 5.68,
+    "Artistic": 3.25,
+    "Social": 6.18,
+    "Enterprising": 2.26,
+    "Conventional": 3.72
+  },
+  {
+    "Title": "Veterinary Technologists and Technicians",
+    "Realistic": 6.71,
+    "Investigative": 5.26,
+    "Artistic": 1,
+    "Social": 3.02,
+    "Enterprising": 1,
+    "Conventional": 4.56
+  },
+  {
+    "Title": "Visual and Appearance Designers",
+    "Realistic": 4.22,
+    "Investigative": 2.24,
+    "Artistic": 6.13,
+    "Social": 2.37,
+    "Enterprising": 3.79,
+    "Conventional": 3.54
+  },
+  {
+    "Title": "Vocational and Enrichment Teachers",
+    "Realistic": 2.86,
+    "Investigative": 3.29,
+    "Artistic": 3.8,
+    "Social": 6.93,
+    "Enterprising": 2.76,
+    "Conventional": 3.22
+  },
+  {
+    "Title": "Web Administrators",
+    "Realistic": 2.57,
+    "Investigative": 4.42,
+    "Artistic": 2.28,
+    "Social": 2.23,
+    "Enterprising": 3.74,
+    "Conventional": 5.74
+  },
+  {
+    "Title": "Web Developers",
+    "Realistic": 2.95,
+    "Investigative": 5.06,
+    "Artistic": 3.07,
+    "Social": 2.24,
+    "Enterprising": 2.89,
+    "Conventional": 5.09
+  },
+  {
+    "Title": "Wind Energy Engineers",
+    "Realistic": 5.9,
+    "Investigative": 4.54,
+    "Artistic": 2.22,
+    "Social": 1.43,
+    "Enterprising": 3.12,
+    "Conventional": 4.12
+  },
+  {
+    "Title": "Writers and Authors",
+    "Realistic": 1.99,
+    "Investigative": 2.95,
+    "Artistic": 4.79,
+    "Social": 2.63,
+    "Enterprising": 3.72,
+    "Conventional": 4.33
+  }
+]

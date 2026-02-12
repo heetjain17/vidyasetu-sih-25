@@ -1,0 +1,2429 @@
+{
+  "test_id": "aptitude_75Q_v1",
+  "title": "Aptitude Test - 75 Questions (7-dim vectors)",
+  "feature_names": [
+    "quantitative",
+    "data_interpretation",
+    "analytical",
+    "verbal",
+    "spatial",
+    "creativity",
+    "entrepreneurial_mindset"
+  ],
+  "meta": {
+    "questions_total": 75,
+    "options_per_question": 4,
+    "no_wrong_answer_questions": 32,
+    "traditional_mcq_questions": 43,
+    "difficulty_distribution": {
+      "easy": 20,
+      "medium": 35,
+      "hard": 20
+    },
+    "vector_style": "organic integers 0-100, multiple non-zero per option",
+    "notes": "For the 32 'no-wrong-answer' questions there is no 'correct_option' field. For the other 43 questions 'meta.correct_option' is provided."
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "You have a free weekend — which of these activities would you choose?",
+      "options": [
+        {
+          "id": "Q1_A",
+          "text": "Tackle a hands-on DIY project",
+          "vector": [30, 10, 20, 5, 40, 70, 45]
+        },
+        {
+          "id": "Q1_B",
+          "text": "Read a non-fiction book and take notes",
+          "vector": [45, 40, 50, 65, 10, 35, 25]
+        },
+        {
+          "id": "Q1_C",
+          "text": "Sketch or paint something abstract",
+          "vector": [5, 5, 10, 30, 25, 95, 20]
+        },
+        {
+          "id": "Q1_D",
+          "text": "Plan a small community event",
+          "vector": [20, 25, 35, 30, 20, 60, 90]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q2",
+      "text": "If asked to design a poster, which approach appeals to you most?",
+      "options": [
+        {
+          "id": "Q2_A",
+          "text": "Minimal text, bold imagery",
+          "vector": [10, 15, 20, 40, 60, 80, 30]
+        },
+        {
+          "id": "Q2_B",
+          "text": "Lots of information, small graphics",
+          "vector": [40, 70, 60, 50, 10, 35, 55]
+        },
+        {
+          "id": "Q2_C",
+          "text": "Interactive QR code and digital elements",
+          "vector": [35, 60, 45, 30, 20, 65, 80]
+        },
+        {
+          "id": "Q2_D",
+          "text": "Hand-drawn illustrations and typography",
+          "vector": [5, 10, 25, 55, 35, 95, 40]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q3",
+      "text": "Pick the product idea you’d be most excited to develop.",
+      "options": [
+        {
+          "id": "Q3_A",
+          "text": "A budgeting app for students",
+          "vector": [70, 55, 45, 30, 10, 35, 85]
+        },
+        {
+          "id": "Q3_B",
+          "text": "A community-driven craft marketplace",
+          "vector": [20, 30, 25, 40, 20, 90, 70]
+        },
+        {
+          "id": "Q3_C",
+          "text": "A compact portable fitness device",
+          "vector": [60, 35, 40, 10, 80, 30, 75]
+        },
+        {
+          "id": "Q3_D",
+          "text": "An educational board game",
+          "vector": [30, 25, 55, 60, 25, 85, 50]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q4",
+      "text": "Choose the way you prefer receiving feedback.",
+      "options": [
+        {
+          "id": "Q4_A",
+          "text": "Direct and to the point",
+          "vector": [35, 10, 60, 20, 5, 25, 40]
+        },
+        {
+          "id": "Q4_B",
+          "text": "Constructive with examples",
+          "vector": [40, 45, 70, 60, 10, 35, 55]
+        },
+        {
+          "id": "Q4_C",
+          "text": "Private, one-on-one discussion",
+          "vector": [20, 20, 50, 70, 15, 40, 30]
+        },
+        {
+          "id": "Q4_D",
+          "text": "Group feedback for broader perspective",
+          "vector": [25, 35, 45, 55, 30, 50, 65]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q5",
+      "text": "You need to explain a technical concept to non-experts — how do you start?",
+      "options": [
+        {
+          "id": "Q5_A",
+          "text": "Start with a simple analogy",
+          "vector": [15, 20, 25, 85, 10, 60, 35]
+        },
+        {
+          "id": "Q5_B",
+          "text": "Give the core definition and then examples",
+          "vector": [40, 35, 60, 70, 10, 40, 50]
+        },
+        {
+          "id": "Q5_C",
+          "text": "Show a quick demo first",
+          "vector": [30, 25, 40, 30, 65, 55, 45]
+        },
+        {
+          "id": "Q5_D",
+          "text": "Ask the audience questions to gauge their level",
+          "vector": [20, 45, 50, 80, 20, 55, 40]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q6",
+      "text": "Pick a way to validate a business hypothesis quickly.",
+      "options": [
+        {
+          "id": "Q6_A",
+          "text": "Run a small ad campaign and measure sign-ups",
+          "vector": [45, 40, 50, 20, 10, 30, 90]
+        },
+        {
+          "id": "Q6_B",
+          "text": "Conduct user interviews",
+          "vector": [20, 55, 65, 60, 10, 50, 70]
+        },
+        {
+          "id": "Q6_C",
+          "text": "Build a quick prototype",
+          "vector": [30, 25, 45, 10, 65, 70, 85]
+        },
+        {
+          "id": "Q6_D",
+          "text": "Analyze competitor offerings",
+          "vector": [65, 80, 60, 15, 5, 25, 60]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q7",
+      "text": "Which classroom activity do you find most engaging?",
+      "options": [
+        {
+          "id": "Q7_A",
+          "text": "Problem-solving sessions",
+          "vector": [80, 30, 85, 20, 10, 35, 25]
+        },
+        {
+          "id": "Q7_B",
+          "text": "Group discussions and debates",
+          "vector": [25, 40, 60, 80, 15, 60, 35]
+        },
+        {
+          "id": "Q7_C",
+          "text": "Hands-on labs",
+          "vector": [50, 25, 45, 20, 85, 40, 20]
+        },
+        {
+          "id": "Q7_D",
+          "text": "Creative projects",
+          "vector": [20, 15, 30, 65, 40, 95, 30]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q8",
+      "text": "Choose the tagline you’d use for a green startup.",
+      "options": [
+        {
+          "id": "Q8_A",
+          "text": "\"Sustainable solutions for everyday life\"",
+          "vector": [30, 35, 40, 70, 20, 55, 80]
+        },
+        {
+          "id": "Q8_B",
+          "text": "\"Reducing footprint, increasing value\"",
+          "vector": [45, 60, 55, 50, 10, 45, 90]
+        },
+        {
+          "id": "Q8_C",
+          "text": "\"Nature-inspired innovation\"",
+          "vector": [20, 25, 30, 60, 35, 95, 60]
+        },
+        {
+          "id": "Q8_D",
+          "text": "\"Tech-driven green impact\"",
+          "vector": [60, 45, 70, 40, 25, 65, 85]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q9",
+      "text": "Pick the innovation you think would have the biggest social impact.",
+      "options": [
+        {
+          "id": "Q9_A",
+          "text": "Affordable clean water systems",
+          "vector": [35, 55, 60, 30, 25, 40, 95]
+        },
+        {
+          "id": "Q9_B",
+          "text": "Open-source educational platforms",
+          "vector": [40, 80, 70, 75, 20, 65, 80]
+        },
+        {
+          "id": "Q9_C",
+          "text": "Low-cost renewable energy",
+          "vector": [70, 60, 55, 20, 40, 50, 90]
+        },
+        {
+          "id": "Q9_D",
+          "text": "Decentralized healthcare diagnostics",
+          "vector": [65, 50, 80, 35, 30, 45, 85]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q10",
+      "text": "Which problem would you prioritize solving at your college?",
+      "options": [
+        {
+          "id": "Q10_A",
+          "text": "Improving campus food quality",
+          "vector": [20, 30, 35, 45, 10, 60, 70]
+        },
+        {
+          "id": "Q10_B",
+          "text": "Better study spaces and quiet zones",
+          "vector": [25, 20, 40, 50, 60, 40, 45]
+        },
+        {
+          "id": "Q10_C",
+          "text": "More startup mentorship resources",
+          "vector": [30, 35, 50, 30, 20, 55, 95]
+        },
+        {
+          "id": "Q10_D",
+          "text": "Greater industry-academia collaboration",
+          "vector": [55, 60, 75, 35, 15, 45, 90]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q11",
+      "text": "Which learning resource fits your style?",
+      "options": [
+        {
+          "id": "Q11_A",
+          "text": "Video tutorials",
+          "vector": [30, 50, 45, 60, 30, 55, 40]
+        },
+        {
+          "id": "Q11_B",
+          "text": "Textbooks and notes",
+          "vector": [70, 65, 70, 40, 10, 30, 20]
+        },
+        {
+          "id": "Q11_C",
+          "text": "Interactive simulations",
+          "vector": [45, 40, 55, 30, 80, 65, 50]
+        },
+        {
+          "id": "Q11_D",
+          "text": "Peer study groups",
+          "vector": [25, 35, 50, 75, 20, 45, 60]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q12",
+      "text": "Pick the way you’d test a new feature before launching.",
+      "options": [
+        {
+          "id": "Q12_A",
+          "text": "A/B test with 1,000 users",
+          "vector": [60, 70, 55, 30, 15, 35, 90]
+        },
+        {
+          "id": "Q12_B",
+          "text": "Pilot with a small focused group",
+          "vector": [35, 55, 65, 45, 25, 50, 80]
+        },
+        {
+          "id": "Q12_C",
+          "text": "Run internal user testing",
+          "vector": [25, 40, 50, 35, 40, 45, 60]
+        },
+        {
+          "id": "Q12_D",
+          "text": "Collect unsolicited user feedback post-launch",
+          "vector": [20, 30, 40, 25, 20, 30, 50]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q13",
+      "text": "If you were to teach a short course, which format would you use?",
+      "options": [
+        {
+          "id": "Q13_A",
+          "text": "Project-based with deliverables",
+          "vector": [40, 45, 70, 50, 30, 65, 75]
+        },
+        {
+          "id": "Q13_B",
+          "text": "Lecture + Q&A",
+          "vector": [60, 50, 60, 80, 10, 30, 50]
+        },
+        {
+          "id": "Q13_C",
+          "text": "Hands-on lab sessions",
+          "vector": [55, 35, 55, 30, 85, 50, 40]
+        },
+        {
+          "id": "Q13_D",
+          "text": "Peer-review driven learning",
+          "vector": [30, 40, 60, 70, 25, 55, 65]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q14",
+      "text": "Select the community initiative you'd champion.",
+      "options": [
+        {
+          "id": "Q14_A",
+          "text": "Neighborhood clean-up drives",
+          "vector": [15, 30, 40, 45, 35, 65, 60]
+        },
+        {
+          "id": "Q14_B",
+          "text": "Free coding workshops for youth",
+          "vector": [55, 75, 70, 60, 20, 50, 80]
+        },
+        {
+          "id": "Q14_C",
+          "text": "Local skills exchange program",
+          "vector": [35, 50, 55, 55, 25, 60, 85]
+        },
+        {
+          "id": "Q14_D",
+          "text": "Art and culture festivals",
+          "vector": [10, 25, 30, 80, 65, 95, 50]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q15",
+      "text": "If building a prototype, which material/process do you prefer?",
+      "options": [
+        {
+          "id": "Q15_A",
+          "text": "3D printing",
+          "vector": [45, 25, 50, 10, 80, 55, 70]
+        },
+        {
+          "id": "Q15_B",
+          "text": "CNC machining",
+          "vector": [60, 30, 60, 10, 85, 30, 65]
+        },
+        {
+          "id": "Q15_C",
+          "text": "Cardboard & low-cost materials",
+          "vector": [20, 20, 40, 30, 35, 85, 50]
+        },
+        {
+          "id": "Q15_D",
+          "text": "Software mockups",
+          "vector": [70, 60, 65, 40, 10, 55, 85]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q16",
+      "text": "Which entrepreneurial role appeals to you most?",
+      "options": [
+        {
+          "id": "Q16_A",
+          "text": "Product builder (tech lead)",
+          "vector": [70, 45, 75, 30, 50, 60, 80]
+        },
+        {
+          "id": "Q16_B",
+          "text": "Growth and marketing lead",
+          "vector": [30, 60, 55, 50, 20, 55, 95]
+        },
+        {
+          "id": "Q16_C",
+          "text": "Operations and logistics",
+          "vector": [55, 50, 60, 25, 40, 35, 75]
+        },
+        {
+          "id": "Q16_D",
+          "text": "Design and customer experience",
+          "vector": [20, 30, 40, 70, 45, 95, 60]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q17",
+      "text": "Which ad headline would you choose for a student savings app?",
+      "options": [
+        {
+          "id": "Q17_A",
+          "text": "\"Save small, grow big\"",
+          "vector": [55, 45, 40, 70, 10, 40, 85]
+        },
+        {
+          "id": "Q17_B",
+          "text": "\"Control your student budget\"",
+          "vector": [65, 60, 55, 60, 10, 35, 80]
+        },
+        {
+          "id": "Q17_C",
+          "text": "\"Smart spending for smarter students\"",
+          "vector": [60, 55, 60, 75, 10, 45, 90]
+        },
+        {
+          "id": "Q17_D",
+          "text": "\"Save. Learn. Succeed.\"",
+          "vector": [45, 40, 45, 85, 10, 50, 70]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q18",
+      "text": "What would you focus on when evaluating a startup pitch?",
+      "options": [
+        {
+          "id": "Q18_A",
+          "text": "Market size and growth",
+          "vector": [60, 75, 65, 30, 10, 35, 95]
+        },
+        {
+          "id": "Q18_B",
+          "text": "Team expertise",
+          "vector": [40, 50, 70, 40, 15, 45, 85]
+        },
+        {
+          "id": "Q18_C",
+          "text": "Technical feasibility",
+          "vector": [80, 50, 75, 20, 60, 30, 70]
+        },
+        {
+          "id": "Q18_D",
+          "text": "Go-to-market strategy",
+          "vector": [45, 60, 55, 40, 20, 50, 90]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q19",
+      "text": "You have to summarize a complex paper in 100 words. Which is your main priority?",
+      "options": [
+        {
+          "id": "Q19_A",
+          "text": "Simplify technical content",
+          "vector": [20, 30, 40, 95, 10, 60, 35]
+        },
+        {
+          "id": "Q19_B",
+          "text": "Preserve technical accuracy",
+          "vector": [60, 70, 85, 65, 10, 35, 45]
+        },
+        {
+          "id": "Q19_C",
+          "text": "Make it engaging for broader audience",
+          "vector": [25, 40, 45, 85, 20, 85, 55]
+        },
+        {
+          "id": "Q19_D",
+          "text": "Highlight applications and impact",
+          "vector": [45, 60, 60, 70, 25, 55, 80]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q20",
+      "text": "Pick a leadership style you admire.",
+      "options": [
+        {
+          "id": "Q20_A",
+          "text": "Visionary leader",
+          "vector": [25, 30, 45, 70, 20, 75, 95]
+        },
+        {
+          "id": "Q20_B",
+          "text": "Data-driven manager",
+          "vector": [70, 85, 80, 30, 15, 40, 85]
+        },
+        {
+          "id": "Q20_C",
+          "text": "Servant leader (supports team)",
+          "vector": [30, 40, 55, 85, 25, 60, 65]
+        },
+        {
+          "id": "Q20_D",
+          "text": "Hands-on operator",
+          "vector": [60, 45, 65, 40, 60, 35, 70]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q21",
+      "text": "When solving a puzzle, what do you try first?",
+      "options": [
+        {
+          "id": "Q21_A",
+          "text": "Break it into smaller parts",
+          "vector": [50, 35, 90, 25, 40, 30, 25]
+        },
+        {
+          "id": "Q21_B",
+          "text": "Try a few rapid guesses",
+          "vector": [25, 20, 50, 15, 45, 60, 40]
+        },
+        {
+          "id": "Q21_C",
+          "text": "Look for a pattern",
+          "vector": [30, 60, 80, 20, 25, 35, 30]
+        },
+        {
+          "id": "Q21_D",
+          "text": "Read instructions carefully",
+          "vector": [45, 65, 70, 70, 10, 25, 20]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q22",
+      "text": "Which collaboration tool would you pick for a remote team?",
+      "options": [
+        {
+          "id": "Q22_A",
+          "text": "A compact project tracker",
+          "vector": [55, 60, 65, 30, 15, 35, 80]
+        },
+        {
+          "id": "Q22_B",
+          "text": "A whiteboard + brainstorming app",
+          "vector": [20, 30, 40, 60, 70, 90, 45]
+        },
+        {
+          "id": "Q22_C",
+          "text": "Video-first communication suite",
+          "vector": [35, 45, 50, 80, 25, 55, 60]
+        },
+        {
+          "id": "Q22_D",
+          "text": "Simple shared docs + versioning",
+          "vector": [45, 55, 60, 65, 20, 50, 50]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q23",
+      "text": "Choose a product improvement to prioritize:",
+      "options": [
+        {
+          "id": "Q23_A",
+          "text": "Speed and performance",
+          "vector": [85, 40, 70, 20, 60, 30, 55]
+        },
+        {
+          "id": "Q23_B",
+          "text": "Simpler onboarding",
+          "vector": [35, 55, 60, 75, 20, 60, 65]
+        },
+        {
+          "id": "Q23_C",
+          "text": "Lower cost of production",
+          "vector": [55, 65, 60, 15, 25, 30, 90]
+        },
+        {
+          "id": "Q23_D",
+          "text": "Add creative customization options",
+          "vector": [20, 30, 40, 60, 50, 95, 45]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q24",
+      "text": "Pick a favourite way to present data.",
+      "options": [
+        {
+          "id": "Q24_A",
+          "text": "Clean table with notes",
+          "vector": [60, 80, 70, 40, 15, 30, 40]
+        },
+        {
+          "id": "Q24_B",
+          "text": "Interactive visualisation",
+          "vector": [40, 70, 60, 55, 60, 85, 65]
+        },
+        {
+          "id": "Q24_C",
+          "text": "Short written summary + key numbers",
+          "vector": [25, 50, 60, 85, 10, 40, 45]
+        },
+        {
+          "id": "Q24_D",
+          "text": "Storytelling slide deck",
+          "vector": [30, 55, 65, 95, 20, 85, 70]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q25",
+      "text": "You’re building an MVP. Which metric is most important initially?",
+      "options": [
+        {
+          "id": "Q25_A",
+          "text": "User engagement",
+          "vector": [35, 75, 60, 30, 25, 55, 85]
+        },
+        {
+          "id": "Q25_B",
+          "text": "Activation rate (first key action)",
+          "vector": [50, 65, 70, 25, 20, 45, 90]
+        },
+        {
+          "id": "Q25_C",
+          "text": "Customer acquisition cost",
+          "vector": [65, 80, 65, 20, 10, 30, 95]
+        },
+        {
+          "id": "Q25_D",
+          "text": "Retention after 7 days",
+          "vector": [55, 70, 75, 25, 15, 50, 80]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q26",
+      "text": "When reading code, what do you do first?",
+      "options": [
+        {
+          "id": "Q26_A",
+          "text": "Scan for high-level architecture",
+          "vector": [60, 45, 80, 25, 40, 30, 25]
+        },
+        {
+          "id": "Q26_B",
+          "text": "Start with tests or usage examples",
+          "vector": [40, 60, 70, 30, 15, 35, 40]
+        },
+        {
+          "id": "Q26_C",
+          "text": "Run the code and observe behaviour",
+          "vector": [45, 30, 55, 20, 60, 40, 30]
+        },
+        {
+          "id": "Q26_D",
+          "text": "Read comments and documentation",
+          "vector": [35, 55, 65, 80, 10, 30, 20]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q27",
+      "text": "Choose an approach to reduce churn.",
+      "options": [
+        {
+          "id": "Q27_A",
+          "text": "Improve onboarding",
+          "vector": [30, 50, 60, 70, 15, 45, 75]
+        },
+        {
+          "id": "Q27_B",
+          "text": "Introduce loyalty rewards",
+          "vector": [25, 35, 45, 55, 20, 65, 70]
+        },
+        {
+          "id": "Q27_C",
+          "text": "Offer better pricing tiers",
+          "vector": [55, 60, 50, 30, 10, 35, 85]
+        },
+        {
+          "id": "Q27_D",
+          "text": "Provide dedicated customer success",
+          "vector": [40, 55, 65, 75, 15, 45, 80]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q28",
+      "text": "Which hobby would you recommend for boosting creativity?",
+      "options": [
+        {
+          "id": "Q28_A",
+          "text": "Photography",
+          "vector": [15, 20, 25, 45, 70, 95, 30]
+        },
+        {
+          "id": "Q28_B",
+          "text": "Coding side projects",
+          "vector": [65, 50, 75, 30, 40, 55, 80]
+        },
+        {
+          "id": "Q28_C",
+          "text": "Creative writing",
+          "vector": [10, 25, 30, 95, 20, 90, 35]
+        },
+        {
+          "id": "Q28_D",
+          "text": "Woodworking",
+          "vector": [30, 25, 40, 20, 85, 70, 45]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q29",
+      "text": "If you must pivot a product, what's the first data you look at?",
+      "options": [
+        {
+          "id": "Q29_A",
+          "text": "User behaviour flows",
+          "vector": [40, 85, 70, 25, 30, 45, 80]
+        },
+        {
+          "id": "Q29_B",
+          "text": "Revenue and unit economics",
+          "vector": [75, 60, 65, 20, 10, 30, 95]
+        },
+        {
+          "id": "Q29_C",
+          "text": "Customer feedback threads",
+          "vector": [25, 75, 60, 80, 20, 65, 70]
+        },
+        {
+          "id": "Q29_D",
+          "text": "Market trends and competitor moves",
+          "vector": [60, 90, 75, 35, 20, 40, 85]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q30",
+      "text": "Which problem-solving style fits you best?",
+      "options": [
+        {
+          "id": "Q30_A",
+          "text": "Analytical and methodical",
+          "vector": [70, 60, 90, 30, 40, 35, 40]
+        },
+        {
+          "id": "Q30_B",
+          "text": "Creative leaps and analogies",
+          "vector": [15, 20, 40, 70, 35, 95, 45]
+        },
+        {
+          "id": "Q30_C",
+          "text": "Trial-and-error rapid testing",
+          "vector": [35, 30, 55, 20, 60, 65, 70]
+        },
+        {
+          "id": "Q30_D",
+          "text": "Collaborative brainstorming",
+          "vector": [25, 45, 65, 85, 25, 75, 60]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q31",
+      "text": "Select a strategy to increase product virality.",
+      "options": [
+        {
+          "id": "Q31_A",
+          "text": "Built-in sharing incentives",
+          "vector": [40, 60, 55, 30, 20, 40, 90]
+        },
+        {
+          "id": "Q31_B",
+          "text": "Referral rewards",
+          "vector": [35, 70, 60, 25, 15, 30, 95]
+        },
+        {
+          "id": "Q31_C",
+          "text": "Frictionless invite flows",
+          "vector": [45, 65, 70, 30, 20, 55, 85]
+        },
+        {
+          "id": "Q31_D",
+          "text": "Create shareable content templates",
+          "vector": [25, 45, 50, 70, 40, 85, 65]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "no_wrong_answer"
+      }
+    },
+    {
+      "id": "Q32",
+      "text": "If starting a side-hustle, which resource matters most to you?",
+      "options": [
+        {
+          "id": "Q32_A",
+          "text": "Mentorship and networks",
+          "vector": [20, 40, 60, 55, 15, 45, 95]
+        },
+        {
+          "id": "Q32_B",
+          "text": "Access to early customers",
+          "vector": [50, 70, 65, 30, 20, 40, 90]
+        },
+        {
+          "id": "Q32_C",
+          "text": "Technical tools and infra",
+          "vector": [75, 50, 70, 20, 60, 35, 80]
+        },
+        {
+          "id": "Q32_D",
+          "text": "Time and focus",
+          "vector": [40, 30, 55, 60, 25, 50, 75]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "no_wrong_answer"
+      }
+    },
+
+    {
+      "id": "Q33",
+      "text": "Quantitative — A student scores 72 out of 90. What is the percentage?",
+      "options": [
+        {
+          "id": "Q33_A",
+          "text": "75%",
+          "vector": [20, 5, 15, 5, 0, 5, 10]
+        },
+        {
+          "id": "Q33_B",
+          "text": "80%",
+          "vector": [95, 20, 85, 10, 0, 5, 15]
+        },
+        {
+          "id": "Q33_C",
+          "text": "82%",
+          "vector": [15, 5, 10, 5, 0, 5, 5]
+        },
+        {
+          "id": "Q33_D",
+          "text": "85%",
+          "vector": [10, 5, 10, 5, 0, 5, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q33_C"
+      }
+    },
+    {
+      "id": "Q34",
+      "text": "Quantitative — In a class of 35 students, ratio male:female is 3:4. How many females?",
+      "options": [
+        {
+          "id": "Q34_A",
+          "text": "15",
+          "vector": [15, 5, 15, 5, 0, 5, 10]
+        },
+        {
+          "id": "Q34_B",
+          "text": "20",
+          "vector": [90, 15, 85, 10, 0, 5, 20]
+        },
+        {
+          "id": "Q34_C",
+          "text": "25",
+          "vector": [20, 5, 20, 5, 0, 5, 8]
+        },
+        {
+          "id": "Q34_D",
+          "text": "28",
+          "vector": [10, 5, 10, 5, 0, 5, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q34_B"
+      }
+    },
+    {
+      "id": "Q35",
+      "text": "Quantitative — A student walks to college at 3 km/h and returns at 2 km/h. Total time 5 hours. Distance (one-way)?",
+      "options": [
+        {
+          "id": "Q35_A",
+          "text": "5 km",
+          "vector": [20, 10, 20, 5, 10, 5, 10]
+        },
+        {
+          "id": "Q35_B",
+          "text": "6 km",
+          "vector": [90, 20, 85, 10, 15, 10, 25]
+        },
+        {
+          "id": "Q35_C",
+          "text": "7 km",
+          "vector": [25, 10, 25, 5, 10, 5, 10]
+        },
+        {
+          "id": "Q35_D",
+          "text": "8 km",
+          "vector": [15, 10, 15, 5, 10, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q35_B"
+      }
+    },
+    {
+      "id": "Q36",
+      "text": "Data Interpretation — Bar chart with enrollments: CS=120, ME=80, EE=60, CE=40. Which course has 25% of total enrollment?",
+      "options": [
+        {
+          "id": "Q36_A",
+          "text": "Computer Science (CS)",
+          "vector": [30, 95, 85, 15, 5, 10, 25]
+        },
+        {
+          "id": "Q36_B",
+          "text": "Mechanical Engineering (ME)",
+          "vector": [15, 20, 25, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q36_C",
+          "text": "Electrical Engineering (EE)",
+          "vector": [10, 15, 20, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q36_D",
+          "text": "Civil Engineering (CE)",
+          "vector": [10, 10, 15, 10, 5, 5, 8]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q36_A"
+      }
+    },
+    {
+      "id": "Q37",
+      "text": "Analytical — Series: 3, 7, 16, 35, ?. Pattern *2+1, *2+2, *2+3, *2+4. Next number?",
+      "options": [
+        {
+          "id": "Q37_A",
+          "text": "70",
+          "vector": [15, 5, 25, 10, 10, 5, 10]
+        },
+        {
+          "id": "Q37_B",
+          "text": "72",
+          "vector": [20, 5, 30, 10, 10, 5, 10]
+        },
+        {
+          "id": "Q37_C",
+          "text": "74",
+          "vector": [30, 10, 95, 15, 10, 5, 15]
+        },
+        {
+          "id": "Q37_D",
+          "text": "78",
+          "vector": [15, 5, 20, 10, 10, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q37_C"
+      }
+    },
+    {
+      "id": "Q38",
+      "text": "Logical Analogy — Doctor : Hospital :: Professor : ?",
+      "options": [
+        {
+          "id": "Q38_A",
+          "text": "Student",
+          "vector": [5, 10, 15, 15, 5, 10, 10]
+        },
+        {
+          "id": "Q38_B",
+          "text": "Subject",
+          "vector": [10, 10, 20, 20, 5, 15, 15]
+        },
+        {
+          "id": "Q38_C",
+          "text": "College",
+          "vector": [20, 20, 90, 85, 10, 20, 30]
+        },
+        {
+          "id": "Q38_D",
+          "text": "Study",
+          "vector": [5, 10, 15, 20, 5, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q38_C"
+      }
+    },
+    {
+      "id": "Q39",
+      "text": "Deduction — If all cats are mammals and all mammals are animals, which is true?",
+      "options": [
+        {
+          "id": "Q39_A",
+          "text": "All animals are cats.",
+          "vector": [5, 5, 10, 5, 5, 5, 5]
+        },
+        {
+          "id": "Q39_B",
+          "text": "All cats are animals.",
+          "vector": [15, 15, 95, 30, 10, 5, 15]
+        },
+        {
+          "id": "Q39_C",
+          "text": "Some animals are not mammals.",
+          "vector": [5, 5, 15, 5, 5, 5, 5]
+        },
+        {
+          "id": "Q39_D",
+          "text": "All mammals are cats.",
+          "vector": [5, 5, 10, 5, 5, 5, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q39_B"
+      }
+    },
+    {
+      "id": "Q40",
+      "text": "Verbal — Synonym for 'Diligent'?",
+      "options": [
+        {
+          "id": "Q40_A",
+          "text": "Lazy",
+          "vector": [5, 5, 5, 5, 5, 5, 5]
+        },
+        {
+          "id": "Q40_B",
+          "text": "Intelligent",
+          "vector": [10, 5, 15, 15, 5, 10, 10]
+        },
+        {
+          "id": "Q40_C",
+          "text": "Hardworking",
+          "vector": [15, 10, 80, 95, 10, 20, 35]
+        },
+        {
+          "id": "Q40_D",
+          "text": "Quick",
+          "vector": [10, 5, 10, 10, 10, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q40_C"
+      }
+    },
+    {
+      "id": "Q41",
+      "text": "Analytical — Odd one out: Laptop, Smartphone, Tablet, Book",
+      "options": [
+        {
+          "id": "Q41_A",
+          "text": "Laptop",
+          "vector": [10, 5, 15, 10, 15, 10, 10]
+        },
+        {
+          "id": "Q41_B",
+          "text": "Smartphone",
+          "vector": [10, 5, 20, 10, 15, 10, 15]
+        },
+        {
+          "id": "Q41_C",
+          "text": "Tablet",
+          "vector": [10, 5, 15, 10, 15, 10, 10]
+        },
+        {
+          "id": "Q41_D",
+          "text": "Book",
+          "vector": [15, 15, 90, 85, 10, 40, 20]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q41_D"
+      }
+    },
+    {
+      "id": "Q42",
+      "text": "Coding-Decoding — If 'COLLEGE' -> 'FROOHJH', how is 'STUDENT' coded?",
+      "options": [
+        {
+          "id": "Q42_A",
+          "text": "VWXGHQW",
+          "vector": [15, 5, 20, 15, 10, 10, 10]
+        },
+        {
+          "id": "Q42_B",
+          "text": "VWXHGPW",
+          "vector": [25, 15, 90, 30, 10, 15, 15]
+        },
+        {
+          "id": "Q42_C",
+          "text": "VXWHGPW",
+          "vector": [15, 5, 15, 15, 10, 10, 10]
+        },
+        {
+          "id": "Q42_D",
+          "text": "WWXHGPW",
+          "vector": [10, 5, 15, 10, 10, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q42_B"
+      }
+    },
+    {
+      "id": "Q43",
+      "text": "Spatial — A 3x3x3 cube painted outside: how many small cubes have exactly one face painted?",
+      "options": [
+        {
+          "id": "Q43_A",
+          "text": "6",
+          "vector": [25, 15, 85, 10, 95, 20, 15]
+        },
+        {
+          "id": "Q43_B",
+          "text": "8",
+          "vector": [10, 5, 15, 5, 20, 10, 10]
+        },
+        {
+          "id": "Q43_C",
+          "text": "12",
+          "vector": [10, 5, 20, 5, 25, 10, 10]
+        },
+        {
+          "id": "Q43_D",
+          "text": "24",
+          "vector": [15, 5, 25, 5, 30, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q43_A"
+      }
+    },
+    {
+      "id": "Q44",
+      "text": "Problem Solving — Library has avg 510 visitors on Sundays, 240 other days. For a 30-day month starting Sunday, average per day?",
+      "options": [
+        {
+          "id": "Q44_A",
+          "text": "285",
+          "vector": [90, 50, 85, 20, 10, 15, 30]
+        },
+        {
+          "id": "Q44_B",
+          "text": "290",
+          "vector": [25, 15, 30, 10, 10, 10, 15]
+        },
+        {
+          "id": "Q44_C",
+          "text": "300",
+          "vector": [20, 15, 25, 10, 10, 10, 15]
+        },
+        {
+          "id": "Q44_D",
+          "text": "315",
+          "vector": [15, 10, 20, 10, 10, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q44_A"
+      }
+    },
+    {
+      "id": "Q45",
+      "text": "Quantitative — Percentage increase: from 64 to 80, percent increase?",
+      "options": [
+        {
+          "id": "Q45_A",
+          "text": "25%",
+          "vector": [95, 25, 85, 15, 5, 10, 20]
+        },
+        {
+          "id": "Q45_B",
+          "text": "20%",
+          "vector": [20, 10, 25, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q45_C",
+          "text": "22.5%",
+          "vector": [15, 10, 20, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q45_D",
+          "text": "30%",
+          "vector": [10, 5, 15, 8, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q45_A"
+      }
+    },
+    {
+      "id": "Q46",
+      "text": "Ratios — In class of 45, boys:girls = 4:5. How many boys?",
+      "options": [
+        {
+          "id": "Q46_A",
+          "text": "16",
+          "vector": [15, 5, 20, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q46_B",
+          "text": "20",
+          "vector": [90, 20, 85, 15, 5, 10, 25]
+        },
+        {
+          "id": "Q46_C",
+          "text": "18",
+          "vector": [20, 10, 25, 10, 5, 5, 12]
+        },
+        {
+          "id": "Q46_D",
+          "text": "25",
+          "vector": [15, 10, 20, 10, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q46_B"
+      }
+    },
+    {
+      "id": "Q47",
+      "text": "Profit & Loss — Buy at ₹1200, sell ₹1560. Profit %",
+      "options": [
+        {
+          "id": "Q47_A",
+          "text": "30%",
+          "vector": [90, 30, 85, 15, 5, 10, 30]
+        },
+        {
+          "id": "Q47_B",
+          "text": "25%",
+          "vector": [20, 15, 25, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q47_C",
+          "text": "28%",
+          "vector": [25, 15, 30, 10, 5, 5, 20]
+        },
+        {
+          "id": "Q47_D",
+          "text": "35%",
+          "vector": [15, 10, 20, 10, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q47_A"
+      }
+    },
+    {
+      "id": "Q48",
+      "text": "Speed & Distance — Average speed of a trip at 60 km/h one way and 40 km/h return?",
+      "options": [
+        {
+          "id": "Q48_A",
+          "text": "48 km/h",
+          "vector": [90, 25, 85, 15, 10, 10, 25]
+        },
+        {
+          "id": "Q48_B",
+          "text": "50 km/h",
+          "vector": [20, 10, 25, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q48_C",
+          "text": "52 km/h",
+          "vector": [15, 10, 20, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q48_D",
+          "text": "56 km/h",
+          "vector": [15, 10, 20, 8, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q48_A"
+      }
+    },
+    {
+      "id": "Q49",
+      "text": "Time & Work — A in 12 days, B in 18 days. Together 3 days; how much left?",
+      "options": [
+        {
+          "id": "Q49_A",
+          "text": "1/2",
+          "vector": [15, 10, 20, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q49_B",
+          "text": "5/12",
+          "vector": [20, 15, 25, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q49_C",
+          "text": "1/2",
+          "vector": [90, 30, 85, 15, 5, 10, 25]
+        },
+        {
+          "id": "Q49_D",
+          "text": "1/3",
+          "vector": [15, 15, 25, 8, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q49_C"
+      }
+    },
+    {
+      "id": "Q50",
+      "text": "Simple Interest — ₹8,000 earns ₹2,400 in 3 years. Rate?",
+      "options": [
+        {
+          "id": "Q50_A",
+          "text": "8%",
+          "vector": [20, 15, 25, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q50_B",
+          "text": "9%",
+          "vector": [25, 15, 30, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q50_C",
+          "text": "10%",
+          "vector": [90, 35, 85, 15, 5, 10, 30]
+        },
+        {
+          "id": "Q50_D",
+          "text": "12%",
+          "vector": [15, 10, 20, 8, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q50_C"
+      }
+    },
+    {
+      "id": "Q51",
+      "text": "Mixtures — 40 L with milk:water = 3:1. How much water to add to make 3:2?",
+      "options": [
+        {
+          "id": "Q51_A",
+          "text": "6 L",
+          "vector": [15, 15, 20, 10, 5, 10, 10]
+        },
+        {
+          "id": "Q51_B",
+          "text": "8 L",
+          "vector": [20, 20, 25, 10, 5, 10, 15]
+        },
+        {
+          "id": "Q51_C",
+          "text": "10 L",
+          "vector": [90, 35, 85, 15, 10, 15, 30]
+        },
+        {
+          "id": "Q51_D",
+          "text": "12 L",
+          "vector": [20, 15, 25, 10, 5, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "traditional_mcq",
+        "correct_option": "Q51_C"
+      }
+    },
+    {
+      "id": "Q52",
+      "text": "Algebra — If x - 1/x = 4, what is x^2 + 1/x^2?",
+      "options": [
+        {
+          "id": "Q52_A",
+          "text": "14",
+          "vector": [15, 10, 25, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q52_B",
+          "text": "16",
+          "vector": [20, 15, 30, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q52_C",
+          "text": "18",
+          "vector": [95, 30, 90, 15, 10, 10, 25]
+        },
+        {
+          "id": "Q52_D",
+          "text": "20",
+          "vector": [20, 15, 30, 10, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "traditional_mcq",
+        "correct_option": "Q52_C"
+      }
+    },
+    {
+      "id": "Q53",
+      "text": "Permutation — How many 4-digit even numbers from {1,2,3,4,5} w/o repetition?",
+      "options": [
+        {
+          "id": "Q53_A",
+          "text": "24",
+          "vector": [15, 10, 25, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q53_B",
+          "text": "30",
+          "vector": [20, 10, 30, 10, 5, 5, 20]
+        },
+        {
+          "id": "Q53_C",
+          "text": "36",
+          "vector": [25, 15, 35, 10, 5, 10, 25]
+        },
+        {
+          "id": "Q53_D",
+          "text": "48",
+          "vector": [90, 25, 90, 20, 10, 15, 35]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "traditional_mcq",
+        "correct_option": "Q53_D"
+      }
+    },
+    {
+      "id": "Q54",
+      "text": "Probability — Two dice rolled. Probability sum is prime?",
+      "options": [
+        {
+          "id": "Q54_A",
+          "text": "5/12",
+          "vector": [90, 30, 85, 15, 10, 10, 25]
+        },
+        {
+          "id": "Q54_B",
+          "text": "1/2",
+          "vector": [20, 15, 25, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q54_C",
+          "text": "7/12",
+          "vector": [20, 15, 30, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q54_D",
+          "text": "2/3",
+          "vector": [15, 10, 20, 8, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "traditional_mcq",
+        "correct_option": "Q54_A"
+      }
+    },
+    {
+      "id": "Q55",
+      "text": "DI — Company profits Q1=24, Q2=32, Q3=40, Q4=28. Total profit?",
+      "options": [
+        {
+          "id": "Q55_A",
+          "text": "112",
+          "vector": [15, 25, 20, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q55_B",
+          "text": "120",
+          "vector": [20, 30, 25, 10, 5, 5, 20]
+        },
+        {
+          "id": "Q55_C",
+          "text": "124",
+          "vector": [35, 95, 70, 15, 5, 10, 30]
+        },
+        {
+          "id": "Q55_D",
+          "text": "132",
+          "vector": [25, 30, 30, 10, 5, 5, 20]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q55_C"
+      }
+    },
+    {
+      "id": "Q56",
+      "text": "DI — Which quarter is exactly 25% of total profit?",
+      "options": [
+        {
+          "id": "Q56_A",
+          "text": "Q1",
+          "vector": [10, 20, 15, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q56_B",
+          "text": "Q2",
+          "vector": [10, 25, 20, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q56_C",
+          "text": "Q3",
+          "vector": [10, 30, 25, 10, 5, 5, 20]
+        },
+        {
+          "id": "Q56_D",
+          "text": "None",
+          "vector": [15, 95, 85, 15, 5, 10, 25]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q56_D"
+      }
+    },
+    {
+      "id": "Q57",
+      "text": "DI — If Q3 increases by 25%, new Q3?",
+      "options": [
+        {
+          "id": "Q57_A",
+          "text": "45",
+          "vector": [15, 25, 25, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q57_B",
+          "text": "50",
+          "vector": [30, 95, 75, 15, 5, 10, 30]
+        },
+        {
+          "id": "Q57_C",
+          "text": "48",
+          "vector": [20, 30, 30, 10, 5, 5, 20]
+        },
+        {
+          "id": "Q57_D",
+          "text": "55",
+          "vector": [20, 25, 30, 10, 5, 5, 18]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q57_B"
+      }
+    },
+    {
+      "id": "Q58",
+      "text": "DI — Ratio (Q1+Q4) : (Q2+Q3)?",
+      "options": [
+        {
+          "id": "Q58_A",
+          "text": "13:18",
+          "vector": [20, 95, 75, 15, 5, 10, 25]
+        },
+        {
+          "id": "Q58_B",
+          "text": "13:20",
+          "vector": [15, 30, 30, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q58_C",
+          "text": "52:72",
+          "vector": [15, 25, 35, 10, 5, 5, 15]
+        },
+        {
+          "id": "Q58_D",
+          "text": "2:3",
+          "vector": [15, 25, 35, 10, 5, 5, 15]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q58_A"
+      }
+    },
+    {
+      "id": "Q59",
+      "text": "DI — Percentage decrease from Q3(40) to Q4(28)?",
+      "options": [
+        {
+          "id": "Q59_A",
+          "text": "30%",
+          "vector": [25, 95, 75, 15, 5, 10, 25]
+        },
+        {
+          "id": "Q59_B",
+          "text": "25%",
+          "vector": [15, 30, 25, 10, 5, 5, 12]
+        },
+        {
+          "id": "Q59_C",
+          "text": "20%",
+          "vector": [15, 25, 25, 10, 5, 5, 10]
+        },
+        {
+          "id": "Q59_D",
+          "text": "40%",
+          "vector": [15, 20, 20, 8, 5, 5, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q59_A"
+      }
+    },
+    {
+      "id": "Q60",
+      "text": "Analytical — Sequence 5, 12, 26, 54, 110, ?. What rule likely generates the sequence?",
+      "options": [
+        {
+          "id": "Q60_A",
+          "text": "n*2 + n-th prime",
+          "vector": [15, 10, 30, 10, 15, 10, 10]
+        },
+        {
+          "id": "Q60_B",
+          "text": "Double previous and add incremental even",
+          "vector": [20, 10, 35, 10, 15, 10, 10]
+        },
+        {
+          "id": "Q60_C",
+          "text": "Multiply by 2 and add sequentially increasing +1",
+          "vector": [25, 15, 95, 15, 20, 10, 15]
+        },
+        {
+          "id": "Q60_D",
+          "text": "Random pattern",
+          "vector": [5, 5, 10, 5, 5, 5, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "traditional_mcq",
+        "correct_option": "Q60_C"
+      }
+    },
+    {
+      "id": "Q61",
+      "text": "Analogy — Book : Reading :: Knife : ____",
+      "options": [
+        {
+          "id": "Q61_A",
+          "text": "Cutting",
+          "vector": [15, 15, 90, 75, 20, 15, 15]
+        },
+        {
+          "id": "Q61_B",
+          "text": "Sharp",
+          "vector": [5, 5, 15, 10, 10, 10, 10]
+        },
+        {
+          "id": "Q61_C",
+          "text": "Metal",
+          "vector": [5, 5, 10, 10, 10, 5, 5]
+        },
+        {
+          "id": "Q61_D",
+          "text": "Weapon",
+          "vector": [5, 5, 20, 10, 5, 5, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q61_A"
+      }
+    },
+    {
+      "id": "Q62",
+      "text": "Blood Relations — A is brother of B. B is mother of C. A is ____ to C?",
+      "options": [
+        {
+          "id": "Q62_A",
+          "text": "Brother",
+          "vector": [5, 5, 10, 10, 5, 5, 5]
+        },
+        {
+          "id": "Q62_B",
+          "text": "Uncle",
+          "vector": [15, 20, 95, 20, 5, 5, 15]
+        },
+        {
+          "id": "Q62_C",
+          "text": "Cousin",
+          "vector": [5, 5, 15, 10, 5, 5, 5]
+        },
+        {
+          "id": "Q62_D",
+          "text": "Nephew",
+          "vector": [5, 5, 10, 10, 5, 5, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q62_B"
+      }
+    },
+    {
+      "id": "Q63",
+      "text": "Syllogism — All bottles are containers; Some containers are glass. Which conclusion follows?",
+      "options": [
+        {
+          "id": "Q63_A",
+          "text": "Some bottles are glass",
+          "vector": [15, 15, 30, 15, 5, 10, 10]
+        },
+        {
+          "id": "Q63_B",
+          "text": "All containers are bottles",
+          "vector": [5, 5, 10, 10, 5, 5, 5]
+        },
+        {
+          "id": "Q63_C",
+          "text": "All glass are bottles",
+          "vector": [5, 5, 10, 10, 5, 5, 5]
+        },
+        {
+          "id": "Q63_D",
+          "text": "None of the above",
+          "vector": [20, 20, 95, 25, 5, 10, 15]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q63_D"
+      }
+    },
+    {
+      "id": "Q64",
+      "text": "Odd One Out — Triangle, Square, Rectangle, Cube. Which does not belong?",
+      "options": [
+        {
+          "id": "Q64_A",
+          "text": "Triangle",
+          "vector": [10, 10, 30, 10, 40, 20, 10]
+        },
+        {
+          "id": "Q64_B",
+          "text": "Square",
+          "vector": [10, 10, 40, 10, 35, 20, 10]
+        },
+        {
+          "id": "Q64_C",
+          "text": "Rectangle",
+          "vector": [10, 10, 35, 10, 30, 20, 10]
+        },
+        {
+          "id": "Q64_D",
+          "text": "Cube",
+          "vector": [20, 20, 90, 15, 95, 20, 15]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q64_D"
+      }
+    },
+    {
+      "id": "Q65",
+      "text": "Coding-Decoding — If SMART -> VSDUW, what is PLANE?",
+      "options": [
+        {
+          "id": "Q65_A",
+          "text": "SODQH",
+          "vector": [15, 15, 90, 75, 20, 15, 15]
+        },
+        {
+          "id": "Q65_B",
+          "text": "SODPH",
+          "vector": [15, 10, 50, 25, 15, 10, 10]
+        },
+        {
+          "id": "Q65_C",
+          "text": "SMDQH",
+          "vector": [10, 10, 30, 20, 15, 10, 10]
+        },
+        {
+          "id": "Q65_D",
+          "text": "SODQG",
+          "vector": [10, 10, 25, 15, 10, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q65_A"
+      }
+    },
+    {
+      "id": "Q66",
+      "text": "Direction Sense — A walks 4 km north, 3 km east, 4 km south. Distance from start?",
+      "options": [
+        {
+          "id": "Q66_A",
+          "text": "1 km",
+          "vector": [10, 10, 20, 10, 80, 15, 10]
+        },
+        {
+          "id": "Q66_B",
+          "text": "2 km",
+          "vector": [15, 10, 30, 10, 85, 20, 10]
+        },
+        {
+          "id": "Q66_C",
+          "text": "3 km",
+          "vector": [25, 20, 90, 20, 95, 20, 15]
+        },
+        {
+          "id": "Q66_D",
+          "text": "5 km",
+          "vector": [10, 10, 25, 10, 70, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q66_C"
+      }
+    },
+    {
+      "id": "Q67",
+      "text": "Puzzles — Four people A,B,C,D sit in row. A left of B; C right of D; D immediate right of A. Who is in middle?",
+      "options": [
+        {
+          "id": "Q67_A",
+          "text": "A",
+          "vector": [10, 15, 45, 20, 30, 15, 12]
+        },
+        {
+          "id": "Q67_B",
+          "text": "B",
+          "vector": [15, 20, 50, 25, 35, 20, 15]
+        },
+        {
+          "id": "Q67_C",
+          "text": "C",
+          "vector": [20, 25, 60, 30, 40, 20, 18]
+        },
+        {
+          "id": "Q67_D",
+          "text": "D",
+          "vector": [25, 30, 90, 30, 75, 25, 20]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q67_D"
+      }
+    },
+    {
+      "id": "Q68",
+      "text": "Number Puzzle — If 3@5 = 19 and 4@6 = 28 then 7@2 = ?",
+      "options": [
+        {
+          "id": "Q68_A",
+          "text": "35",
+          "vector": [10, 10, 50, 10, 10, 10, 10]
+        },
+        {
+          "id": "Q68_B",
+          "text": "45",
+          "vector": [20, 10, 60, 10, 10, 10, 12]
+        },
+        {
+          "id": "Q68_C",
+          "text": "51",
+          "vector": [30, 15, 75, 12, 15, 12, 15]
+        },
+        {
+          "id": "Q68_D",
+          "text": "63",
+          "vector": [15, 10, 45, 10, 10, 10, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "medium",
+        "type": "traditional_mcq",
+        "correct_option": "Q68_C"
+      }
+    },
+    {
+      "id": "Q69",
+      "text": "Figure Pattern — Shape rotates 90° each step. After 5 rotations total rotation is:",
+      "options": [
+        {
+          "id": "Q69_A",
+          "text": "360°",
+          "vector": [10, 10, 30, 10, 80, 20, 10]
+        },
+        {
+          "id": "Q69_B",
+          "text": "450°",
+          "vector": [10, 10, 35, 10, 85, 20, 12]
+        },
+        {
+          "id": "Q69_C",
+          "text": "540°",
+          "vector": [10, 10, 25, 10, 70, 15, 10]
+        },
+        {
+          "id": "Q69_D",
+          "text": "630°",
+          "vector": [10, 10, 20, 10, 60, 10, 8]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q69_B"
+      }
+    },
+    {
+      "id": "Q70",
+      "text": "Verbal — Select the closest meaning of 'Prudent'.",
+      "options": [
+        {
+          "id": "Q70_A",
+          "text": "Careful",
+          "vector": [15, 10, 75, 95, 10, 15, 25]
+        },
+        {
+          "id": "Q70_B",
+          "text": "Brave",
+          "vector": [5, 5, 10, 15, 5, 10, 10]
+        },
+        {
+          "id": "Q70_C",
+          "text": "Proud",
+          "vector": [5, 5, 10, 15, 5, 10, 5]
+        },
+        {
+          "id": "Q70_D",
+          "text": "Passive",
+          "vector": [5, 5, 10, 10, 5, 10, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q70_A"
+      }
+    },
+    {
+      "id": "Q71",
+      "text": "Verbal — Opposite of 'Scarcity'?",
+      "options": [
+        {
+          "id": "Q71_A",
+          "text": "Shortage",
+          "vector": [5, 10, 15, 10, 5, 5, 5]
+        },
+        {
+          "id": "Q71_B",
+          "text": "Lack",
+          "vector": [5, 10, 15, 10, 5, 5, 5]
+        },
+        {
+          "id": "Q71_C",
+          "text": "Plenty",
+          "vector": [15, 20, 85, 95, 15, 30, 20]
+        },
+        {
+          "id": "Q71_D",
+          "text": "Rare",
+          "vector": [5, 10, 20, 10, 5, 10, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q71_C"
+      }
+    },
+    {
+      "id": "Q72",
+      "text": "Sentence Correction — Choose the correct sentence.",
+      "options": [
+        {
+          "id": "Q72_A",
+          "text": "He don't know the answer.",
+          "vector": [5, 5, 10, 5, 5, 5, 5]
+        },
+        {
+          "id": "Q72_B",
+          "text": "He doesn't knows the answer.",
+          "vector": [5, 5, 15, 5, 5, 5, 5]
+        },
+        {
+          "id": "Q72_C",
+          "text": "He doesn't know the answer.",
+          "vector": [15, 15, 90, 95, 15, 20, 15]
+        },
+        {
+          "id": "Q72_D",
+          "text": "He don't knows the answer.",
+          "vector": [5, 5, 10, 5, 5, 5, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q72_C"
+      }
+    },
+    {
+      "id": "Q73",
+      "text": "Reading Comprehension — \"Efficient systems reduce waste and maximize productivity.\" Inference?",
+      "options": [
+        {
+          "id": "Q73_A",
+          "text": "Waste is unavoidable.",
+          "vector": [5, 10, 20, 10, 5, 5, 5]
+        },
+        {
+          "id": "Q73_B",
+          "text": "Efficiency leads to better output.",
+          "vector": [20, 30, 90, 95, 15, 25, 30]
+        },
+        {
+          "id": "Q73_C",
+          "text": "Productivity reduces efficiency.",
+          "vector": [5, 10, 20, 10, 5, 5, 5]
+        },
+        {
+          "id": "Q73_D",
+          "text": "Waste increases efficiency.",
+          "vector": [5, 10, 15, 8, 5, 5, 5]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q73_B"
+      }
+    },
+    {
+      "id": "Q74",
+      "text": "Fill in the blank — He succeeded ___ hard work.",
+      "options": [
+        {
+          "id": "Q74_A",
+          "text": "from",
+          "vector": [5, 5, 10, 5, 5, 5, 5]
+        },
+        {
+          "id": "Q74_B",
+          "text": "by",
+          "vector": [15, 15, 85, 95, 15, 25, 30]
+        },
+        {
+          "id": "Q74_C",
+          "text": "with",
+          "vector": [5, 5, 20, 10, 5, 10, 5]
+        },
+        {
+          "id": "Q74_D",
+          "text": "through",
+          "vector": [5, 5, 25, 15, 5, 15, 10]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "easy",
+        "type": "traditional_mcq",
+        "correct_option": "Q74_B"
+      }
+    },
+    {
+      "id": "Q75",
+      "text": "Higher-order problem: You have 3 projects. Which prioritization do you choose?",
+      "options": [
+        {
+          "id": "Q75_A",
+          "text": "Highest ROI first",
+          "vector": [60, 50, 70, 25, 20, 40, 95]
+        },
+        {
+          "id": "Q75_B",
+          "text": "Quick wins first",
+          "vector": [45, 40, 55, 30, 35, 60, 85]
+        },
+        {
+          "id": "Q75_C",
+          "text": "Tackle hardest first",
+          "vector": [70, 45, 80, 20, 60, 50, 70]
+        },
+        {
+          "id": "Q75_D",
+          "text": "Rotate focus across teams",
+          "vector": [35, 55, 60, 50, 40, 65, 80]
+        }
+      ],
+      "meta": {
+        "max_choices": 1,
+        "difficulty": "hard",
+        "type": "traditional_mcq",
+        "correct_option": "Q75_A"
+      }
+    }
+  ],
+  "scoring": {
+    "description": "Scoring is multi-dimensional. Each selected option contributes its 7-dim vector values to the student's raw scores for those dimensions. Raw per-dimension score is the sum of the selected option's value for that dimension across all answered questions.",
+    "per_question_contribution": "For every answered question, the chosen option's vector is added to the student's raw vector. There is no negative scoring.",
+    "normalization_formula": "For each dimension D: normalized_D = (raw_D / max_possible_D) * 100. Where max_possible_D = sum over all questions of (maximum option value for dimension D among that question's 4 options).",
+    "how_to_compute_max_possible_D": "max_possible_D = Σ_{q in questions} max(option.vector[D] for option in q.options). This yields the highest possible raw score a student could get for that dimension if they always chose the option that maximizes that dimension for each question.",
+    "example_compute": {
+      "example_raw_vector": {
+        "quantitative": 2500,
+        "data_interpretation": 1800,
+        "analytical": 2700,
+        "verbal": 2200,
+        "spatial": 1600,
+        "creativity": 3000,
+        "entrepreneurial_mindset": 2900
+      },
+      "example_max_possible": {
+        "quantitative": "Σ per-question max in quantitative (compute from JSON)",
+        "data_interpretation": "Σ per-question max in data_interpretation (compute from JSON)",
+        "analytical": "Σ per-question max in analytical (compute from JSON)",
+        "verbal": "Σ per-question max in verbal (compute from JSON)",
+        "spatial": "Σ per-question max in spatial (compute from JSON)",
+        "creativity": "Σ per-question max in creativity (compute from JSON)",
+        "entrepreneurial_mindset": "Σ per-question max in entrepreneurial_mindset (compute from JSON)"
+      },
+      "example_normalized": "normalized_quantitative = (2500 / max_possible_quantitative) * 100 (do this for each dim)"
+    },
+    "notes": [
+      "Because all options have multi-dimensional non-zero vectors, even 'wrong' answers contribute to the student's profile.",
+      "For the 32 'no_wrong_answer' questions there is intentionally no 'correct_option' field; answers map preferences/traits directly into the 7-dim vector.",
+      "If you want to make a simpler scoring scheme (e.g., each question contributes at most 100 total points split across dimensions), I can re-normalize vectors so per-question max = 100 for easier intuition."
+    ]
+  }
+}

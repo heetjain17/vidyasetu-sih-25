@@ -1,0 +1,41 @@
+export default {
+  title: "Careers",
+  search: {
+    placeholder: "Search careers...",
+    noResults: "No careers found",
+    results_one: "{{count}} career found",
+    results_other: "{{count}} careers found",
+  },
+  details: {
+    overview: "Overview",
+    skills: "Required Skills",
+    education: "Education Requirements",
+    salary: "Salary Range",
+    growth: "Career Growth",
+    companies: "Top Companies",
+  },
+  card: {
+    viewDetails: "View Details",
+    saveCareer: "Save Career",
+    saved: "Saved",
+    match: "{{percent}}% Match",
+  },
+  recommendations: {
+    title: "Recommended for You",
+    subtitle: "Based on your assessment",
+    empty: "Complete the assessment to get recommendations",
+    topMatch: "Top Match",
+    goodMatch: "Good Match",
+    considerThis: "Consider This",
+  },
+  categories: {
+    technology: "Technology",
+    healthcare: "Healthcare",
+    business: "Business",
+    creative: "Creative",
+    education: "Education",
+    engineering: "Engineering",
+    science: "Science",
+    arts: "Arts & Humanities",
+  },
+} as const;

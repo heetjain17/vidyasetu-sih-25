@@ -1,0 +1,213 @@
+{
+  "languages": ["hi", "ks", "doi", "goj"],
+  "entries": [
+    {
+      "id": "career_top_trait",
+      "master_en": "You were recommended this career mainly because your strongest personality dimension is {TRAIT}.",
+      "hi": "आपको यह करियर इसलिए सुझाया गया क्योंकि आपकी सबसे मजबूत व्यक्तित्व विशेषता {TRAIT} है।",
+      "ks": "تُہند بہترین شخصیتی پہلو {TRAIT} چھ، یِس وجہ سٕتھ توہانٛ گژھ کرِئر سفارش کیٔے گٔے۔",
+      "doi": "تُہانٛنوں ایہہ کیریئر ایس لئی سوچیایا گیا क्योंकि تہڑا سبھ توں وڈّا وصف {TRAIT} اے۔",
+      "goj": "تُہانٛج اوکھڑی وصف {TRAIT} है، ییں وجہ سٕتھ ایہ کیریئر سفارش کیتی وئی۔"
+    },
+    {
+      "id": "trait_Artistic_1",
+      "master_en": "Artistic",
+      "hi": "रचनात्मक",
+      "ks": "تخلیقی",
+      "doi": "تخلیقی",
+      "goj": "تخلیقی"
+    },
+    {
+      "id": "trait_Investigative_1",
+      "master_en": "Investigative",
+      "hi": "अन्वेषणात्मक",
+      "ks": "تحقیقی",
+      "doi": "تحقیقی",
+      "goj": "تحقیقی"
+    },
+    {
+      "id": "trait_Realistic_1",
+      "master_en": "Realistic",
+      "hi": "व्यावहारिक",
+      "ks": "عملی",
+      "doi": "عملی",
+      "goj": "عملی"
+    },
+    {
+      "id": "trait_Social_1",
+      "master_en": "Social",
+      "hi": "सामाजिक",
+      "ks": "سماجی",
+      "doi": "سماجی",
+      "goj": "سماجی"
+    },
+    {
+      "id": "trait_Enterprising_1",
+      "master_en": "Enterprising",
+      "hi": "उद्यमी",
+      "ks": "کاروباری",
+      "doi": "کاروباری",
+      "goj": "کاروباری"
+    },
+    {
+      "id": "trait_Conventional_1",
+      "master_en": "Conventional",
+      "hi": "परंपरागत",
+      "ks": "روایتی",
+      "doi": "روایتی",
+      "goj": "روایتی"
+    },
+    {
+      "id": "career_artistic_1",
+      "master_en": "You express creativity and enjoy activities involving art, design, or imagination.",
+      "hi": "आप रचनात्मक हैं और कला, डिजाइन या कल्पना से जुड़ी गतिविधियों का आनंद लेते हैं।",
+      "ks": "تُہٕندِ تخلیقیت ظاہر کرن چھ اور تُہٕن فن، ڈیزائن یا تخیل سِتھ وابستہ سرگرمِین پسند آسن۔",
+      "doi": "تُسی تخلیقی ہو تے فنکارانہ کم پسند کردے ہو، جِیہڑے وچ ڈیزائن تے تصور شامل اے۔",
+      "goj": "تُہانٛ ج تخلیقی اظہار کرنڑ آلو، تساں فن تے ڈیزائن والیاں سرگرمِیاں پسند کرندے ہو۔"
+    },
+    {
+      "id": "career_investigative_1",
+      "master_en": "You enjoy analyzing problems, researching, and solving complex tasks.",
+      "hi": "आपको समस्याओं का विश्लेषण, अनुसंधान और जटिल कार्य हल करना पसंद है।",
+      "ks": "تُہٕن مسائل سٕتھ تجزیہ، تحقیق تے پیچیدہ कم حل करن پسند آسن۔",
+      "doi": "تُسی مسئلے تجزیہ करن، تحقیق کرن تے مشکل कम حل کرن पसंद کردے ओ۔",
+      "goj": "تساں مسائل دا تجزیہ करن، تحقیق کرن تے مشکل कम حل करن خوشی محسوس करندے ہو۔"
+    },
+    {
+      "id": "career_realistic_1",
+      "master_en": "You prefer hands-on, practical tasks and working with tools or machines.",
+      "hi": "आप व्यावहारिक, हाथों-हाथ के कार्य और उपकरणों/मशीनों के साथ काम करना पसंद करते हैं।",
+      "ks": "تُہٕن عملی، ہتھیلی اوپر کاں کم تے اوزار यामشین سِتھ کام کرن پسند آسن۔",
+      "doi": "تُسی हाथ وِच کم کرن تے اوجار یا مशیناں نال کم کرن پسند کردے ओ۔",
+      "goj": "تساں عملی کم تے اوزار یا مشین نال کم کرن پسند کرندے ہو۔"
+    },
+    {
+      "id": "career_social_1",
+      "master_en": "You enjoy working with people, helping others, or teaching and guiding.",
+      "hi": "आप लोगों के साथ काम करना, दूसरों की मदद करना या शिक्षण/मार्गदर्शन करना पसंद करते हैं।",
+      "ks": "تُہٕن لوکاں سِتھ کم کرن، هॉرۍ مدد کرن یا پڑھان/راہنمائی کرن پسند آسن۔",
+      "doi": "تُسی لوکاں نال کم کرن، دوجیاں دی مدد کرن یا پڑھاون پسند کردے ओ۔",
+      "goj": "تساں لوکوں نال کم کرن، ہوراں دی مدد کرن تے پڑھاون پسند کرندے ہو۔"
+    },
+    {
+      "id": "career_enterprising_1",
+      "master_en": "You like leading, persuading, and taking initiative.",
+      "hi": "आप नेतृत्व करना, लोगों को प्रेरित करना और पहल करना पसंद करते हैं।",
+      "ks": "تُہٕن قیادت کرن، قائل کرن تے پہل کرن پسند آسن۔",
+      "doi": "تُسی لیڈ کرنا، لوکاں کوں راضی کرنا تے پہل کرنا پسند کردے ओ۔",
+      "goj": "تساں لیڈ کرنا، قائل کرنا تے پہل کرنا پسند کرندے ہو۔"
+    },
+    {
+      "id": "career_conventional_1",
+      "master_en": "You prefer structured, organized tasks and working with data.",
+      "hi": "आप संरचित, व्यवस्थित कार्य और डेटा के साथ काम करना पसंद करते हैं।",
+      "ks": "تُہٕن منظم، ترتیب وار کم تے ڈیٹا سِتھ کم کرن پسند آسن۔",
+      "doi": "تُسی منظم، ترتیب والے کم تے ڈیٹا نال کم کرن پسند کردے ओ۔",
+      "goj": "تساں منظم کم تے ڈیٹا نال کم کرنا پسند کرندے ہو۔"
+    },
+    {
+      "id": "college_locality_1",
+      "master_en": "You prefer studying closer to home.",
+      "hi": "आप घर के पास पढ़ना पसंद करते हैं।",
+      "ks": "تُہٕن گھرٙس نزِد پڑھنا پسند آسن۔",
+      "doi": "تُسی گھر دے کول पढ़ना पसंद کردے ओ۔",
+      "goj": "تساں گھر دے کریب پڑھن پسند کرندے او۔"
+    },
+    {
+      "id": "college_financial_1",
+      "master_en": "The fee structure matches your budget expectations.",
+      "hi": "शुल्क संरचना आपके बजट की उम्मीदों से मेल खाती है।",
+      "ks": "فیس ڈھانچہ تُہٕندِ بجٹ ترسِراں سِتھ میل چھ۔",
+      "doi": "فیس ڈھانچہ تہڑے بجٹ دی توقعات نال میل کھاندی اے۔",
+      "goj": "فیس ڈھانچہ توھانجے بجٹ نال میل کھاندی اے۔"
+    },
+    {
+      "id": "college_eligibility_1",
+      "master_en": "Your category and qualifications match the admission criteria.",
+      "hi": "आपकी श्रेणी और योग्यताएँ प्रवेश मानदंड से मेल खाती हैं।",
+      "ks": "تُہٕند زمرو تِہ قابلیت داخلہ معیار سِتھ میل چھ۔",
+      "doi": "تہڈی کیٹیگری تے قابلیت داخلہ معیار نال میل کھاندی اے۔",
+      "goj": "تواڈی کیٹیگری تے قابلیت داخلہ معیار نال میل کھاندی اے۔"
+    },
+    {
+      "id": "college_cultural_1",
+      "master_en": "Your hobbies and event interests match the college's cultural activities.",
+      "hi": "आपके शौक और कार्यक्रम रुचियाँ कॉलेज की सांस्कृतिक गतिविधियों से मेल खाती हैं।",
+      "ks": "تُہٕند مشغلاں تِہ ایونٹس دلچسپی کالجٕک ثقافتی سرگرمیاں سِتھ میل چھ۔",
+      "doi": "تُہڈے شوق تے ایونٹ دلچسپیاں کالیج دیاں ثقافتی سرگرمیاں نال میل کھاندیاں نیں۔",
+      "goj": "تُہانٛج شوق تے ایونٹس دی دلچسپی کالج دی ثقافتی سرگرمیاں نال میل کھاندی اے۔"
+    },
+    {
+      "id": "college_quality_1",
+      "master_en": "The college has good infrastructure and student facilities.",
+      "hi": "कॉलेज में अच्छी इन्फ्रास्ट्रक्चर और छात्र सुविधाएँ हैं।",
+      "ks": "کالج منز بہتر ڈھانچو تے شاگرد سہولتاہ موجود چھ۔",
+      "doi": "کالیج کول وادیاں سہولتاں تے ڈھانچہ اے۔",
+      "goj": "کالج وچ وادیاں سہولتاں تے ڈھانچہ موجود اے۔"
+    },
+    {
+      "id": "why_recommended_locality",
+      "master_en": "We recommended this college because it is close to your home locality and reduces commute time.",
+      "hi": "हमने यह कॉलेज इसलिए सुझाया क्योंकि यह आपके घर के पास है और यात्रा समय कम होता है।",
+      "ks": "اساں یہ کالج سفارش کیٖے چھ کیوں کہ یہ تُہٕند گھر دے نزِد اے تے سفر ویلا گھٹ کران۔",
+      "doi": "اسان ایہہ کالیج اس لئی چنیا کیتا کیوں کہ ایہ تہڑے گھر دے کول اے تے سفر دا ویلا گھٹدا اے۔",
+      "goj": "اسان ایہ کالج سفارش کیتی کیونکہ ایہ توہانجے گھر دے کول اے تے سفر دا ویلا گھٹائے۔"
+    },
+    {
+      "id": "why_recommended_budget",
+      "master_en": "We recommended this college because its fees fit your budget and scholarships are available.",
+      "hi": "हमने यह कॉलेज इसलिए सुझाया क्योंकि इसकी फीस आपके बजट में है और छात्रवृत्तियाँ उपलब्ध हैं।",
+      "ks": "اساں یہ کالج سفارش کیا چھ کیوں کہ اسۍ فیس تُہٕندِ بجٹ سٕتھ میل کھانِ تے وظائف موجود آسن۔",
+      "doi": "اسان ایہہ کالیج اس لئی چنیا کیتا کیوں کہ ایہدی فیس تہڑے بجٹ وچ اے تے وظیفے دستیاب نیں۔",
+      "goj": "اسان ایہہ کالج سفارش کیتی کیونکہ ایہدی فیس توہانجے بجٹ وچ اے تے وظیفے موجود نیں۔"
+    },
+    {
+      "id": "thank_you",
+      "master_en": "Thank you — good luck with your applications!",
+      "hi": "धन्यवाद — आपके आवेदनों के लिए शुभकामनाएँ!",
+      "ks": "شکریہ — توہانٛکِ درخواستن لئی نیک تمنائیں!",
+      "doi": "شکریہ — تہانٛج درخواستاں لئی نیک تمنائیں!",
+      "goj": "مہربانی — توہانج درخواستاں لئی نیک خواہشات!"
+    },
+    {
+      "id": "report_title",
+      "master_en": "Report",
+      "hi": "रिपोर्ट"
+    },
+    {
+      "id": "career_recommendations_title",
+      "master_en": "Top Career Recommendations",
+      "hi": "शीर्ष करियर सिफारिशें"
+    },
+    {
+      "id": "course_recommendations_title",
+      "master_en": "Recommended Courses",
+      "hi": "सुझाए गए पाठ्यक्रम"
+    },
+    {
+      "id": "college_recommendations_title",
+      "master_en": "Top Colleges Recommended",
+      "hi": "शीर्ष अनुशंसित कॉलेज"
+    },
+    {
+      "id": "see_detailed_reasoning",
+      "master_en": "See Detailed Reasoning",
+      "hi": "विस्तृत तर्क देखें"
+    },
+    {
+      "id": "match_score",
+      "master_en": "Match Score",
+      "hi": "मिलान स्कोर"
+    },
+    {
+      "id": "based_on_careers",
+      "master_en": "Based on your top career matches",
+      "hi": "आपके शीर्ष करियर मिलान के आधार पर"
+    },
+    {
+      "id": "more_courses",
+      "master_en": "+{count} more courses",
+      "hi": "+{count} और पाठ्यक्रम"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Arts & Humanities Roadmap",
+    "semester": {},
+    "internships": [],
+    "exams": [],
+    "certifications": [],
+    "upscaling": []
+  },
+  {
+    "id": 2,
+    "title": "Science & Research Roadmap",
+    "semester": {},
+    "internships": [],
+    "exams": [],
+    "certifications": [],
+    "upscaling": []
+  },
+  {
+    "id": 3,
+    "title": "Commerce & Business Roadmap",
+    "semester": {},
+    "internships": [],
+    "exams": [],
+    "certifications": [],
+    "upscaling": []
+  },
+  {
+    "id": 4,
+    "title": "Computer & IT Roadmap",
+    "semester": {},
+    "internships": [],
+    "exams": [],
+    "certifications": [],
+    "upscaling": []
+  },
+  {
+    "id": 5,
+    "title": "Professional & Vocational Roadmap",
+    "semester": {},
+    "internships": [],
+    "exams": [],
+    "certifications": [],
+    "upscaling": []
+  },
+  {
+    "id": 6,
+    "title": "Entrepreneurship & Skill-Aligned Roadmap",
+    "semester": {},
+    "internships": [],
+    "exams": [],
+    "certifications": [],
+    "upscaling": []
+  },
+  {
+    "id": 7,
+    "title": "Fallback template for uncommon or generic degrees",
+    "semester": {},
+    "internships": [],
+    "exams": [],
+    "certifications": [],
+    "upscaling": []
+  }
+]

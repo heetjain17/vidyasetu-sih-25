@@ -1,0 +1,1322 @@
+[
+  {
+    "Title": "Accountants and Auditors,1.14,3.57,1.09,2.13,3.86,7,Analyze financial records to ensure accuracy and compliance with regulations.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Actors,2.31,2.13,7,4.1,4,1.67,",
+    "Realistic": "Perform roles in film, theater, or television through acting and character portrayal.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "",
+    "Realistic": "Administrative Law Judges, Adjudicators, and Hearing Officers",
+    "Investigative": ",1.04,4.01,1.57,3.04,5.24,5.39,Preside over hearings and make legal decisions on disputes and administrative matters.",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Advanced Tech & Systems Specialists,6.52,4.94,1.37,1.28,1.33,4.97,Support development and deployment of advanced technical systems and solutions.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Aerospace Engineers,5.37,6.14,2.45,1.28,2.58,4.63,",
+    "Realistic": "Design, test, and develop aircraft, spacecraft, and related systems.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Agricultural Inspectors,5.33,4.06,1,1.9,3.13,5.15,Inspect agricultural products and processes to ensure safety and quality standards.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Agricultural Technology and Operations,6.33,4.33,1.41,1.45,2.01,4.41,",
+    "Realistic": "Oversee agricultural equipment, operations, and technology-based farming processes.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Airfield Operations Specialists,4.73,3.51,1,2.49,4.48,5.03,",
+    "Realistic": "Manage safe airport operations, including coordination of aircraft movement and logistics.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "",
+    "Realistic": "Airline Pilots, Copilots, and Flight Engineers",
+    "Investigative": ",4.74,3.17,1.43,2.49,3.79,4.69,Operate and navigate aircraft while ensuring passenger and flight safety.",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Anthropologists and Archeologists,4.55,6.74,3.89,3.32,1.56,3.54,",
+    "Realistic": "Study human cultures, past civilizations, and archaeological artifacts.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Applied and Decorative Arts,5.13,1.69,6.42,2.38,2.93,2.62,Create functional or decorative art using various design techniques.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Architects,5.21,4.18,4.55,2.51,3.45,4.12,Plan and design buildings and structures with functionality and aesthetics in mind.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Archivists,2.78,4.58,2.95,3.1,1.92,6.02,",
+    "Realistic": "Organize, preserve, and manage historical documents and archival materials.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Astronomers,4.85,7,3.24,2.81,1.99,3.97,Study celestial bodies and phenomena to understand the universe.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Athletic Trainers,5.54,4.39,1.09,5.7,2.27,3.32,Help individuals improve athletic performance and prevent injuries.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Atmospheric and Space Scientists,4.82,6.35,2.72,2.45,2.69,4.48,Research and forecast weather and atmospheric conditions.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Audio and Video Technicians,4.4,2.23,4.65,1.9,2.4,4.02,",
+    "Realistic": "Set up, operate, and maintain audio or visual equipment for recordings and broadcasts.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Automotive Engineers,6.48,5.7,2.44,1.29,2.04,4.11,",
+    "Realistic": "Design and improve vehicle systems, components, and performance.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Aviation Inspectors,5.57,4.09,1,1.43,2.59,5.73,Inspect aircraft to ensure compliance with safety standards and regulations.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Bioinformatics Scientists,3.74,7,2.56,1.63,1.27,5.03,Apply computational and biological methods to analyze biological data.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Biological Researchers,5.25,6.92,2.31,2.47,2.05,4.01,Conduct research on living organisms to understand biological processes.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Biological Technicians,5.6,5.57,1.24,1.98,1.18,5.37,Assist scientists by performing lab tests and collecting biological data.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Biologists,4.15,6.97,2.32,2.56,2.93,4.5,",
+    "Realistic": "Study living organisms, their interactions, and life processes.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Biostatisticians,2.58,7,2.65,2.67,1.86,4.73,Apply statistical methods to analyze biological and medical data.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Blockchain Engineers,3.4,5.28,2.07,1.57,3.39,5.69,Develop and maintain blockchain-based systems and applications.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Budget Analysts,1,3.81,1.53,2.2,4.76,6.92,Analyze financial data to help plan and manage organizational budgets.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Business Intelligence Analysts,1.12,5.46,1.95,1.88,4.46,5.61,Use data to identify business trends and support strategic decision-making.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "CAD Technicians,5.65,3.89,3.86,1.36,1.56,5,Create technical drawings and 3D models using computer-aided design software.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "",
+    "Realistic": "Captains, Mates, and Pilots of Water Vessels",
+    "Investigative": ",5.61,2.64,1,1.88,4.23,4.56,Navigate and operate marine vessels safely on waterways.",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Career Counselors,1,3.31,3.42,7,4.21,3.38,Guide individuals in exploring and planning career paths.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Cartographers and Photogrammetrists,4.61,5.15,3.56,1.77,1.63,5.33,Create maps and analyze geographic data using surveying and photogrammetry.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Chefs and Head Cooks,5.68,1.43,2.49,3.02,3.74,4.31,Prepare and cook meals while managing kitchen operations.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Chief Executives,1.3,3.24,2.08,3.52,6.88,5,Oversee overall operations and strategic direction of an organization.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Choreographers,3.67,2.08,7,4.08,3.8,1.88,Create and plan dance routines for performances.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Climate Change Policy Analysts,1.37,6.73,3.11,3.17,4.69,4.06,Analyze environmental policies and their impacts on climate change.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Coaches and Scouts,4.26,2.15,2.43,5.31,5.13,3.44,Train athletes and develop coaching strategies for performance improvement.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Computer Hardware Engineers,5.79,5.64,1.84,1.79,1.88,5.28,Design and develop computer hardware systems and components.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Computer Network Architects,4.06,5.33,2.24,2.19,3.17,5.07,Plan and build computer networks for secure communication and data flow.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Computer Programmers,3.31,5.18,2.62,2.01,2.04,5.8,Write and test code to build software applications and systems.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Computer Systems Expert,3.84,6.07,1.98,1.97,2.54,5.66,",
+    "Realistic": "Manage and optimize computer systems, including hardware and software integration.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Cost Estimators,3.1,3.25,1.05,1.66,4.71,6.44,",
+    "Realistic": "Estimate project costs by analyzing materials, labor, and production requirements.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Creative and Media Directors,2.11,2.15,6.47,3.33,5.46,3.37,",
+    "Realistic": "Oversee creative vision and production across media, film, or advertising projects.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Creative Arts and Design Professionals,3.89,2.74,7,2.19,2.54,2.78,",
+    "Realistic": "Produce artistic or design-focused work across visual, performing, or applied arts.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Credit Analysts,1,3.83,1,2.42,4.5,6.89,Evaluate financial data to determine creditworthiness and lending risk.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Customs and Border Protection Officers,3.41,2.64,1,2.62,4.32,5.27,",
+    "Realistic": "Enforce laws, secure borders, and facilitate legal movement of people and goods.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Customs Brokers,2.43,1.53,1,2.2,5.07,6.13,",
+    "Realistic": "Assist clients with customs regulations, import/export rules, and documentation.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Data and Research Analysts,2.51,6.34,2.29,2.29,2.73,5.45,Analyze datasets to extract insights and support research-based decisions.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Data Scientists,2.16,6.99,2.59,1.66,1.71,5.4,Use statistical and computational methods to build predictive models and insights.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Database Architects,2.69,5.68,2.22,1.93,2.75,5.99,",
+    "Realistic": "Design, build, and optimize large-scale database systems and architectures.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Digital Designers,2.62,4.48,5.45,2.28,3.58,4.13,",
+    "Realistic": "Create digital layouts, graphics, and interface designs for online platforms.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Early Childhood and Special Education,2.59,3.3,3.9,7,2.21,3.49,Teach young children and support learners with special educational needs.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Economists,1.54,7,2.49,2.22,3.8,4.34,",
+    "Realistic": "Study and analyze economic systems, trends, and market behaviors.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Editors,1,3.11,5.16,2.51,4.03,4.85,",
+    "Realistic": "Review, revise, and refine written content for clarity and accuracy.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Energy & Industrial Technicians,6.63,3.74,1.18,1.46,1.5,4.75,Operate and maintain industrial or energy-related machinery and systems.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Environmental Compliance Inspectors,4.57,4.77,1.05,2.35,3.21,5.84,Monitor compliance with environmental laws and investigate violations.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Farm and Health Managers,4.55,3.78,1.3,2.45,5.23,4.72,Manage agricultural or health-related operations to ensure efficient performance.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Financial Consultant,1.18,3.38,1.44,3.05,5.77,5.53,",
+    "Realistic": "Provide financial planning, investment advice, and economic guidance.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "",
+    "Realistic": "Fraud Examiners, Investigators and Analysts",
+    "Investigative": ",1.85,4.54,1.11,1.84,4.63,6.09,Investigate financial irregularities and detect fraud or misconduct.",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Geneticists,3.95,7,3.04,2.96,1.69,4.41,",
+    "Realistic": "Study genes, heredity, and genetic variation in living organisms.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Geographers,5.19,6.73,3.7,2.69,2.15,3.71,",
+    "Realistic": "Study Earth's landscapes, human-environment interactions, and spatial patterns.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Geoscientists,5.66,7,2.7,2.23,1.67,4.16,",
+    "Realistic": "Analyze Earth's physical structure, minerals, and geological processes.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Health Education Specialists,1.64,5.3,2.53,6.16,3.2,3.98,Promote health awareness and educate communities on wellness practices.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Histology Technicians,6.45,5.4,1.27,2.13,1,5.12,Prepare and examine tissue samples for medical diagnosis.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Historians,2.42,5.19,3.61,3.21,2.4,4.97,Research and interpret past events using historical sources.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "HR Generalist,1.22,2.18,1.38,3.63,5.54,5.9,",
+    "Realistic": "Manage hiring, employee relations, training, and HR processes.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Hydrologic Technicians,5.55,4.96,1,1.53,1.41,5.33,",
+    "Realistic": "Measure and evaluate water resources, flow, and environmental conditions.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Intelligence Analysts,2.35,5.88,2.18,1.91,3.63,5.51,",
+    "Realistic": "Gather intelligence, analyze threats, and support security decision-making.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Interpreters and Translators,1.89,3.16,4.4,3.51,1.88,4.64,Convert spoken or written language between two or more languages.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "",
+    "Realistic": "Judges, Magistrate Judges, and Magistrates",
+    "Investigative": ",2.37,3.75,2.21,4,5.25,4.11,Interpret and apply laws to make legal rulings and oversee court proceedings.",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "K-12 School Teachers,2.66,3.27,3.92,7,2.58,3.62,Teach academic subjects and manage classrooms for school-age children.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Landscape Architects,5.42,4.69,4.57,2.63,3.66,3.71,Design outdoor spaces and landscapes that balance function and aesthetics.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Lawyers,1.17,4.52,2.32,3.45,5.54,4.54,Represent clients in legal matters and provide legal advice.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Legal Secretaries and Administrative Assistants,1.52,3.16,1.59,3.01,4.28,6.61,Perform administrative tasks supporting legal processes and documentation.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Legislators,1.54,3.35,2.7,3.69,5.52,3.62,",
+    "Realistic": "Create laws, draft policies, and represent public interests in government.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Logisticians,3.2,4.42,1.04,1.7,4.37,6.05,",
+    "Realistic": "Manage the movement of goods, logistics planning, and supply chain efficiency.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Manufacturing Engineers,5.18,4.67,2.1,1.51,3.06,4.48,",
+    "Realistic": "Develop manufacturing processes, machinery, and system improvements.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Marine Engineers and Naval Architects,5.72,5.48,2.34,1.43,3.43,4.44,",
+    "Realistic": "Design, build, and maintain ships, marine structures, and ocean systems.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Market Research Analysts and Marketing Specialists,1.07,4.6,2.56,2.48,5.52,4.62,Analyze market data to understand consumer behavior and inform marketing strategy.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Materials Engineers,5.89,5.83,2.54,1.37,2.06,4.11,Develop and test materials for improved performance and industrial use.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Mathematicians,3,7,3.23,1.97,1.16,5.27,Study mathematical theories and solve complex quantitative problems.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Mechatronics Engineers,5.86,5.67,2.42,1.46,1.6,4.92,",
+    "Realistic": "Design and integrate mechanical, electronic, and computer systems into automated solutions.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Media Programming Directors,1.28,2.22,3.92,3.71,6.75,4.74,",
+    "Realistic": "Oversee scheduling, content, and strategy for radio, TV, or digital media programming.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Medical Counselors,1.35,5.27,2.81,6.26,2.77,3.63,Provide guidance and emotional support to clients facing medical or health challenges.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Medical Scientists,4.43,7,2.3,3.24,2.23,3.95,Conduct research to advance medical knowledge and improve human health.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "",
+    "Realistic": "Meeting, Convention, and Event Planners",
+    "Investigative": ",1,1.43,2.44,4.52,7,5.27,",
+    "Artistic": "Plan and coordinate conferences, events, and large-scale meetings.",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Motion Picture Projectionists,5.42,1.95,2.98,2.02,2.08,4.58,Operate film projection equipment and manage theater screening systems.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Musicians and Singers,2.87,1.53,6.66,3.4,3.41,2.17,",
+    "Realistic": "Perform or create music for live audiences, recordings, or productions.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Nanosystems Engineers,5.38,6.09,2.43,1.36,2.52,4.08,Design nanoscale systems and materials with specialized engineering techniques.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Neuroscience Specialists,3.15,7,2.58,5.44,2.11,3.44,Study the brain and nervous system to understand behavior and neurological functions.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "",
+    "Realistic": "News Analysts, Reporters, and Journalists",
+    "Investigative": ",1.47,4.16,5.09,2.8,3.96,3.63,",
+    "Artistic": "Report news, analyze current events, and communicate information to the public.",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Nuclear Technicians,5.75,4.57,1,1.83,2.26,5.07,Operate equipment in nuclear facilities and monitor radiation and safety procedures.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Office Administrator,2.28,1.66,1.13,2.72,3.72,6.57,",
+    "Realistic": "Manage administrative tasks, scheduling, and office communication workflows.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Office and General Managers,2.42,3.2,1.44,3.22,5.94,5.61,Oversee daily operations and coordinate activities across organizational departments.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Pharmacy Technicians / Aides,3.84,2.32,1,3.25,3.21,6.91,Assist pharmacists by preparing medications and managing pharmacy inventory.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Photographers,5.49,2.29,5.18,1.85,2.3,3.43,Capture images using cameras and creative visual techniques.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Photonics Engineers,5.82,5.91,2.73,1.4,1.72,4.12,Develop devices and systems that manipulate and control light.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Physicists,4.95,7,2.76,2.11,1.82,4.86,",
+    "Realistic": "Study matter, energy, and natural laws through scientific research.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Police and Sheriff's Patrol Officers,5.37,2.75,1.07,3.43,4.09,4.35,",
+    "Realistic": "Enforce laws, conduct patrols, and ensure public safety within communities.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Political Scientists,1,6.62,3.78,3.47,3.7,3.6,",
+    "Realistic": "Research political systems, policies, and government behavior.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Project and Technical Managers,2.95,3.73,1.75,2.49,5.36,5.4,",
+    "Realistic": "Lead project teams and oversee technical development, timelines, and resources.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Property and Hospitality Managers,3.14,2.2,1.55,3.37,6.27,5.17,Manage property operations or hospitality services for guests and tenants.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Public Relations Specialists,1,2.79,4.72,3.94,5.81,3.47,Shape public image and manage communication between organizations and the public.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Radiologic Technologists and Technicians,6.25,4.63,1,3.58,1,4.87,Perform imaging procedures to assist in diagnosing medical conditions.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Records Manager,1.89,2.29,1.55,3.48,3.83,6.54,",
+    "Realistic": "Organize and maintain information, files, and organizational records.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Recreational Therapists,3.88,4.03,3.12,6.69,2.32,2.67,Help individuals improve well-being through structured recreational activities.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Regulatory Affairs Specialists,1.48,3.33,1,2.46,4.46,6.32,Ensure products and practices comply with regulatory standards and policies.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Sales and Marketing Managers,1.44,2.39,2.76,3.91,6.48,4.41,Oversee sales operations and marketing strategies to drive business growth.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Sales Engineers,3.16,3.66,1.79,2.87,5.81,4.49,Explain and support the sale of technical or engineering-related products.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "School Psychologists,1,5,3.31,6.77,2.82,4.01,Provide psychological assessment and support for students in educational settings.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Search Marketing Strategists,1,3.81,3.23,2.7,5.53,4.69,Optimize online visibility and advertising through search-engine strategies.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Skincare Specialists,5.8,2.06,2.92,4.06,3.01,3.15,Provide skincare treatments and cosmetic procedures to clients.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Sociologists,1.61,6.43,3.96,4.42,3.08,3.57,",
+    "Realistic": "Study social behavior, interactions, and societal structures.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Software Developers,3.93,5.86,2.26,1.88,1.87,5.46,",
+    "Realistic": "Design, develop, and maintain software applications and systems.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Sound Engineering Technicians,5.04,2.6,4.44,1.79,1.92,4.26,",
+    "Realistic": "Operate sound equipment for recording, mixing, and live audio production.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Space & Product Designers,4.21,3.36,6.07,2.57,3.65,3.5,Design physical products or spatial concepts with creative and functional focus.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Statisticians,2.51,4.5,1.25,1.43,1.78,6.64,Analyze data using mathematical models and statistical methods.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Sustainability Specialists,2.06,5.2,2.5,2.95,5.09,4.41,Promote sustainable practices and environmental stewardship in organizations.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Teaching and Classroom Support Staff,2.49,2.8,2.54,6.72,2.56,4.31,Assist teachers in classroom activities and student support tasks.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Training and Development Specialists,1.97,3.92,3.09,5.66,3.76,3.93,Develop training programs and support employee learning and development.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Transit and Railroad Police,5.87,2.42,1,2.55,3.28,5.06,Enforce security and safety regulations within transportation systems.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Treasurers and Controllers,1,2.4,1.28,2.7,6.22,6.15,",
+    "Realistic": "Manage financial assets, budgets, and organizational accounting responsibilities.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "",
+    "Realistic": "Umpires, Referees, and Other Sports Officials",
+    "Investigative": ",4.38,1.65,1.09,3.34,5.69,4.64,Officiate sporting events and enforce game rules.",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "University & College Instructors (Arts & Humanities),2.81,5.06,3.95,6.85,2.57,3.4,Teach and conduct research in arts and humanities disciplines at the university level.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "University & College Instructors (Social Sciences & Professional),2.57,5.19,3.4,6.78,2.88,3.54,Teach and research in social sciences or professional studies at the university level.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "University & College Instructors (STEM & Technical),3.8,5.68,3.25,6.18,2.26,3.72,Teach and research STEM or technical subjects at the university level.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Veterinary Technologists and Technicians,6.71,5.26,1,3.02,1,4.56,Assist veterinarians by caring for animals and performing clinical tasks.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Visual and Appearance Designers,4.22,2.24,6.13,2.37,3.79,3.54,",
+    "Realistic": "Improve personal appearance through styling, grooming, and aesthetic design.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Vocational and Enrichment Teachers,2.86,3.29,3.8,6.93,2.76,3.22,Teach practical skills or enrichment subjects in non-traditional education settings.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Web Administrators,2.57,4.42,2.28,2.23,3.74,5.74,",
+    "Realistic": "Manage and maintain websites, servers, and related online infrastructure.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Web Developers,2.95,5.06,3.07,2.24,2.89,5.09,",
+    "Realistic": "Build and maintain websites, applications, and interactive online tools.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Wind Energy Engineers,5.9,4.54,2.22,1.43,3.12,4.12,Design and optimize systems that generate energy from wind resources.",
+    "Realistic": "",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  },
+  {
+    "Title": "Writers and Authors,1.99,2.95,4.79,2.63,3.72,4.33,",
+    "Realistic": "Create written content such as books, articles, or scripts.",
+    "Investigative": "",
+    "Artistic": "",
+    "Social": "",
+    "Enterprising": "",
+    "Conventional": "",
+    "desc": ""
+  }
+]

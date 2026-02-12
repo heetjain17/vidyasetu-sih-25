@@ -1,0 +1,660 @@
+[
+  {
+    "id": "exam_101",
+    "exam_name": "Diploma Programmes in Polytechnics",
+    "category": "Polytechnic",
+    "description": "Diploma entrance examination for Polytechnic programs conducted by JKSBOTE.",
+    "format": "Offline/Online as per BOTE notification.",
+    "website": "https://jksbotelive.com/",
+    "events": [
+      {
+        "id": "evt_301",
+        "title": "Registration Starts",
+        "date": "2026-02-01T10:00:00Z",
+        "status": "Upcoming",
+        "description": "Application form available online."
+      },
+      {
+        "id": "evt_302",
+        "title": "Registration Ends",
+        "date": "2026-03-05T23:59:00Z",
+        "status": "Upcoming",
+        "description": "Last date to submit Polytechnic applications."
+      },
+      {
+        "id": "evt_303",
+        "title": "Exam Date",
+        "date": "2026-04-15T09:00:00Z",
+        "status": "Upcoming",
+        "description": "Polytechnic entrance examination."
+      }
+    ]
+  },
+
+  {
+    "id": "exam_102",
+    "exam_name": "Post Basic B.Sc Nursing",
+    "category": "Medical",
+    "description": "Entrance exam for Post Basic B.Sc Nursing admission.",
+    "format": "Offline exam.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_304",
+        "title": "Registration Starts",
+        "date": "2026-03-10T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_305",
+        "title": "Registration Ends",
+        "date": "2026-04-10T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_306",
+        "title": "Exam Date",
+        "date": "2026-05-17T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_103",
+    "exam_name": "Para Medical Diploma Courses (12th Based)",
+    "category": "Paramedical",
+    "description": "Diploma courses for 12th-pass students.",
+    "format": "Offline test.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_307",
+        "title": "Registration Starts",
+        "date": "2026-01-20T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_308",
+        "title": "Registration Ends",
+        "date": "2026-03-01T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_309",
+        "title": "Exam Date",
+        "date": "2026-04-20T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_104",
+    "exam_name": "B.Sc Nursing / Paramedical / Technology",
+    "category": "Medical",
+    "description": "Combined entrance test.",
+    "format": "Offline exam.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_310",
+        "title": "Registration Starts",
+        "date": "2026-02-15T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_311",
+        "title": "Registration Ends",
+        "date": "2026-03-30T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_312",
+        "title": "Exam Date",
+        "date": "2026-04-27T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_105",
+    "exam_name": "B.Pharmacy / D.Pharmacy",
+    "category": "Pharmacy",
+    "description": "Entrance exam for Pharmacy programmes.",
+    "format": "Offline exam.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_313",
+        "title": "Registration Starts",
+        "date": "2026-03-01T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_314",
+        "title": "Registration Ends",
+        "date": "2026-04-25T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_315",
+        "title": "Exam Date",
+        "date": "2026-05-24T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_106",
+    "exam_name": "M.Sc Nursing",
+    "category": "Medical PG",
+    "description": "Entrance exam for M.Sc Nursing.",
+    "format": "Offline test.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_316",
+        "title": "Registration Starts",
+        "date": "2026-04-05T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_317",
+        "title": "Registration Ends",
+        "date": "2026-05-20T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_318",
+        "title": "Exam Date",
+        "date": "2026-06-22T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_107",
+    "exam_name": "MD/MS/PG Diploma Course",
+    "category": "Medical PG",
+    "description": "NBEMS postgraduate medical exams including NEET PG.",
+    "format": "Computer Based Test.",
+    "website": "https://natboard.edu.in/",
+    "events": [
+      {
+        "id": "evt_319",
+        "title": "Registration Starts",
+        "date": "2026-01-20T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_320",
+        "title": "Registration Ends",
+        "date": "2026-02-15T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_321",
+        "title": "Exam Date",
+        "date": "2026-04-19T09:00:00Z",
+        "status": "Upcoming",
+        "description": "NEET PG exam date (realistic cycle)."
+      }
+    ]
+  },
+
+  {
+    "id": "exam_108",
+    "exam_name": "M.Sc Technology",
+    "category": "Science PG",
+    "description": "PG entrance test for M.Sc Technology programs.",
+    "format": "Offline exam.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_322",
+        "title": "Registration Starts",
+        "date": "2026-04-10T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_323",
+        "title": "Registration Ends",
+        "date": "2026-06-01T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_324",
+        "title": "Exam Date",
+        "date": "2026-07-06T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_109",
+    "exam_name": "PGDRP",
+    "category": "Postgraduate Diploma",
+    "description": "Postgraduate Diploma in Rehabilitation Psychology.",
+    "format": "Offline exam.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_325",
+        "title": "Registration Starts",
+        "date": "2026-05-01T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_326",
+        "title": "Registration Ends",
+        "date": "2026-06-10T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_327",
+        "title": "Exam Date",
+        "date": "2026-08-25T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_110",
+    "exam_name": "Common Entrance Test (Engineering)",
+    "category": "Engineering",
+    "description": "State-level engineering CET for B.Tech admissions.",
+    "format": "Offline exam.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_328",
+        "title": "Registration Starts",
+        "date": "2026-01-25T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_329",
+        "title": "Registration Ends",
+        "date": "2026-03-10T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_330",
+        "title": "Exam Date",
+        "date": "2026-04-12T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_111",
+    "exam_name": "B.Architecture",
+    "category": "Architecture",
+    "description": "Entrance exam for B.Arch admission.",
+    "format": "Offline/NATA-based depending on notification.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_331",
+        "title": "Registration Starts",
+        "date": "2026-03-01T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_332",
+        "title": "Registration Ends",
+        "date": "2026-04-15T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_333",
+        "title": "Exam Date",
+        "date": "2026-06-12T09:00:00Z",
+        "status": "Upcoming",
+        "description": "Realistic B.Arch state exam timeline."
+      }
+    ]
+  },
+
+  {
+    "id": "exam_112",
+    "exam_name": "Common Entrance Test (Medical)",
+    "category": "Medical",
+    "description": "State-level medical entrance test.",
+    "format": "Offline exam.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_334",
+        "title": "Registration Starts",
+        "date": "2026-06-15T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_335",
+        "title": "Registration Ends",
+        "date": "2026-07-15T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_336",
+        "title": "Exam Date",
+        "date": "2026-08-02T09:00:00Z",
+        "status": "Upcoming",
+        "description": "Occurs after NEET UG results."
+      }
+    ]
+  },
+
+  {
+    "id": "exam_113",
+    "exam_name": "MD/MS Ayurveda",
+    "category": "Ayurveda PG",
+    "description": "Entrance exam for PG Ayurveda courses.",
+    "format": "Offline exam.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_337",
+        "title": "Registration Starts",
+        "date": "2026-07-15T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_338",
+        "title": "Registration Ends",
+        "date": "2026-09-01T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_339",
+        "title": "Exam Date",
+        "date": "2026-10-05T09:00:00Z",
+        "status": "Upcoming",
+        "description": "Realistic AYUSH PG exam timeline."
+      }
+    ]
+  },
+
+  {
+    "id": "exam_114",
+    "exam_name": "MDS Course",
+    "category": "Dental PG",
+    "description": "NBEMS MDS entrance examination.",
+    "format": "CBT.",
+    "website": "https://natboard.edu.in/",
+    "events": [
+      {
+        "id": "evt_340",
+        "title": "Registration Starts",
+        "date": "2026-01-05T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_341",
+        "title": "Registration Ends",
+        "date": "2026-01-30T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_342",
+        "title": "Exam Date",
+        "date": "2026-03-10T09:00:00Z",
+        "status": "Upcoming",
+        "description": "NEET MDS realistic exam cycle."
+      }
+    ]
+  },
+
+  {
+    "id": "exam_115",
+    "exam_name": "B.Ed (CET)",
+    "category": "Education",
+    "description": "Entrance test for B.Ed admission.",
+    "format": "Offline.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_343",
+        "title": "Registration Starts",
+        "date": "2026-02-20T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_344",
+        "title": "Registration Ends",
+        "date": "2026-03-25T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_345",
+        "title": "Exam Date",
+        "date": "2026-04-26T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_116",
+    "exam_name": "10th Based Para Medical Course",
+    "category": "Paramedical",
+    "description": "Entrance exam for 10th-based paramedical programs.",
+    "format": "Offline test.",
+    "website": "https://jkbopee.gov.in/",
+    "events": [
+      {
+        "id": "evt_346",
+        "title": "Registration Starts",
+        "date": "2026-01-15T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_347",
+        "title": "Registration Ends",
+        "date": "2026-03-05T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_348",
+        "title": "Exam Date",
+        "date": "2026-04-19T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_201",
+    "exam_name": "JEE Main 2026 Session 1",
+    "category": "Engineering",
+    "description": "National-level engineering entrance exam conducted by NTA for admission to NITs, IIITs, and CFTIs.",
+    "format": "Computer Based Test. PCM. MCQs + Numerical Questions.",
+    "website": "https://jeemain.nta.ac.in/",
+    "events": [
+      {
+        "id": "evt_401",
+        "title": "Registration Starts",
+        "date": "2025-11-01T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_402",
+        "title": "Registration Ends",
+        "date": "2025-12-15T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_403",
+        "title": "Admit Card Release",
+        "date": "2026-01-10T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_404",
+        "title": "Exam Date",
+        "date": "2026-01-22T09:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_405",
+        "title": "Result Declaration",
+        "date": "2026-02-10T10:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_202",
+    "exam_name": "CUET UG 2026",
+    "category": "General UG",
+    "description": "National entrance test for UG admissions to Central and participating universities.",
+    "format": "Computer Based Test. Multiple subjects depending on domain selection.",
+    "website": "https://cuet.samarth.ac.in/",
+    "events": [
+      {
+        "id": "evt_406",
+        "title": "Registration Starts",
+        "date": "2026-02-01T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_407",
+        "title": "Registration Ends",
+        "date": "2026-03-10T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_408",
+        "title": "Exam Date",
+        "date": "2026-05-15T09:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_409",
+        "title": "Result Declaration",
+        "date": "2026-06-20T10:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_203",
+    "exam_name": "NEET UG 2026",
+    "category": "Medical",
+    "description": "National medical entrance exam for admission into MBBS, BDS, AYUSH, and Nursing.",
+    "format": "Offline Pen-and-paper test.",
+    "website": "https://neet.nta.nic.in/",
+    "events": [
+      {
+        "id": "evt_410",
+        "title": "Registration Starts",
+        "date": "2026-01-15T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_411",
+        "title": "Registration Ends",
+        "date": "2026-03-05T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_412",
+        "title": "Exam Date",
+        "date": "2026-05-03T14:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_413",
+        "title": "Result Declaration",
+        "date": "2026-06-06T10:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_204",
+    "exam_name": "NATA 2026",
+    "category": "Architecture",
+    "description": "National Aptitude Test in Architecture conducted by Council of Architecture.",
+    "format": "Computer Based Test.",
+    "website": "https://nata.in/",
+    "events": [
+      {
+        "id": "evt_414",
+        "title": "Registration Starts",
+        "date": "2026-03-01T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_415",
+        "title": "Registration Ends",
+        "date": "2026-04-20T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_416",
+        "title": "Exam Date",
+        "date": "2026-05-12T09:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_417",
+        "title": "Result Declaration",
+        "date": "2026-05-25T10:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  },
+
+  {
+    "id": "exam_205",
+    "exam_name": "UPSC Civil Services Examination 2026",
+    "category": "Government Jobs",
+    "description": "Prestigious national-level examination to recruit IAS, IPS, IFS, and Central Civil Services officers.",
+    "format": "Prelims (MCQ), Mains (Descriptive), Interview.",
+    "website": "https://upsc.gov.in/",
+    "events": [
+      {
+        "id": "evt_418",
+        "title": "Notification Release",
+        "date": "2026-02-12T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_419",
+        "title": "Registration Starts",
+        "date": "2026-02-12T10:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_420",
+        "title": "Registration Ends",
+        "date": "2026-03-05T23:59:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_421",
+        "title": "Prelims Exam",
+        "date": "2026-06-07T09:00:00Z",
+        "status": "Upcoming"
+      },
+      {
+        "id": "evt_422",
+        "title": "Mains Exam",
+        "date": "2026-09-18T09:00:00Z",
+        "status": "Upcoming"
+      }
+    ]
+  }
+]

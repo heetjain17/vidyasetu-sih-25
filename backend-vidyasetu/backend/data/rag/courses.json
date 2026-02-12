@@ -1,0 +1,1292 @@
+[
+  {
+    "id": 1,
+    "name": "5 Year Integrated Programme in Mathematics",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 2,
+    "name": "B.Sc Computer Applications",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 3,
+    "name": "BA Dogri",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 4,
+    "name": "BA Economics",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 5,
+    "name": "BA Education",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 6,
+    "name": "BA English Literature",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 7,
+    "name": "BA Hindi Literature",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 8,
+    "name": "BA History",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 9,
+    "name": "BA Mass Communication and Multimedia Production",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 10,
+    "name": "BA Music",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 11,
+    "name": "BA Philosophy",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 12,
+    "name": "BA Political Science",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 13,
+    "name": "BA Psychology",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 14,
+    "name": "BA Public Administration",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 15,
+    "name": "BA Punjabi Literature",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 16,
+    "name": "BA Sanskrit",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 17,
+    "name": "BA Sociology",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 18,
+    "name": "BA Urdu",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 19,
+    "name": "Bachelor of Arts & Humanities With Major in Dogri",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 20,
+    "name": "Bachelor of Arts & Humanities With Major in English/English Literature",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 21,
+    "name": "Bachelor of Arts & Humanities With Major in Hindi",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 22,
+    "name": "Bachelor of Arts & Humanities With Major in Kashmiri",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 23,
+    "name": "Bachelor of Arts & Humanities With Major in Music",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 24,
+    "name": "Bachelor of Arts & Humanities With Major in Persian",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 25,
+    "name": "Bachelor of Arts & Humanities With Major in Punjabi",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 26,
+    "name": "Bachelor of Arts & Humanities With Major in Sanskrit",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 27,
+    "name": "Bachelor of Arts & Humanities With Major in Urdu",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 28,
+    "name": "Bachelor of Arts & Humanties with Major in Arabic",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 29,
+    "name": "Bachelor of Arts Anthropology (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 30,
+    "name": "Bachelor of Arts Arabic (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 31,
+    "name": "Bachelor of Arts Economics (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 32,
+    "name": "Bachelor of Arts Education (Hons)",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 33,
+    "name": "Bachelor of Arts English (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 34,
+    "name": "Bachelor of Arts English Literature (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 35,
+    "name": "Bachelor of Arts History (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 36,
+    "name": "Bachelor of Arts in Economics (Honours)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 37,
+    "name": "Bachelor of Arts in Economics (Honours) Self Financed",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 38,
+    "name": "Bachelor of Arts in English Literature (Honours)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 39,
+    "name": "Bachelor of Arts in English Literature (Honours) Self Financed",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 40,
+    "name": "Bachelor of Arts Islamic Studies (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 41,
+    "name": "Bachelor of Arts Journalism & Mass Communication (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 42,
+    "name": "Bachelor of Arts Kashmiri (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 43,
+    "name": "Bachelor of Arts Music (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 44,
+    "name": "Bachelor of Arts Philosophy (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 45,
+    "name": "Bachelor of Arts Political Science (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 46,
+    "name": "Bachelor of Arts Psychology (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 47,
+    "name": "Bachelor of Arts Public Administration (Hons)",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 48,
+    "name": "Bachelor of Arts Social Work (Hons)",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 49,
+    "name": "Bachelor of Arts Sociology (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 50,
+    "name": "Bachelor of Arts Tour and Travel Management (Hons)",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 51,
+    "name": "Bachelor of Arts Urdu (Hons)",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 52,
+    "name": "Bachelor of Arts/Science Geography (Hons)",
+    "roadmap_id": 1,
+    "stream": "Science"
+  },
+  {
+    "id": 53,
+    "name": "Bachelor of Arts/Science Mathematics (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 54,
+    "name": "Bachelor of Arts/Science Statistics (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 55,
+    "name": "Bachelor of Business Administration (Honours)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 56,
+    "name": "Bachelor of Business Administration (Honours) Self Financed",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 57,
+    "name": "Bachelor of business Administration (Hons)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 58,
+    "name": "Bachelor of Business Administration in Financial Management (Hons)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 59,
+    "name": "Bachelor of Business Administration in Marketing Management (Hons)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 60,
+    "name": "Bachelor of Commerce",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 61,
+    "name": "Bachelor of Commerce (Hons)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 62,
+    "name": "Bachelor of Commerce in Accounting & Taxation (Honours)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 63,
+    "name": "Bachelor of Commerce in Accounting & Taxation (Honours) Self Financed",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 64,
+    "name": "Bachelor of Commerce in Accounting & Taxation (Hons)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 65,
+    "name": "Bachelor of Commerce in Finance (Honours)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 66,
+    "name": "Bachelor of Commerce in Finance (Honours) Self Financed",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 67,
+    "name": "Bachelor of Commerce in Finance (Hons)",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 68,
+    "name": "Bachelor of Commerce With Major in Accounting and Finance",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 69,
+    "name": "Bachelor of Commerce With Major in Business Studies",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 70,
+    "name": "Bachelor of Computer Application (Hons)",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 71,
+    "name": "Bachelor of Computer Applications",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 72,
+    "name": "Bachelor of Computer Applications (Honours)",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 73,
+    "name": "Bachelor of Computer Applications (Honours) Self Financed",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 74,
+    "name": "Bachelor of Computer Applications (Hons)",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 75,
+    "name": "Bachelor of Computer Applications Self Financed",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 76,
+    "name": "Bachelor of Management with Major in Business Management",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 77,
+    "name": "Bachelor of Multimedia and Mass Communication",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 78,
+    "name": "Bachelor of Science Anthropology (Hons)",
+    "roadmap_id": 1,
+    "stream": "Science"
+  },
+  {
+    "id": 79,
+    "name": "Bachelor of Science Bio-Chemistry (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 80,
+    "name": "Bachelor of Science Biochemistry (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 81,
+    "name": "Bachelor of Science Biotechnology (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 82,
+    "name": "Bachelor of Science Botany (Honours)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 83,
+    "name": "Bachelor of Science Botany (Honours) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 84,
+    "name": "Bachelor of Science Botany (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 85,
+    "name": "Bachelor of Science Chemistry (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 86,
+    "name": "Bachelor of Science Clinical Bio-Chemistry (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 87,
+    "name": "Bachelor of Science Electronics (Hons)",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 88,
+    "name": "Bachelor of Science Environmental Science (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 89,
+    "name": "Bachelor of Science Food Science & Technology (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 90,
+    "name": "Bachelor of Science Geology (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 91,
+    "name": "Bachelor of Science Home Science (Hons)",
+    "roadmap_id": 5,
+    "stream": "Science"
+  },
+  {
+    "id": 92,
+    "name": "Bachelor of Science in Bio-Chemistry (Honours)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 93,
+    "name": "Bachelor of Science in Bio-Chemistry (Honours) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 94,
+    "name": "Bachelor of Science in Biotechnology (Honours)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 95,
+    "name": "Bachelor of Science in Biotechnology (Honours) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 96,
+    "name": "Bachelor of Science in Botany (Integrated)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 97,
+    "name": "Bachelor of Science in Botany (Integrated) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 98,
+    "name": "Bachelor of Science in Chemistry (Honours)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 99,
+    "name": "Bachelor of Science in Chemistry (Honours) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 100,
+    "name": "Bachelor of Science in Chemistry (Integrated)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 101,
+    "name": "Bachelor of Science in Chemistry (Integrated) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 102,
+    "name": "Bachelor of Science in Electronics (Honours)",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 103,
+    "name": "Bachelor of Science in Electronics (Honours) Self Financed",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 104,
+    "name": "Bachelor of Science in Information Technology (Honours)",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 105,
+    "name": "Bachelor of Science in Information Technology (Honours) Self Financed",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 106,
+    "name": "Bachelor of Science in Mathematics (Honours)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 107,
+    "name": "Bachelor of Science in Mathematics (Honours) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 108,
+    "name": "Bachelor of Science in NanoScience & NanoTechnology (Honours)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 109,
+    "name": "Bachelor of Science in NanoScience & NanoTechnology (Honours) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 110,
+    "name": "Bachelor of Science in Physics (Honours)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 111,
+    "name": "Bachelor of Science in Physics (Honours) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 112,
+    "name": "Bachelor of Science in Zoology (Honours)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 113,
+    "name": "Bachelor of Science in Zoology (Honours) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 114,
+    "name": "Bachelor of Science in Zoology (Integrated)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 115,
+    "name": "Bachelor of Science in Zoology (Integrated) Self Financed",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 116,
+    "name": "Bachelor of Science Information Technology (Hons)",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 117,
+    "name": "Bachelor of Science Mathematics (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 118,
+    "name": "Bachelor of Science Physics (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 119,
+    "name": "Bachelor of Science Statistics (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 120,
+    "name": "Bachelor of Science with Major in Biochemistry",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 121,
+    "name": "Bachelor of Science with Major in Biotechnology",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 122,
+    "name": "Bachelor of Science with Major in Botany",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 123,
+    "name": "Bachelor of Science With Major in Chemistry",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 124,
+    "name": "Bachelor of Science With Major in Computer Application",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 125,
+    "name": "Bachelor of Science With Major in Electronics",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 126,
+    "name": "Bachelor of Science With Major in Environmental Science",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 127,
+    "name": "Bachelor of Science With Major in Geography",
+    "roadmap_id": 1,
+    "stream": "Science"
+  },
+  {
+    "id": 128,
+    "name": "Bachelor of Science With Major in Geology",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 129,
+    "name": "Bachelor of Science With Major in Home Science",
+    "roadmap_id": 5,
+    "stream": "Science"
+  },
+  {
+    "id": 130,
+    "name": "Bachelor of Science With Major in Industrial Fish and fisheries",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 131,
+    "name": "Bachelor of Science With Major in Information Technology",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 132,
+    "name": "Bachelor of Science With Major in Mathematics",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 133,
+    "name": "Bachelor of Science With Major in Physics",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 134,
+    "name": "Bachelor of Science With Major in Sericulture",
+    "roadmap_id": 5,
+    "stream": "Science"
+  },
+  {
+    "id": 135,
+    "name": "Bachelor of Science With Major in Statistics",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 136,
+    "name": "Bachelor of Science With Major in Zoology",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 137,
+    "name": "Bachelor of Science Zoology (Hons)",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 138,
+    "name": "Bachelor of Social and Behavioral Science With Major in Economics",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 139,
+    "name": "Bachelor of Social and Behavioral Science With Major in Education",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 140,
+    "name": "Bachelor of Social and Behavioural Science With Major in History",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 141,
+    "name": "Bachelor of Social and Behavioural Science With Major in Islamic Studies",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 142,
+    "name": "Bachelor of Social and Behavioural Science With Major in Library Science",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 143,
+    "name": "Bachelor of Social and Behavioural Science With Major in Philosophy",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 144,
+    "name": "Bachelor of Social and Behavioural Science With Major in Physical Education",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 145,
+    "name": "Bachelor of Social and Behavioural Science With Major in Political Science",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 146,
+    "name": "Bachelor of Social and Behavioural Science With Major in Psychology",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 147,
+    "name": "Bachelor of Social and Behavioural Science With Major in Public Administration",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 148,
+    "name": "Bachelor of Social and Behavioural Science With Major in Sociology",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 149,
+    "name": "BACHELORS (HONOURS) WITH ACCOUNTING & TAXATION (COMMERCE) AS MAJOR",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 150,
+    "name": "BACHELORS (HONOURS) WITH ANTHROPOLOGY AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Science"
+  },
+  {
+    "id": 151,
+    "name": "BACHELORS (HONOURS) WITH ARABIC LITERATURE AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 152,
+    "name": "BACHELORS (HONOURS) WITH BIO-CHEMISTRY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 153,
+    "name": "BACHELORS (HONOURS) WITH BIO-RESOURCES AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 154,
+    "name": "BACHELORS (HONOURS) WITH BIO-TECHNOLOGY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 155,
+    "name": "BACHELORS (HONOURS) WITH BOTANY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 156,
+    "name": "BACHELORS (HONOURS) WITH BUSINESS ADMINISTRATION AS MAJOR",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 157,
+    "name": "BACHELORS (HONOURS) WITH CHEMISTRY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 158,
+    "name": "BACHELORS (HONOURS) WITH CLINICAL BIO-CHEMISTRY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 159,
+    "name": "BACHELORS (HONOURS) WITH COMMERCE (FINANCE) AS MAJOR",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 160,
+    "name": "BACHELORS (HONOURS) WITH COMPUTER APPLICATIONS AS MAJOR",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 161,
+    "name": "BACHELORS (HONOURS) WITH DISASTER MANAGEMENT AS MAJOR",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 162,
+    "name": "BACHELORS (HONOURS) WITH ECONOMICS AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 163,
+    "name": "BACHELORS (HONOURS) WITH EDUCATION AS MAJOR",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 164,
+    "name": "BACHELORS (HONOURS) WITH ELECTRONICS AS MAJOR",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 165,
+    "name": "BACHELORS (HONOURS) WITH ENGLISH LITERATURE AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 166,
+    "name": "BACHELORS (HONOURS) WITH ENVIRONMENTAL SCIENCE AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 167,
+    "name": "BACHELORS (HONOURS) WITH FOOD SCIENCE & TECHNOLOGY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 168,
+    "name": "BACHELORS (HONOURS) WITH GEOGRAPHY AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Science"
+  },
+  {
+    "id": 169,
+    "name": "BACHELORS (HONOURS) WITH GEOLOGY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 170,
+    "name": "BACHELORS (HONOURS) WITH HINDI LITERATURE AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 171,
+    "name": "BACHELORS (HONOURS) WITH HISTORY AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 172,
+    "name": "BACHELORS (HONOURS) WITH HOME SCIENCE AS MAJOR",
+    "roadmap_id": 5,
+    "stream": "Science"
+  },
+  {
+    "id": 173,
+    "name": "BACHELORS (HONOURS) WITH INDIAN MUSIC AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 174,
+    "name": "BACHELORS (HONOURS) WITH INFORMATION TECHNOLOGY AS MAJOR",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 175,
+    "name": "BACHELORS (HONOURS) WITH ISLAMIC STUDIES AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 176,
+    "name": "BACHELORS (HONOURS) WITH KASHMIRI LITERATURE AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 177,
+    "name": "BACHELORS (HONOURS) WITH MANAGEMENT (COMMERCE) AS MAJOR",
+    "roadmap_id": 3,
+    "stream": "Commerce"
+  },
+  {
+    "id": 178,
+    "name": "BACHELORS (HONOURS) WITH MASS COMMUNICATION AND MULTIMEDIA PRODUCTION AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 179,
+    "name": "BACHELORS (HONOURS) WITH MATHEMATICS/APPLIED MATHEMATICS AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 180,
+    "name": "BACHELORS (HONOURS) WITH PERSIAN LITERATURE AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 181,
+    "name": "BACHELORS (HONOURS) WITH PHILOSOPHY AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 182,
+    "name": "BACHELORS (HONOURS) WITH PHYSICS AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 183,
+    "name": "BACHELORS (HONOURS) WITH POLITICAL SCIENCE AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 184,
+    "name": "BACHELORS (HONOURS) WITH PSYCHOLOGY AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 185,
+    "name": "BACHELORS (HONOURS) WITH PUBLIC ADMINISTRATION AS MAJOR",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 186,
+    "name": "BACHELORS (HONOURS) WITH PUNJABI LITERATURE AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 187,
+    "name": "BACHELORS (HONOURS) WITH SOCIAL WORK AS MAJOR",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 188,
+    "name": "BACHELORS (HONOURS) WITH SOCIOLOGY AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 189,
+    "name": "BACHELORS (HONOURS) WITH SPOKEN PERSIAN AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 190,
+    "name": "BACHELORS (HONOURS) WITH STATISTICS AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 191,
+    "name": "BACHELORS (HONOURS) WITH TOURISM AND TRAVEL MANAGEMENT AS MAJOR",
+    "roadmap_id": 5,
+    "stream": "Arts"
+  },
+  {
+    "id": 192,
+    "name": "BACHELORS (HONOURS) WITH URDU LITERATURE AS MAJOR",
+    "roadmap_id": 1,
+    "stream": "Arts"
+  },
+  {
+    "id": 193,
+    "name": "BACHELORS (HONOURS) WITH WATER MANAGEMENT AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Arts"
+  },
+  {
+    "id": 194,
+    "name": "BACHELORS (HONOURS) WITH ZOOLOGY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 195,
+    "name": "BACHELORS OF SCIENCE IN ZOLOOGY AS MAJOR",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 196,
+    "name": "BSc Anthropology",
+    "roadmap_id": 1,
+    "stream": "Science"
+  },
+  {
+    "id": 197,
+    "name": "BSc Biotechnology",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 198,
+    "name": "BSc Botany",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 199,
+    "name": "BSc Chemistry",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 200,
+    "name": "BSc Geography",
+    "roadmap_id": 1,
+    "stream": "Science"
+  },
+  {
+    "id": 201,
+    "name": "BSc Home Science",
+    "roadmap_id": 5,
+    "stream": "Science"
+  },
+  {
+    "id": 202,
+    "name": "BSc in Biotechnology",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 203,
+    "name": "BSc in Botany",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 204,
+    "name": "BSc in Chemistry",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 205,
+    "name": "BSc in Electronics",
+    "roadmap_id": 4,
+    "stream": "Science"
+  },
+  {
+    "id": 206,
+    "name": "BSc in Geography",
+    "roadmap_id": 1,
+    "stream": "Science"
+  },
+  {
+    "id": 207,
+    "name": "BSc in Geology",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 208,
+    "name": "BSc in Mathematics",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 209,
+    "name": "BSc in Physics",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 210,
+    "name": "BSc in Zoology",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 211,
+    "name": "BSc Mathematics",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 212,
+    "name": "BSc Physics",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 213,
+    "name": "BSc Zoology",
+    "roadmap_id": 2,
+    "stream": "Science"
+  },
+  {
+    "id": 214,
+    "name": "Design Your Degree",
+    "roadmap_id": 6,
+    "stream": "Arts"
+  },
+  {
+    "id": 215,
+    "name": "Design Your Degree (DYD)",
+    "roadmap_id": 6,
+    "stream": "Arts"
+  }
+]

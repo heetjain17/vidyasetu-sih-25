@@ -1,0 +1,61 @@
+{
+  "Realistic": {
+    "Logical": 0.05,
+    "Quantitative": 0.02,
+    "Analytical": 0.04,
+    "Verbal": 0.01,
+    "Spatial": 0.55,
+    "Creativity": 0.03,
+    "Enter": 0.21
+  },
+
+  "Investigative": {
+    "Logical": 0.45,
+    "Quantitative": 0.45,
+    "Analytical": 0.3,
+    "Verbal": 0.05,
+    "Spatial": 0.02,
+    "Creativity": 0.02,
+    "Enter": 0.01
+  },
+
+  "Artistic": {
+    "Logical": 0.02,
+    "Quantitative": 0.01,
+    "Analytical": 0.1,
+    "Verbal": 0.1,
+    "Spatial": 0.25,
+    "Creativity": 0.51,
+    "Enter": 0.07
+  },
+
+  "Social": {
+    "Logical": 0.02,
+    "Quantitative": 0.01,
+    "Analytical": 0.05,
+    "Verbal": 0.55,
+    "Spatial": 0.03,
+    "Creativity": 0.12,
+    "Enter": 0.51
+  },
+
+  "Enterprising": {
+    "Logical": 0.05,
+    "Quantitative": 0.03,
+    "Analytical": 0.05,
+    "Verbal": 0.25,
+    "Spatial": 0.01,
+    "Creativity": 0.08,
+    "Enter": 0.71
+  },
+
+  "Conventional": {
+    "Logical": 0.11,
+    "Quantitative": 0.18,
+    "Analytical": 0.16,
+    "Verbal": 0.04,
+    "Spatial": 0.14,
+    "Creativity": 0.05,
+    "Enter": 0.04
+  }
+}
