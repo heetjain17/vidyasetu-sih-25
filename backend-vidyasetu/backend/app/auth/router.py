@@ -61,9 +61,13 @@ def login_user(data: LoginRequest, supabase=Depends(get_supabase_client)):
     user_id = _extract(user, "id")
     user_role = UserRole.STUDENT
     if user_id:
-        user_result = supabase.table("Users").select("role").eq("u_id", user_id).single().execute()
-        if user_result.data:
-            user_role = UserRole(user_result.data.get("role", "STUDENT"))
+        try:
+            user_result = supabase.table("Users").select("role").eq("u_id", user_id).single().execute()
+            if user_result.data:
+                user_role = UserRole(user_result.data.get("role", "STUDENT"))
+        except Exception:
+            # User authenticated but not in Users table - use default role
+            pass
 
     return AuthResponse(
         access_token=_extract(session, "access_token"),
