@@ -1,25 +1,23 @@
-import { Briefcase, BookOpen, GraduationCap } from "lucide-react";
-import type { CareerCard as CareerCardType } from "@/api/chatbotApi";
+import { Briefcase, BookOpen, GraduationCap } from "lucide-react"
+import type { CareerCard as CareerCardType } from "@/api/chatbotApi"
 
 interface CareerCardProps {
-  career: CareerCardType;
+  career: CareerCardType
 }
 
 export function CareerCard({ career }: CareerCardProps) {
   return (
     <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow">
       <div className="flex items-start gap-3">
-        <div className="h-10 w-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center flex-shrink-0">
+        <div className="h-10 w-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center shrink-0">
           <Briefcase className="h-5 w-5 text-purple-600 dark:text-purple-400" />
         </div>
         <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
-            {career.career}
-          </h4>
+          <h4 className="font-semibold text-slate-900 dark:text-white mb-2">{career.career}</h4>
           {career.courses && career.courses.length > 0 && (
             <div className="mb-2">
               <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-1">
-                <BookOpen className="h-4 w-4 flex-shrink-0" />
+                <BookOpen className="h-4 w-4 shrink-0" />
                 <span className="font-medium">Courses:</span>
               </div>
               <div className="flex flex-wrap gap-1">
@@ -37,7 +35,7 @@ export function CareerCard({ career }: CareerCardProps) {
           {career.colleges && career.colleges.length > 0 && (
             <div>
               <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-1">
-                <GraduationCap className="h-4 w-4 flex-shrink-0" />
+                <GraduationCap className="h-4 w-4 shrink-0" />
                 <span className="font-medium">Colleges:</span>
               </div>
               <div className="flex flex-wrap gap-1">
@@ -60,5 +58,5 @@ export function CareerCard({ career }: CareerCardProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }
