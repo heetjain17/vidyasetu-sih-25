@@ -1,0 +1,22 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every 3 days. 
+    # Supabase free-tier pauses after 7 days of inactivity, so every 3 days is frequent enough while keeping calls minimal.
+    - cron: '0 0 */3 * *'
+  # Allows you to trigger the workflow manually from the GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  ping-db:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send API Request to Supabase
+        # We query just a single row from a public endpoint to register activity and keep the DB awake.
+        # Make sure to set SUPABASE_URL and SUPABASE_KEY in your GitHub repository secrets!
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/?limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}"
+          echo "Pinged Supabase REST API successfully!"
