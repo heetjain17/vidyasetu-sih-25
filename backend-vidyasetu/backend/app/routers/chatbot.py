@@ -6,7 +6,7 @@ Uses OpenAI for LLM and Qdrant for vector search.
 
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.schemas.chatbot import ChatRequest, ChatResponse, HealthResponse
-from app.services.openai_chatbot import rag_answer_stream, rag_answer, check_health
+from app.services.chatbot_service import rag_answer_stream, rag_answer, check_health
 import json
 
 router = APIRouter()

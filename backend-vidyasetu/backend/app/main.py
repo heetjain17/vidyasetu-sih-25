@@ -22,21 +22,36 @@ from app.dependencies.cors import configure_cors
 # FastAPI App with Swagger UI Auth Configuration
 # ============================================================
 app = FastAPI(
-    title="Margadarshaka API",
+    title="🎓 Margadarshaka API",
     description="""
-    Career Guidance Platform API with Multi-Role Authentication.
-    
-    ## Roles
-    - **STUDENT**: Take assessments, get recommendations, manage profile
-    - **PARENT**: Link to students, view their recommendations
-    - **COLLEGE**: Manage college profile (coming soon)
-    
-    ## Authentication
-    1. Register/Login to get an access token
-    2. Click "Authorize" button and enter: `Bearer <your_token>`
-    3. All protected endpoints will now work
+    ## Comprehensive Career Guidance Platform
+    Margadarshaka is an advanced career counseling system tailored for students in Jammu & Kashmir. It combines psychological theory (RIASEC), heuristic scoring, and AI-driven RAG (Retrieval-Augmented Generation) to guide students through the complexities of higher education.
+
+    ### 🧩 Core Modules
+    *   **🎯 Smart Recommender**: A multi-dimensional engine that matches student aptitude (RIASEC) with careers and evaluates colleges based on Locality, Financials, Eligibility, Cultural alignment, and Quality.
+    *   **💬 AI Chatbot**: A robust RAG-based assistant that searches a local knowledge base (Qdrant) to answer hyper-local academic queries. Operates with a dual OpenAI/Ollama strategy.
+    *   **👤 Role-Based Access Control**:
+        *   **STUDENT**: Primary user; takes assessments, gets personalized paths.
+        *   **PARENT**: Guardian user; can link to multiple children and monitor their progress.
+        *   **COLLEGE**: Institutional user; manages facilities, events, and placement data.
+    *   **📚 Career Hub**: Repository of career roadmaps, study resources, and scholarship information.
+
+    ### 🔒 Authentication
+    1.  **Register**: Create an account via `/auth/register`.
+    2.  **Login**: Get a JWT token via `/auth/login`.
+    3.  **Authorize**: Use the **Authorize** button on this page and enter `Bearer <your_token>`.
+
+    ### 🌐 Localization
+    The platform supports translation to **Hindi, Urdu, and Kashmiri** for all recommendation explanations via the `/recommend/translate` service.
     """,
-    version="2.0.0",
+    version="2.1.0",
+    contact={
+        "name": "Margadarshaka Team",
+        "url": "https://margadarshaka.jk.gov.in",
+    },
+    license_info={
+        "name": "Proprietary",
+    },
 )
 
 # Configure CORS

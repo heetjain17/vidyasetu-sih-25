@@ -6,7 +6,7 @@ from app.routers.discussion_forum_schemas import (
     CommentCreate, CommentOut, VoteCreate, VoteResult
 )
 import app.services.discussion_forum_service as service
-from app.services.openai_chatbot import rag_answer
+from app.services.chatbot_service import rag_answer
 
 router = APIRouter(
     prefix="/forum",
