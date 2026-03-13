@@ -41,3 +41,17 @@ from app.schemas.timeline import (
 )
 
 from app.schemas.feedback import FeedbackCreate
+
+from app.schemas.college_admin import (
+    ProfileUpdate,
+    CollegeUpdate,
+    LinkCollegeRequest,
+    AddCourseRequest,
+    FacilitiesUpdate,
+)
+
+from app.schemas.chatbot_futuristic import (
+    FuturisticCareerRequest,
+    FuturisticCareerItem,
+    FuturisticCareerResponse,
+)

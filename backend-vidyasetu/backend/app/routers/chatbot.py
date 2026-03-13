@@ -6,6 +6,7 @@ Uses OpenAI for LLM and Qdrant for vector search.
 
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.schemas.chatbot import ChatRequest, ChatResponse, HealthResponse
+from app.schemas.chatbot_futuristic import FuturisticCareerRequest, FuturisticCareerItem, FuturisticCareerResponse
 from app.services.chatbot_service import rag_answer_stream, rag_answer, check_health
 import json
 
@@ -93,52 +94,6 @@ def health_check():
     """
     status = check_health()
     return HealthResponse(**status)
-
-
-# ---------- Futuristic Career Generator Endpoint ----------
-from pydantic import BaseModel, Field
-from typing import List, Optional
-
-class FuturisticCareerRequest(BaseModel):
-    """Request model for futuristic career generation."""
-    interests: str = Field(..., description="User's interests or query about future careers")
-    hobbies: Optional[List[str]] = Field(default=None, description="User's hobbies")
-    skills: Optional[List[str]] = Field(default=None, description="User's current skills")
-    location: Optional[str] = Field(default="India", description="User's location")
-    current_field: Optional[str] = Field(default=None, description="Current career interest/field")
-    num_careers: Optional[int] = Field(default=4, ge=1, le=10, description="Number of career suggestions")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "interests": "artificial intelligence and robotics",
-                "hobbies": ["coding", "gaming", "reading sci-fi"],
-                "skills": ["Python", "Machine Learning"],
-                "location": "Jammu",
-                "current_field": "Computer Science",
-                "num_careers": 4
-            }
-        }
-
-
-class FuturisticCareerItem(BaseModel):
-    """Individual futuristic career suggestion."""
-    title: str
-    description: Optional[str] = None
-    why_suitable: Optional[str] = None
-    skills_needed: Optional[List[str]] = None
-    getting_started: Optional[List[str]] = None
-    future_demand: Optional[str] = None
-    salary_potential: Optional[str] = None
-
-
-class FuturisticCareerResponse(BaseModel):
-    """Response model for futuristic career generation."""
-    success: bool
-    careers: List[FuturisticCareerItem] = []
-    answer_text: Optional[str] = None
-    note: Optional[str] = None
-    error: Optional[str] = None
 
 
 @router.post("/futuristic-careers", response_model=FuturisticCareerResponse, summary="Generate Futuristic Career Suggestions")
