@@ -39,15 +39,65 @@ print(f"🔌 Connecting to Qdrant at {QDRANT_URL}...")
 qdrant_client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
 
 
-def get_embeddings_batch(texts: List[str]) -> List[List[float]]:
-    """Get embeddings for a batch of texts using Gemini."""
+def get_embeddings_batch(
+    texts: List[str], delay_between_requests: float = 0.6
+) -> List[List[float]]:
+    """
+    Get embeddings for a batch of texts using Gemini with rate limiting.
+
+    Args:
+        texts: List of texts to embed
+        delay_between_requests: Delay in seconds between requests (default 0.6s = 100 req/min)
+
+    Returns:
+        List of embeddings
+    """
     embeddings = []
     total = len(texts)
 
     for i, text in enumerate(texts):
         if (i + 1) % 10 == 0:
             print(f"    Embedding {i + 1}/{total}...", end="\r")
-        embeddings.append(get_embedding(text))
+
+        # Retry logic for rate limits
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                embedding = get_embedding(text)
+                embeddings.append(embedding)
+
+                # Add delay between requests to stay under rate limit
+                if i < total - 1:  # Don't delay after last request
+                    time.sleep(delay_between_requests)
+                break
+
+            except Exception as e:
+                if "ResourceExhausted" in str(type(e).__name__) or "429" in str(e):
+                    # Extract retry delay from error message if available
+                    retry_delay = 60  # Default 1 minute
+                    if "retry in" in str(e).lower():
+                        try:
+                            import re
+
+                            match = re.search(r"retry in (\d+\.?\d*)s", str(e))
+                            if match:
+                                retry_delay = (
+                                    float(match.group(1)) + 1
+                                )  # Add 1 second buffer
+                        except:
+                            pass
+
+                    print(
+                        f"\n    ⚠️  Rate limit hit. Waiting {retry_delay:.0f} seconds..."
+                    )
+                    time.sleep(retry_delay)
+
+                    if attempt < max_retries - 1:
+                        print(f"    🔄 Retrying ({attempt + 2}/{max_retries})...")
+                    else:
+                        raise
+                else:
+                    raise
 
     print(f"    Embedded {total}/{total} texts    ")
     return embeddings
