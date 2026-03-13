@@ -11,6 +11,7 @@ Usage:
 import os
 import sys
 import json
+import time
 from typing import List, Dict, Any
 
 # Add parent directory to path to import app modules
@@ -20,6 +21,7 @@ from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct
 from app.utils.gemini_client import get_embedding, GEMINI_EMBED_MODEL
+from google.api_core.exceptions import ResourceExhausted
 
 load_dotenv()
 
