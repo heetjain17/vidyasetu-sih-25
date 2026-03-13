@@ -15,32 +15,39 @@ jobs:
         run: |
           echo "Pinging Qdrant cluster to keep it alive..."
           
-          # Health check endpoint
-          response=$(curl -s -w "\n%{http_code}" "${{ secrets.QDRANT_URL }}/health" \
-            -H "api-key: ${{ secrets.QDRANT_API_KEY }}")
+          # Try multiple health endpoints (Qdrant Cloud uses different endpoints)
+          for endpoint in "" "/healthz" "/health"; do
+            echo "Trying endpoint: ${{ secrets.QDRANT_URL }}${endpoint}"
+            
+            response=$(curl -s -w "\n%{http_code}" "${{ secrets.QDRANT_URL }}${endpoint}" \
+              -H "api-key: ${{ secrets.QDRANT_API_KEY }}" 2>&1 || echo "000")
+            
+            http_code=$(echo "$response" | tail -n1)
+            body=$(echo "$response" | head -n-1)
+            
+            echo "HTTP Status: $http_code"
+            
+            if [ "$http_code" -eq 200 ] || [ "$http_code" -eq 204 ]; then
+              echo "✅ Qdrant cluster is alive and healthy"
+              echo "Response: $body"
+              exit 0
+            fi
+          done
           
-          http_code=$(echo "$response" | tail -n1)
-          body=$(echo "$response" | head -n-1)
-          
-          echo "HTTP Status: $http_code"
-          echo "Response: $body"
-          
-          if [ "$http_code" -eq 200 ]; then
-            echo "✅ Qdrant cluster is alive and healthy"
-          else
-            echo "⚠️ Qdrant cluster returned status $http_code"
-            exit 1
-          fi
+          echo "⚠️ Could not reach Qdrant cluster on any endpoint"
+          echo "Last response: $body"
+          exit 1
       
       - name: Get Collections Info
         run: |
           echo "Fetching collections information..."
           
-          curl -s "${{ secrets.QDRANT_URL }}/collections" \
-            -H "api-key: ${{ secrets.QDRANT_API_KEY }}" \
-            | jq '.result.collections[] | {name: .name, points_count: .points_count}'
+          response=$(curl -s "${{ secrets.QDRANT_URL }}/collections" \
+            -H "api-key: ${{ secrets.QDRANT_API_KEY }}")
           
-          echo "✅ Collections fetched successfully"
+          echo "$response" | jq -r '.result.collections[]? | "  - \(.name): \(.points_count) points"' || echo "Could not parse collections"
+          
+          echo "✅ Collections check completed"
       
       - name: Verify Embeddings Collection
         run: |
@@ -49,13 +56,17 @@ jobs:
           response=$(curl -s "${{ secrets.QDRANT_URL }}/collections/college_career_knowledge_gemini" \
             -H "api-key: ${{ secrets.QDRANT_API_KEY }}")
           
-          echo "$response" | jq '{
-            name: .result.config.params.vectors.size,
-            points_count: .result.points_count,
-            status: .result.status
-          }'
+          points=$(echo "$response" | jq -r '.result.points_count // "unknown"')
+          status=$(echo "$response" | jq -r '.result.status // "unknown"')
           
-          echo "✅ Collection verified"
+          echo "  Points: $points"
+          echo "  Status: $status"
+          
+          if [ "$points" != "unknown" ] && [ "$points" != "null" ]; then
+            echo "✅ Collection verified successfully"
+          else
+            echo "⚠️ Collection might not exist or is inaccessible"
+          fi
       
       - name: Send Success Notification
         if: success()
