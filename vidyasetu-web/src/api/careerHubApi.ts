@@ -2,38 +2,38 @@
  * Career Hub API - Fetch study materials, roadmaps, and scholarships
  */
 
-const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+import apiClient from "./client"
 
 export interface StudyMaterial {
-  courses: string;
-  link: string;
-  duration: string;
-  materials: string;
+  courses: string
+  link: string
+  duration: string
+  materials: string
 }
 
 export interface CareerRoadmap {
-  id: number;
-  courses: string;
-  industry: string;
-  government_exams: string;
-  company_names: string;
-  higher_education: string;
+  id: number
+  courses: string
+  industry: string
+  government_exams: string
+  company_names: string
+  higher_education: string
 }
 
 export interface Scholarship {
-  id: number;
-  scheme: string;
-  eligibility: string;
-  benefit: string;
-  link: string;
+  id: number
+  scheme: string
+  eligibility: string
+  benefit: string
+  link: string
 }
 
 export interface PaginatedResponse<T> {
-  data: T[];
-  total: number;
-  page: number;
-  limit: number;
-  pages: number;
+  data: T[]
+  total: number
+  page: number
+  limit: number
+  pages: number
 }
 
 export async function getCourses(
@@ -44,21 +44,24 @@ export async function getCourses(
   const params = new URLSearchParams({
     page: page.toString(),
     limit: limit.toString(),
-  });
-  if (search) params.append("search", search);
+  })
+  if (search) params.append("search", search)
 
-  const res = await fetch(`${API_URL}/career-hub/courses?${params}`);
-  if (!res.ok) throw new Error("Failed to fetch courses");
-  return res.json();
+  const response = await apiClient.get<PaginatedResponse<StudyMaterial>>(
+    `/career-hub/courses?${params}`
+  )
+  return response.data
 }
 
 export async function getAllCourses(): Promise<{
-  data: StudyMaterial[];
-  total: number;
+  data: StudyMaterial[]
+  total: number
 }> {
-  const res = await fetch(`${API_URL}/career-hub/courses/all`);
-  if (!res.ok) throw new Error("Failed to fetch all courses");
-  return res.json();
+  const response = await apiClient.get<{
+    data: StudyMaterial[]
+    total: number
+  }>("/career-hub/courses/all")
+  return response.data
 }
 
 export async function getRoadmaps(
@@ -69,34 +72,47 @@ export async function getRoadmaps(
   const params = new URLSearchParams({
     page: page.toString(),
     limit: limit.toString(),
-  });
-  if (search) params.append("search", search);
+  })
+  if (search) params.append("search", search)
 
-  const res = await fetch(`${API_URL}/career-hub/roadmaps?${params}`);
-  if (!res.ok) throw new Error("Failed to fetch roadmaps");
-  return res.json();
+  const response = await apiClient.get<PaginatedResponse<CareerRoadmap>>(
+    `/career-hub/roadmaps?${params}`
+  )
+  return response.data
 }
 
 export async function getAllRoadmaps(): Promise<{
-  data: CareerRoadmap[];
-  total: number;
+  data: CareerRoadmap[]
+  total: number
 }> {
-  const res = await fetch(`${API_URL}/career-hub/roadmaps/all`);
-  if (!res.ok) throw new Error("Failed to fetch all roadmaps");
-  return res.json();
+  const response = await apiClient.get<{
+    data: CareerRoadmap[]
+    total: number
+  }>("/career-hub/roadmaps/all")
+  return response.data
 }
 
 export async function getRoadmapById(id: number): Promise<CareerRoadmap> {
-  const res = await fetch(`${API_URL}/career-hub/roadmaps/${id}`);
-  if (!res.ok) throw new Error("Failed to fetch roadmap");
-  return res.json();
+  const response = await apiClient.get<CareerRoadmap>(`/career-hub/roadmaps/${id}`)
+  return response.data
 }
 
 export async function getScholarships(): Promise<{
-  data: Scholarship[];
-  total: number;
+  data: Scholarship[]
+  total: number
 }> {
-  const res = await fetch(`${API_URL}/career-hub/scholarships`);
-  if (!res.ok) throw new Error("Failed to fetch scholarships");
-  return res.json();
+  const response = await apiClient.get<{
+    data: Scholarship[]
+    total: number
+  }>("/career-hub/scholarships")
+  return response.data
+}
+
+export default {
+  getCourses,
+  getAllCourses,
+  getRoadmaps,
+  getAllRoadmaps,
+  getRoadmapById,
+  getScholarships,
 }
