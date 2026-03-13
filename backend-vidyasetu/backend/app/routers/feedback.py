@@ -4,20 +4,13 @@ Stores user feedback about recommendations.
 """
 
 from fastapi import APIRouter, HTTPException, Depends
-from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
 from app.dependencies.db_dependency import get_supabase_client
 from app.dependencies.auth_dependency import get_current_user, CurrentUser
+from app.schemas.feedback import FeedbackCreate
 
 router = APIRouter(prefix="/feedback", tags=["feedback"])
-
-
-class FeedbackCreate(BaseModel):
-    role: str  # Student / Parent / SPOC
-    recommendations_useful: str  # Yes / Somewhat / No
-    recommendations_accurate: str  # Yes / Somewhat / No
-    suggestions: Optional[str] = None
 
 
 @router.post("/", summary="Submit feedback")

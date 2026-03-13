@@ -1,18 +1,13 @@
 
-import sys
-import os
 import asyncio
+import os
 from dotenv import load_dotenv
 from fastapi import HTTPException
 
-# Add the backend directory to sys.path so we can import app modules
-backend_path = r"c:\Coding\SIH_25\backend-margadarsaka\backend"
-sys.path.append(backend_path)
+load_dotenv()
 
-# Load environment variables
-load_dotenv(os.path.join(backend_path, ".env"))
-
-from app.routers.timeline import sync_whatsapp, WhatsAppSyncRequest
+from app.routers.timeline import sync_whatsapp
+from app.schemas.timeline import WhatsAppSyncRequest
 
 async def test_real_integration():
     print("\n--- Testing Real Integration with N8N ---")

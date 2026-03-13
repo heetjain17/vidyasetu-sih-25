@@ -1,17 +1,12 @@
 
-import sys
-import os
 import asyncio
 from dotenv import load_dotenv
+import os
 
-# Add backend to path
-backend_path = r"c:\Coding\SIH_25\backend-margadarsaka\backend"
-sys.path.append(backend_path)
+load_dotenv()
 
-# Load env including GOOGLE_APPLICATION_CREDENTIALS
-load_dotenv(os.path.join(backend_path, ".env"))
-
-from app.routers.timeline import sync_calendar, CalendarSyncRequest
+from app.routers.timeline import sync_calendar
+from app.schemas.timeline import CalendarSyncRequest
 
 async def test_calendar_sync():
     print("\n--- Testing Google Calendar Sync ---")
