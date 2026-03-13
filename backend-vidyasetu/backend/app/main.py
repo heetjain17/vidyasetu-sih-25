@@ -10,38 +10,79 @@ if not dotenv_path:
     dotenv_path = pathlib.Path(__file__).resolve().parents[1] / ".env"
 load_dotenv(dotenv_path)
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.openapi.utils import get_openapi
-from app.routers import predict, health, recommend, colleges, roadmaps, timeline, discussion_forum
+import traceback
+import logging
+
+from app.routers import health, recommend, colleges, roadmaps, timeline, discussion_forum
 from app.routers import users, data
 from app.routers import profiles, links, college_admin, chatbot, career_hub, feedback  # New routers
 from app.auth.router import router as auth_router
 from app.dependencies.cors import configure_cors
 
+# Setup basic logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 # ============================================================
 # FastAPI App with Swagger UI Auth Configuration
 # ============================================================
 app = FastAPI(
-    title="Margadarshaka API",
+    title="🎓 Margadarshaka API",
     description="""
-    Career Guidance Platform API with Multi-Role Authentication.
-    
-    ## Roles
-    - **STUDENT**: Take assessments, get recommendations, manage profile
-    - **PARENT**: Link to students, view their recommendations
-    - **COLLEGE**: Manage college profile (coming soon)
-    
-    ## Authentication
-    1. Register/Login to get an access token
-    2. Click "Authorize" button and enter: `Bearer <your_token>`
-    3. All protected endpoints will now work
+    ## Comprehensive Career Guidance Platform
+    Margadarshaka is an advanced career counseling system tailored for students in Jammu & Kashmir. It combines psychological theory (RIASEC), heuristic scoring, and AI-driven RAG (Retrieval-Augmented Generation) to guide students through the complexities of higher education.
+
+    ### 🧩 Core Modules
+    *   **🎯 Smart Recommender**: A multi-dimensional engine that matches student aptitude (RIASEC) with careers and evaluates colleges based on Locality, Financials, Eligibility, Cultural alignment, and Quality.
+    *   **💬 AI Chatbot**: A robust RAG-based assistant that searches a local knowledge base (Qdrant) to answer hyper-local academic queries. Operates with a dual OpenAI/Ollama strategy.
+    *   **👤 Role-Based Access Control**:
+        *   **STUDENT**: Primary user; takes assessments, gets personalized paths.
+        *   **PARENT**: Guardian user; can link to multiple children and monitor their progress.
+        *   **COLLEGE**: Institutional user; manages facilities, events, and placement data.
+    *   **📚 Career Hub**: Repository of career roadmaps, study resources, and scholarship information.
+
+    ### 🔒 Authentication
+    1.  **Register**: Create an account via `/auth/register`.
+    2.  **Login**: Get a JWT token via `/auth/login`.
+    3.  **Authorize**: Use the **Authorize** button on this page and enter `Bearer <your_token>`.
+
+    ### 🌐 Localization
+    The platform supports translation to **Hindi, Urdu, and Kashmiri** for all recommendation explanations via the `/recommend/translate` service.
     """,
-    version="2.0.0",
+    version="2.1.0",
+    contact={
+        "name": "Margadarshaka Team",
+        "url": "https://margadarshaka.jk.gov.in",
+    },
+    license_info={
+        "name": "Proprietary",
+    },
 )
 
 # Configure CORS
 configure_cors(app)
 
+
+# ============================================================
+# Global Exception Handler (Catch-All for 500 Errors)
+# ============================================================
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    """
+    Catches unhandled exceptions that would normally result in a silent 500 error in production.
+    Logs the full stack trace and returns a JSON response.
+    """
+    error_msg = f"Unhandled exception on {request.method} {request.url}\n"
+    error_msg += "".join(traceback.format_exception(type(exc), exc, exc.__traceback__))
+    logger.error(error_msg)
+    
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal Server Error", "message": str(exc)}
+    )
 
 # ============================================================
 # Custom OpenAPI Schema with JWT Bearer Auth
@@ -92,7 +133,6 @@ app.include_router(links.router, prefix="/links", tags=["🔗 Parent-Student Lin
 # Existing routes
 app.include_router(users.router, prefix="/users", tags=["users"])
 app.include_router(data.router, prefix="/data", tags=["data"])
-app.include_router(predict.router, prefix="/predict", tags=["predict"])
 app.include_router(recommend.router, prefix="/recommend", tags=["🎯 Recommendations"])
 app.include_router(colleges.router, tags=["🏫 Colleges"])
 app.include_router(roadmaps.router, tags=["roadmaps"])

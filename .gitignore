@@ -1,0 +1,5 @@
+supabase/.temp/*
+supabase/roles.sql
+
+.env
+.env.local

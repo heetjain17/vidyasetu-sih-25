@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from app.services.db_service import fetch_all_roadmap_templates, fetch_roadmap_by_id
 
-router = APIRouter(prefix="/roadmaps", tags=["roadmaps"])
+router = APIRouter(prefix="/roadmaps")
 
 
 @router.get("/")

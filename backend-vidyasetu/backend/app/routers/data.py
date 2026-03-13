@@ -5,31 +5,32 @@ from typing import List
 router = APIRouter()
 
 def get_table_data(table: str, supabase):
-    result = supabase.table(table).select("*").execute()
-    if result.get("error"):
-        raise HTTPException(status_code=400, detail=result["error"]["message"])
-    return result["data"]
+    try:
+        result = supabase.table(table).select("*").execute()
+        return result.data
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @router.get("/careers")
 def read_careers(supabase=Depends(get_supabase_client)):
-    return get_table_data("careers", supabase)
+    return get_table_data("RIASEC", supabase)
 
 @router.get("/college-list")
 def read_college_list(supabase=Depends(get_supabase_client)):
-    return get_table_data("college_list", supabase)
+    return get_table_data("CollegeList", supabase)
 
 @router.get("/courses")
 def read_courses(supabase=Depends(get_supabase_client)):
-    return get_table_data("courses", supabase)
+    return get_table_data("Courses", supabase)
 
 @router.get("/course-college")
 def read_course_college(supabase=Depends(get_supabase_client)):
-    return get_table_data("course_college", supabase)
+    return get_table_data("CourseToCollege", supabase)
 
 @router.get("/roadmap")
 def read_roadmap(supabase=Depends(get_supabase_client)):
-    return get_table_data("roadmap", supabase)
+    return get_table_data("RoadmapTemplates", supabase)
 
 @router.get("/college-facilities")
 def read_college_facilities(supabase=Depends(get_supabase_client)):
-    return get_table_data("college_facilities", supabase)
+    return get_table_data("CollegeFacilities", supabase)

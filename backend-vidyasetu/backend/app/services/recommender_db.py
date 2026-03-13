@@ -1,187 +1,177 @@
-# recommender_db.py - Database-based recommender (replaces recommender_wrapped.py)
-# Fetches all data from Supabase instead of JSON files
+# recommender_db.py - Unified Database-based recommender
+# Consolidates logic from previous multi-file recommender system.
 
 import numpy as np
+import math
+from typing import Optional, List, Tuple, Dict, Any
 from app.services.db_service import (
     fetch_riasec_careers,
     fetch_career_to_course_mapping,
     fetch_course_to_college_mapping,
     fetch_college_data,
 )
-from app.services.recommender2_db import college_recommender_db
-from app.utils.model1_utils import compute_riasec, career_to_course, course_to_college
-from app.utils.util_mod2_1 import cosine_similarity
+from app.utils.riasec_utils import compute_riasec
+from app.utils.recommendation_helpers import career_to_course, course_to_college
+from app.utils.math_utils import cosine_similarity
+from app.utils.embedding_utils import embed
+from app.utils.scoring_logic import (
+    locality_match_score,
+    financial_match_score,
+    eligibility_match_score,
+    cultural_match_score,
+    quality_score
+)
 
+# ============================================================================
+# RECOMMENDER LOGIC
+# ============================================================================
+
+def normalize_student_weights(preferences: dict) -> List[float]:
+    weights = {
+        "locality": preferences.get("Importance_Locality", 3),
+        "financial": preferences.get("Importance_Financial", 3),
+        "eligibility": preferences.get("Importance_Eligibility", 3),
+        "cultural": preferences.get("Importance_Events_hobbies", 3),
+        "quality": preferences.get("Importance_Quality", 3),
+    }
+    total = sum(weights.values())
+    if total == 0: return [0.2] * 5
+    return [weights["locality"]/total, weights["financial"]/total, 
+            weights["eligibility"]/total, weights["cultural"]/total, 
+            weights["quality"]/total]
+
+def college_recommender_logic(student_actual: dict, student_preferences: dict, colleges: list, filter_list: list) -> tuple:
+    # Setup for cultural matching
+    CATEGORY_TEXT = {
+        "cultural": ["music", "dance", "art", "painting", "theatre", "singing"],
+        "sport": ["football", "cricket", "running", "basketball"],
+        "technical": ["coding", "programming", "robotics", "ai"],
+        "others": ["charity", "volunteering", "socialwork"],
+    }
+    CATEGORY_EMB = {cat: embed(" ".join(words)) for cat, words in CATEGORY_TEXT.items()}
+    
+    college_match_score = {}
+    filter_set = {c.lower().strip() for c in filter_list} if filter_list else set()
+    
+    # Primary pass
+    for college in colleges:
+        name = college.get("Name", "").strip()
+        if not name or (filter_set and name.lower() not in filter_set): continue
+        
+        eligibility = eligibility_match_score(student_actual, college)
+        if eligibility == 0: continue
+        
+        scores = [
+            locality_match_score(student_actual, college),
+            financial_match_score(student_actual, college),
+            eligibility,
+            cultural_match_score(student_actual, college, CATEGORY_EMB, CATEGORY_TEXT),
+            quality_score(college)
+        ]
+        college_match_score[name] = scores
+
+    # Fallback to all colleges if filter Resulted in 0 matches
+    if not college_match_score:
+        for college in colleges:
+            name = college.get("Name", "").strip()
+            if not name: continue
+            
+            eligibility = eligibility_match_score(student_actual, college)
+            if eligibility == 0: continue
+            
+            college_match_score[name] = [
+                locality_match_score(student_actual, college),
+                financial_match_score(student_actual, college),
+                eligibility,
+                cultural_match_score(student_actual, college, CATEGORY_EMB, CATEGORY_TEXT),
+                quality_score(college)
+            ]
+
+    weights = normalize_student_weights(student_preferences)
+    final_scores = {name: round(sum(s * w for s, w in zip(scores, weights)), 4) 
+                   for name, scores in college_match_score.items()}
+    
+    return college_match_score, final_scores
+
+# ============================================================================
+# CORE RECOMMENDER PIPELINE
+# ============================================================================
 
 def _to_float_list(x):
-    """Helper to convert numpy arrays or sequences to list of floats."""
-    if isinstance(x, np.ndarray):
-        return [float(v) for v in x.tolist()]
-    if isinstance(x, (list, tuple)):
-        return [float(v) for v in x]
+    if isinstance(x, np.ndarray): return [float(v) for v in x.tolist()]
+    if isinstance(x, (list, tuple)): return [float(v) for v in x]
     return [float(x)]
 
-
-def get_recommendations_from_db(logical, quant, analytical, verbal, spatial, creativity, enter, top_n=10):
-    """
-    Get career recommendations from database instead of CSV.
-    """
-    # Compute student's RIASEC vector
-    student_vec = compute_riasec(logical, quant, analytical, verbal, spatial, creativity, enter)
-    
-    # Fetch careers from database (returns list of dicts)
+def get_career_recommendations(scores: dict, top_n=10) -> List[str]:
+    student_vec = compute_riasec(
+        scores["Logical_reasoning"], scores["Quantitative_reasoning"],
+        scores["Analytical_reasoning"], scores["Verbal_reasoning"],
+        scores["Spatial_reasoning"], scores["Creativity"], scores["Enter"]
+    )
     careers = fetch_riasec_careers()
+    if not careers: return []
     
-    if not careers:
-        return []
-    
-    trait_keys = ["Realistic", "Investigative", "Artistic",
-                  "Social", "Enterprising", "Conventional"]
-    
-    # Calculate similarity scores for each career
+    trait_keys = ["Realistic", "Investigative", "Artistic", "Social", "Enterprising", "Conventional"]
     scored_careers = []
     for career in careers:
         career_vec = [float(career.get(k, 0) or 0) for k in trait_keys]
         sim = cosine_similarity(student_vec, career_vec)
         scored_careers.append((career["Title"], sim))
     
-    # Sort by score descending and get top N
     scored_careers.sort(key=lambda x: x[1], reverse=True)
-    top_careers = [title for title, score in scored_careers[:top_n]]
-    
-    return top_careers
+    return [title for title, score in scored_careers[:top_n]]
 
-
-async def run_recommender_db(
-    scores: dict,
-    student_actual: dict,
-    student_preferences: dict
-) -> dict:
-    """
-    Database-based recommender pipeline.
-    Replaces run_recommender_async from recommender_wrapped.py.
-    
-    Args:
-        scores: User aptitude scores (Logical, Quant, etc.)
-        student_actual: Student's actual data (locality, gender, category, etc.)
-        student_preferences: Student's preferences (weights for scoring)
-    
-    Returns:
-        Complete recommendation results
-    """
+async def run_recommender_db(scores: dict, student_actual: dict, student_preferences: dict) -> dict:
     from app.utils.explain_career_api import explain_careers_batch_with_llm
     from app.utils.explain_college_multi import explain_multiple_colleges_with_llm
 
-    L = scores["Logical_reasoning"]
-    Q = scores["Quantitative_reasoning"]
-    A = scores["Analytical_reasoning"]
-    V = scores["Verbal_reasoning"]
-    S = scores["Spatial_reasoning"]
-    C = scores["Creativity"]
-    E = scores["Enter"]
+    # 1. RIASEC & Careers
+    riasec_scores = _to_float_list(compute_riasec(
+        scores["Logical_reasoning"], scores["Quantitative_reasoning"],
+        scores["Analytical_reasoning"], scores["Verbal_reasoning"],
+        scores["Spatial_reasoning"], scores["Creativity"], scores["Enter"]
+    ))
+    top_careers = get_career_recommendations(scores)
 
-    # 1) RIASEC vector
-    riasec_scores = compute_riasec(L, Q, A, V, S, C, E)
-    riasec_scores = _to_float_list(riasec_scores)
-
-    # 2) Top careers from database
-    top_careers = get_recommendations_from_db(L, Q, A, V, S, C, E)
-
-    # 3) Fetch mappings from database
+    # 2. Mappings
     career_course_dict = fetch_career_to_course_mapping()
-    
     course_college_dict = fetch_course_to_college_mapping()
+    recommended_courses = career_to_course(top_careers, career_course_dict)
+    _, unique_colleges = course_to_college(recommended_courses, course_college_dict)
 
-    # 4) careers → courses
-    career_course_list = career_to_course(top_careers, career_course_dict)
-
-    # 5) courses → colleges
-    course_college_list, unique_colleges = course_to_college(
-        career_course_list,
-        course_college_dict
-    )
-
-    # 6) Fetch college data and run recommender
-    # Fetch ALL colleges from database (not filtered) and let the recommender filter
+    # 3. College Scoring
     college_data = fetch_college_data()
-    
-    college_scores, final_scores = college_recommender_db(
-        student_actual,
-        student_preferences,
-        college_data,
-        unique_colleges  # Pass the filter list to recommender
+    college_scores, final_scores = college_recommender_logic(
+        student_actual, student_preferences, college_data, unique_colleges
     )
 
+    # 4. Formatting Output
+    top_colleges = sorted(final_scores.items(), key=lambda x: x[1], reverse=True)[:5]
+    top_college_names = [name for name, _ in top_colleges]
 
-    # Clean scores for JSON
-    final_scores_clean = {
-        str(name): float(score)
-        for name, score in final_scores.items()
-    }
-
-    college_scores_clean = {
-        str(name): [float(v) for v in vals]
-        for name, vals in college_scores.items()
-    }
-
-    # Sort colleges by score and limit to top 5
-    sorted_colleges = sorted(
-        final_scores_clean.items(),
-        key=lambda x: x[1],
-        reverse=True
-    )[:5]  # Limit to top 5 colleges
-    
-    sorted_colleges = [
-        {"name": name, "score": round(score, 3)}
-        for name, score in sorted_colleges
-    ]
-
-    # -------- Career Explanations (top 5) --------
-    top_five_careers = top_careers[:5]
-    career_explanations = []
-    
+    # 5. Explanations (AI)
+    career_exps = []
     try:
-        raw_career_exps = explain_careers_batch_with_llm(top_five_careers, riasec_scores)
-    except Exception as e:
-        raw_career_exps = {}
+        raw_exps = explain_careers_batch_with_llm(top_careers[:5], riasec_scores)
+        career_exps = [{"career": c, "explanation": raw_exps.get(c, "Explanation unavailable")} for c in top_careers[:5]]
+    except:
+        career_exps = [{"career": c, "explanation": "Explanation unavailable"} for c in top_careers[:5]]
 
-    for career in top_five_careers:
-        explanation = raw_career_exps.get(career, "Career explanation unavailable")
-        career_explanations.append({
-            "career": career,
-            "explanation": explanation
-        })
-
-    # -------- College Explanations (all 5) --------
-    top_five_colleges = [col["name"] for col in sorted_colleges[:5]]
-    college_explanations = {}
-    
+    college_exps = {}
     try:
-        # Check if we have scores for these colleges
-        
         raw_college_exps = explain_multiple_colleges_with_llm(
-            top_five_colleges,
-            student_actual,
-            student_preferences,
-            college_scores_clean
+            top_college_names, student_actual, student_preferences,
+            {name: [float(v) for v in vals] for name, vals in college_scores.items()}
         )
-        
-        for college in top_five_colleges:
-            college_explanations[college] = raw_college_exps.get(
-                college, "Explanation unavailable"
-            )
-    except Exception as e:
-        for c in top_five_colleges:
-            college_explanations[c] = "College explanation unavailable"
+        college_exps = {c: raw_college_exps.get(c, "Explanation unavailable") for c in top_college_names}
+    except:
+        college_exps = {c: "Explanation unavailable" for c in top_college_names}
 
-    
-    # Return only essential fields with limited results
     return {
         "riasec_scores": riasec_scores,
-        "top_careers": top_careers[:5],  # Only top 5 careers
-        "career_courses": career_course_list,  # Career to courses mapping
-        "recommended_colleges": sorted_colleges,  # Already limited to 10
-        "career_explanations": career_explanations,  # Only 3
-        "college_explanations": college_explanations  # Only 3
+        "top_careers": top_careers[:5],
+        "career_courses": recommended_courses,
+        "recommended_colleges": [{"name": n, "score": round(s, 3)} for n, s in top_colleges],
+        "career_explanations": career_exps,
+        "college_explanations": college_exps
     }
-

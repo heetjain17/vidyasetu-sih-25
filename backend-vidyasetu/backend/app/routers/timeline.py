@@ -1,27 +1,10 @@
 from fastapi import APIRouter, HTTPException, BackgroundTasks
-from pydantic import BaseModel, Field, EmailStr
 from typing import List, Optional
 import requests
 import os
+from app.schemas.timeline import WhatsAppSyncRequest, CalendarSyncRequest
 
-router = APIRouter(prefix="/timeline", tags=["Timeline"])
-
-# --- Request Schemas ---
-
-class WhatsAppSyncRequest(BaseModel):
-    phone_number: str = Field(..., description="User's WhatsApp number with country code", example="+919876543210")
-    exam_id: str = Field(..., description="ID of the exam to subscribe to")
-    exam_name: str = Field(..., description="Name of the exam for the notification message")
-
-class CalendarSyncRequest(BaseModel):
-    email: EmailStr = Field(..., description="User's Google email address")
-    exam_id: str = Field(..., description="ID of the exam to sync")
-    exam_name: str = Field(..., description="Name of the exam for the calendar event")
-    events: List[dict] = Field(..., description="List of events to add to calendar")
-
-
-# --- Helper Functions (would connect to n8n in production) ---
-
+router = APIRouter(prefix="/timeline")
 
 # --- Helper Functions ---
 

@@ -35,12 +35,23 @@ from app.schemas.links import (
     PendingRequestResponse,
 )
 
-from app.schemas.forum import (
-    BasePost,
-    PostCreate,
-    PostUpdate,
-    CommentCreate,
-    CommentOut,
-    PostOut,
-    VoteRequest,
+from app.schemas.timeline import (
+    WhatsAppSyncRequest,
+    CalendarSyncRequest,
+)
+
+from app.schemas.feedback import FeedbackCreate
+
+from app.schemas.college_admin import (
+    ProfileUpdate,
+    CollegeUpdate,
+    LinkCollegeRequest,
+    AddCourseRequest,
+    FacilitiesUpdate,
+)
+
+from app.schemas.chatbot_futuristic import (
+    FuturisticCareerRequest,
+    FuturisticCareerItem,
+    FuturisticCareerResponse,
 )

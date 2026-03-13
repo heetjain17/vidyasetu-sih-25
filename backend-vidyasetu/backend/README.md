@@ -1,109 +1,90 @@
-# Backend - Margadarshaka API
+# 🎓 Margadarshaka Backend API
+> **Robust, AI-driven career and college counseling engine tailored for J&K students.**
 
-## Directory Structure
+The Margadarshaka backend is a **FastAPI** application designed to power a highly complex recommendation pipeline, matching student psychological profiles (RIASEC) and preferences to the most suitable career pathways and colleges.
 
-```
-backend/
-├── app/
-│   ├── main.py                 # FastAPI application entry point
-│   │
-│   ├── auth/                   # Authentication module
-│   │   ├── __init__.py
-│   │   └── router.py           # Auth endpoints (/auth/*)
-│   │
-│   ├── schemas/                # Pydantic schemas (request/response models)
-│   │   ├── __init__.py         # Re-exports all schemas
-│   │   ├── auth.py             # UserRole, RegisterRequest, AuthResponse
-│   │   ├── profile.py          # Student/Parent/College profile schemas
-│   │   ├── recommendation.py   # Quiz scores, recommender schemas
-│   │   ├── links.py            # Parent-student link schemas
-│   │   └── forum.py            # Discussion forum schemas
-│   │
-│   ├── routers/                # API route handlers
-│   │   ├── profiles.py         # Profile CRUD (/profile/*)
-│   │   ├── links.py            # Parent-student links (/links/*)
-│   │   ├── recommend.py        # Recommendations (/recommend/*)
-│   │   ├── colleges.py         # College search (/colleges/*)
-│   │   ├── discussion_forum.py # Forum (/forum/*)
-│   │   ├── roadmaps.py         # Career roadmaps
-│   │   ├── timeline.py         # Exam timeline
-│   │   ├── users.py            # User CRUD
-│   │   ├── data.py             # Data endpoints
-│   │   ├── predict.py          # ML predictions
-│   │   └── health.py           # Health check
-│   │
-│   ├── services/               # Business logic & external services
-│   │   ├── recommender_db.py   # Main recommendation engine
-│   │   ├── recommender2_db.py  # College scoring logic
-│   │   ├── db_service.py       # Database utilities
-│   │   ├── discussion_forum_service.py
-│   │   └── google_calendar.py  # Calendar integration
-│   │
-│   ├── utils/                  # Utility functions
-│   │   ├── translation.py      # Language translation
-│   │   ├── llm_client.py       # LLM API client
-│   │   ├── explain_career_api.py
-│   │   ├── explain_college_*.py
-│   │   ├── score_model2.py     # College scoring
-│   │   └── model1_utils.py     # RIASEC calculations
-│   │
-│   ├── dependencies/           # FastAPI dependencies
-│   │   ├── auth_dependency.py  # get_current_user, require_role
-│   │   ├── db_dependency.py    # get_supabase_client
-│   │   └── cors.py             # CORS configuration
-│   │
-│   ├── models/                 # Data models (if using ORM)
-│   │
-│   ├── ml_models/              # ML model files
-│   │
-│   └── cache/                  # Cache files
-│
-├── .env                        # Environment variables
-├── requirements.txt            # Python dependencies
-└── database_schema.sql         # SQL schema for Supabase
-```
+---
 
-## API Documentation
+## 🚀 Quick Start (Development)
 
-Visit `http://localhost:8000/docs` for Swagger UI.
+1. **Activate the Conda Environment**
+   ```bash
+   conda activate vidyasetu-backend
+   ```
+2. **Setup your environment variables**
+   Ensure your `.env` file is populated (see the **Environment Variables** section below).
+3. **Run the server**
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+   > The API will be available at `http://localhost:8000`. Swagger API docs are at `http://localhost:8000/docs`.
 
-### Authentication
+---
 
-1. **Register**: `POST /auth/register` with `{email, password, role}`
-2. **Login**: `POST /auth/login` → Returns `{access_token, role, user_id}`
-3. Use token: Add header `Authorization: Bearer <token>`
+## 🛠️ System Architecture & Features
 
-### User Roles
+### 1. 🎯 Recommender Engine (`/recommend`)
+- Calculates a 6-dimensional **RIASEC** psychological profile based on a 7-section aptitude test.
+- Computes cosine similarity to score 100+ mapped careers.
+- Filters and ranks colleges using a multi-factor weighting algorithm:
+  - **Locality**: Proximity matching.
+  - **Financial**: Budget constraints vs annual fees.
+  - **Eligibility**: Stream constraints (Arts/Science/Commerce) vs College offerings.
+  - **Cultural**: Hobby alignment using NLP text embeddings over college facility tags.
+  - **Quality**: Heuristic ranking.
+- Generates localized, AI-driven friendly explanations explaining *why* a college/career is a fit, available in English, Hindi, Urdu, and Kashmiri.
 
-| Role      | Description                           |
-| --------- | ------------------------------------- |
-| `STUDENT` | Take assessments, get recommendations |
-| `PARENT`  | Link to students, view their data     |
-| `COLLEGE` | Manage college profile                |
+### 2. 💬 AI Chatbot & RAG System (`/chatbot`)
+- A production-grade **Retrieval-Augmented Generation (RAG)** system using **Qdrant** as the vector database.
+- Has an automated fallback mechanism: defaults to **OpenAI (GPT-4o-mini)** for high-quality generations, but gracefully degrades to local **Ollama** if API keys are missing or limits are hit.
+- Answers hyper-local academic and college-specific queries by searching indexed J&K institutional data.
+- Includes a **Futuristic Career Generator** predicting emerging roles (Next 5-20 years) based on current student skills and hobbies.
 
-### Key Endpoints
+### 3. 👤 Role-Based Authorization
+- Backed by **Supabase Auth**. Profiles are separated structurally:
+  - **Student**: Core users taking assessments.
+  - **Parent**: Guardian accounts; features a dedicated *Link system* to track multiple children.
+  - **College Admin**: Institutional dashboards to broadcast events, update campus placement data, and respond to facility queries.
 
-| Endpoint                                   | Role    | Description                    |
-| ------------------------------------------ | ------- | ------------------------------ |
-| `POST /recommend/full`                     | Student | Get & save recommendations     |
-| `GET /profile/me`                          | Any     | Get profile based on role      |
-| `POST /profile/student/invite-code`        | Student | Generate parent linking code   |
-| `POST /links/connect`                      | Parent  | Connect using invite code      |
-| `GET /links/children/{id}/recommendations` | Parent  | View student's recommendations |
+### 4. 📚 Community & Forums
+- Interactive **Discussion Forums** with voting mechanics and predefined administrative tags.
+- Built-in bot logic where `@AI` mentions trigger background tasks to Auto-Reply using the RAG knowledge base.
+- Comprehensive **Career Hub** hosting study materials, scholarships, and career roadmap templates.
 
-## Running Locally
+---
+
+## ⚙️ Environment Variables (`.env`)
+
+The backend requires a configured `.env` file located in the `backend/` root directory.
+
+| Variable | Description | Default / Example |
+|----------|-------------|---------|
+| `SUPABASE_URL` | Your Supabase Project URL. | `https://xxxx.supabase.co` |
+| `SUPABASE_KEY` | Supabase Anon / Service Role Key. | `eyJh...` |
+| `OPENAI_API_KEY` | Used for LLM Explanations, RAG, and Embeddings. | `sk-proj-...` |
+| `OPENAI_MODEL` | The LLM model routing. | `gpt-4o-mini` |
+| `ALLOWED_ORIGINS` | Comma-separated CORS origins for production security. | `http://localhost:3000,https://app.com` |
+| `QDRANT_URL` | URL to the vector database. | `http://localhost:6333` |
+
+---
+
+## 🧪 Testing
+
+The system enforces rigorous automated testing via `pytest`. The test suite uses a mocked Supabase layer where required to ensure fast, offline validation of models and business logic.
 
 ```bash
-cd backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+conda activate vidyasetu-backend
+pytest tests/ -q
 ```
 
-## Environment Variables
+---
 
-```env
-SUPABASE_URL=<your-supabase-url>
-SUPABASE_KEY=<your-supabase-anon-key>
-SUPABASE_JWT_SECRET=<jwt-secret-from-supabase>
-GROQ_API_KEY=<for-llm-explanations>
-```
+## 📂 Project Structure
+
+- `app/main.py`: The ASGI FastAPI application entry point. Includes global Exception Handlers.
+- `app/routers/`: All API endpoints, grouped by domain (`colleges.py`, `recommend.py`, `chatbot.py`, etc.).
+- `app/services/`: Core business logic (Recommender Engines, LLM orchestration, RAG).
+- `app/schemas/`: Pydantic Data Models enforcing strict request/response validation.
+- `app/utils/`: Math functions, scoring logic, language translation utilities.
+- `scripts/`: Standalone utilities (`create_embeddings.py` for Qdrant seeding, `populate_data.py`). See `scripts/README.md`.
+- `tests/`: Extensive PyTest directory verifying endpoints and schemas.

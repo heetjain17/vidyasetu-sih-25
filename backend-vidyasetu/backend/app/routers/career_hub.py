@@ -3,7 +3,7 @@ Career Hub API endpoints.
 Provides access to study materials and career roadmaps.
 """
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, Depends
 from typing import Optional
 from app.services.db_service import (
     fetch_study_materials,
@@ -12,8 +12,9 @@ from app.services.db_service import (
     fetch_all_career_roadmaps,
     fetch_career_roadmap_by_id,
 )
+from app.dependencies.db_dependency import get_supabase_client
 
-router = APIRouter(prefix="/career-hub", tags=["career-hub"])
+router = APIRouter(prefix="/career-hub")
 
 
 # ============================================================
@@ -98,13 +99,7 @@ def get_roadmap(roadmap_id: int):
 # ============================================================
 
 @router.get("/scholarships", summary="Get scholarships")
-def get_scholarships():
-    """
-    Get all scholarships from the database.
-    """
-    from app.dependencies.db_dependency import get_supabase_client
-    
-    supabase = get_supabase_client()
+def get_scholarships(supabase=Depends(get_supabase_client)):
     result = supabase.table("Scholarship").select("*").order("id").execute()
     
     if not result.data:

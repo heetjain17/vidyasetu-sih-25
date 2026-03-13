@@ -9,7 +9,7 @@ from app.services.db_service import (
     fetch_unique_districts,
 )
 
-router = APIRouter(prefix="/colleges", tags=["colleges"])
+router = APIRouter(prefix="/colleges")
 
 
 @router.get("/")

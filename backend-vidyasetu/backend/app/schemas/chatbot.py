@@ -48,4 +48,4 @@ class ChatResponse(BaseModel):
 class HealthResponse(BaseModel):
     """Health check response."""
     qdrant: str
-    openai: str
+    ai_provider: str
