@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-6 shadow-xl flex flex-col gap-4 overflow-hidden"
+            className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-6 shadow-md flex flex-col gap-4 overflow-hidden"
           >
             {/* Language Switcher in Mobile Menu */}
             <div className="py-2">

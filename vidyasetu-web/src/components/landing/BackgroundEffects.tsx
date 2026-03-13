@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 
 type BackgroundEffect =
   | "none"
@@ -11,18 +11,15 @@ type BackgroundEffect =
   | "hexagon"
   | "spotlight"
   | "waves"
-  | "combined";
+  | "combined"
 
 interface BackgroundEffectsProps {
-  effect: BackgroundEffect;
-  mousePos?: { x: number; y: number };
+  effect: BackgroundEffect
+  mousePos?: { x: number; y: number }
 }
 
-export function BackgroundEffects({
-  effect,
-  mousePos = { x: 0, y: 0 },
-}: BackgroundEffectsProps) {
-  if (effect === "none") return null;
+export function BackgroundEffects({ effect, mousePos = { x: 0, y: 0 } }: BackgroundEffectsProps) {
+  if (effect === "none") return null
 
   return (
     <>
@@ -56,12 +53,10 @@ export function BackgroundEffects({
         </div>
       )}
 
-      {/* GRADIENT MESH */}
+      {/* GRADIENT MESH - Simplified without blur */}
       {effect === "gradient-mesh" && (
         <div className="fixed inset-0 z-0 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]" />
         </div>
       )}
 
@@ -157,18 +152,15 @@ export function BackgroundEffects({
         </div>
       )}
     </>
-  );
+  )
 }
 
 interface BackgroundSelectorProps {
-  currentEffect: BackgroundEffect;
-  onEffectChange: (effect: BackgroundEffect) => void;
+  currentEffect: BackgroundEffect
+  onEffectChange: (effect: BackgroundEffect) => void
 }
 
-export function BackgroundSelector({
-  currentEffect,
-  onEffectChange,
-}: BackgroundSelectorProps) {
+export function BackgroundSelector({ currentEffect, onEffectChange }: BackgroundSelectorProps) {
   const effects: { value: BackgroundEffect; label: string }[] = [
     { value: "none", label: "None" },
     { value: "dot-grid", label: "Dot Grid" },
@@ -180,10 +172,10 @@ export function BackgroundSelector({
     { value: "spotlight", label: "Spotlight (Move Mouse)" },
     { value: "waves", label: "Waves" },
     { value: "combined", label: "Combined Effect" },
-  ];
+  ]
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-card/90 backdrop-blur-lg border border-border rounded-2xl shadow-2xl p-4">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-card/90 backdrop-blur-lg border border-border rounded-2xl shadow-lg p-4">
       <p className="text-xs font-semibold text-text-secondary mb-3 text-center">
         🎨 Background Effect Selector
       </p>
@@ -203,5 +195,5 @@ export function BackgroundSelector({
         ))}
       </div>
     </div>
-  );
+  )
 }

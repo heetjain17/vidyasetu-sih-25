@@ -19,12 +19,13 @@ from app.utils.scoring_logic import (
     financial_match_score,
     eligibility_match_score,
     cultural_match_score,
-    quality_score
+    quality_score,
 )
 
 # ============================================================================
 # RECOMMENDER LOGIC
 # ============================================================================
+
 
 def normalize_student_weights(preferences: dict) -> List[float]:
     weights = {
@@ -35,12 +36,20 @@ def normalize_student_weights(preferences: dict) -> List[float]:
         "quality": preferences.get("Importance_Quality", 3),
     }
     total = sum(weights.values())
-    if total == 0: return [0.2] * 5
-    return [weights["locality"]/total, weights["financial"]/total, 
-            weights["eligibility"]/total, weights["cultural"]/total, 
-            weights["quality"]/total]
+    if total == 0:
+        return [0.2] * 5
+    return [
+        weights["locality"] / total,
+        weights["financial"] / total,
+        weights["eligibility"] / total,
+        weights["cultural"] / total,
+        weights["quality"] / total,
+    ]
 
-def college_recommender_logic(student_actual: dict, student_preferences: dict, colleges: list, filter_list: list) -> tuple:
+
+def college_recommender_logic(
+    student_actual: dict, student_preferences: dict, colleges: list, filter_list: list
+) -> tuple:
     # Setup for cultural matching
     CATEGORY_TEXT = {
         "cultural": ["music", "dance", "art", "painting", "theatre", "singing"],
@@ -49,24 +58,26 @@ def college_recommender_logic(student_actual: dict, student_preferences: dict, c
         "others": ["charity", "volunteering", "socialwork"],
     }
     CATEGORY_EMB = {cat: embed(" ".join(words)) for cat, words in CATEGORY_TEXT.items()}
-    
+
     college_match_score = {}
     filter_set = {c.lower().strip() for c in filter_list} if filter_list else set()
-    
+
     # Primary pass
     for college in colleges:
         name = college.get("Name", "").strip()
-        if not name or (filter_set and name.lower() not in filter_set): continue
-        
+        if not name or (filter_set and name.lower() not in filter_set):
+            continue
+
         eligibility = eligibility_match_score(student_actual, college)
-        if eligibility == 0: continue
-        
+        if eligibility == 0:
+            continue
+
         scores = [
             locality_match_score(student_actual, college),
             financial_match_score(student_actual, college),
             eligibility,
             cultural_match_score(student_actual, college, CATEGORY_EMB, CATEGORY_TEXT),
-            quality_score(college)
+            quality_score(college),
         ]
         college_match_score[name] = scores
 
@@ -74,63 +85,95 @@ def college_recommender_logic(student_actual: dict, student_preferences: dict, c
     if not college_match_score:
         for college in colleges:
             name = college.get("Name", "").strip()
-            if not name: continue
-            
+            if not name:
+                continue
+
             eligibility = eligibility_match_score(student_actual, college)
-            if eligibility == 0: continue
-            
+            if eligibility == 0:
+                continue
+
             college_match_score[name] = [
                 locality_match_score(student_actual, college),
                 financial_match_score(student_actual, college),
                 eligibility,
-                cultural_match_score(student_actual, college, CATEGORY_EMB, CATEGORY_TEXT),
-                quality_score(college)
+                cultural_match_score(
+                    student_actual, college, CATEGORY_EMB, CATEGORY_TEXT
+                ),
+                quality_score(college),
             ]
 
     weights = normalize_student_weights(student_preferences)
-    final_scores = {name: round(sum(s * w for s, w in zip(scores, weights)), 4) 
-                   for name, scores in college_match_score.items()}
-    
+    final_scores = {
+        name: round(sum(s * w for s, w in zip(scores, weights)), 4)
+        for name, scores in college_match_score.items()
+    }
+
     return college_match_score, final_scores
+
 
 # ============================================================================
 # CORE RECOMMENDER PIPELINE
 # ============================================================================
 
+
 def _to_float_list(x):
-    if isinstance(x, np.ndarray): return [float(v) for v in x.tolist()]
-    if isinstance(x, (list, tuple)): return [float(v) for v in x]
+    if isinstance(x, np.ndarray):
+        return [float(v) for v in x.tolist()]
+    if isinstance(x, (list, tuple)):
+        return [float(v) for v in x]
     return [float(x)]
+
 
 def get_career_recommendations(scores: dict, top_n=10) -> List[str]:
     student_vec = compute_riasec(
-        scores["Logical_reasoning"], scores["Quantitative_reasoning"],
-        scores["Analytical_reasoning"], scores["Verbal_reasoning"],
-        scores["Spatial_reasoning"], scores["Creativity"], scores["Enter"]
+        scores["Logical_reasoning"],
+        scores["Quantitative_reasoning"],
+        scores["Analytical_reasoning"],
+        scores["Verbal_reasoning"],
+        scores["Spatial_reasoning"],
+        scores["Creativity"],
+        scores["Enter"],
     )
     careers = fetch_riasec_careers()
-    if not careers: return []
-    
-    trait_keys = ["Realistic", "Investigative", "Artistic", "Social", "Enterprising", "Conventional"]
+    if not careers:
+        return []
+
+    trait_keys = [
+        "Realistic",
+        "Investigative",
+        "Artistic",
+        "Social",
+        "Enterprising",
+        "Conventional",
+    ]
     scored_careers = []
     for career in careers:
         career_vec = [float(career.get(k, 0) or 0) for k in trait_keys]
         sim = cosine_similarity(student_vec, career_vec)
         scored_careers.append((career["Title"], sim))
-    
+
     scored_careers.sort(key=lambda x: x[1], reverse=True)
     return [title for title, score in scored_careers[:top_n]]
 
-async def run_recommender_db(scores: dict, student_actual: dict, student_preferences: dict) -> dict:
+
+async def run_recommender_db(
+    scores: dict, student_actual: dict, student_preferences: dict
+) -> dict:
     from app.utils.explain_career_api import explain_careers_batch_with_llm
     from app.utils.explain_college_multi import explain_multiple_colleges_with_llm
 
     # 1. RIASEC & Careers
-    riasec_scores = _to_float_list(compute_riasec(
-        scores["Logical_reasoning"], scores["Quantitative_reasoning"],
-        scores["Analytical_reasoning"], scores["Verbal_reasoning"],
-        scores["Spatial_reasoning"], scores["Creativity"], scores["Enter"]
-    ))
+    riasec_scores = _to_float_list(
+        compute_riasec(
+            scores["Logical_reasoning"],
+            scores["Quantitative_reasoning"],
+            scores["Analytical_reasoning"],
+            scores["Verbal_reasoning"],
+            scores["Spatial_reasoning"],
+            scores["Creativity"],
+            scores["Enter"],
+        )
+    )
     top_careers = get_career_recommendations(scores)
 
     # 2. Mappings
@@ -153,25 +196,40 @@ async def run_recommender_db(scores: dict, student_actual: dict, student_prefere
     career_exps = []
     try:
         raw_exps = explain_careers_batch_with_llm(top_careers[:5], riasec_scores)
-        career_exps = [{"career": c, "explanation": raw_exps.get(c, "Explanation unavailable")} for c in top_careers[:5]]
-    except:
-        career_exps = [{"career": c, "explanation": "Explanation unavailable"} for c in top_careers[:5]]
+        career_exps = [
+            {"career": c, "explanation": raw_exps.get(c, "Explanation unavailable")}
+            for c in top_careers[:5]
+        ]
+    except Exception as e:
+        print(f"❌ Career explanation AI failed: {e}")
+        career_exps = [
+            {"career": c, "explanation": "Explanation unavailable"}
+            for c in top_careers[:5]
+        ]
 
     college_exps = {}
     try:
         raw_college_exps = explain_multiple_colleges_with_llm(
-            top_college_names, student_actual, student_preferences,
-            {name: [float(v) for v in vals] for name, vals in college_scores.items()}
+            top_college_names,
+            student_actual,
+            student_preferences,
+            {name: [float(v) for v in vals] for name, vals in college_scores.items()},
         )
-        college_exps = {c: raw_college_exps.get(c, "Explanation unavailable") for c in top_college_names}
-    except:
+        college_exps = {
+            c: raw_college_exps.get(c, "Explanation unavailable")
+            for c in top_college_names
+        }
+    except Exception as e:
+        print(f"❌ College explanation AI failed: {e}")
         college_exps = {c: "Explanation unavailable" for c in top_college_names}
 
     return {
         "riasec_scores": riasec_scores,
         "top_careers": top_careers[:5],
         "career_courses": recommended_courses,
-        "recommended_colleges": [{"name": n, "score": round(s, 3)} for n, s in top_colleges],
+        "recommended_colleges": [
+            {"name": n, "score": round(s, 3)} for n, s in top_colleges
+        ],
         "career_explanations": career_exps,
-        "college_explanations": college_exps
+        "college_explanations": college_exps,
     }

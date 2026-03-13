@@ -57,7 +57,7 @@ const HeroSection = () => {
 
         <div className="relative">
           <HeroVideoDialog
-            className="w-full rounded-xl shadow-2xl border-4 border-white/10"
+            className="w-full rounded-xl shadow-lg border-4 border-white/10"
             animationStyle="from-right"
             videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
             thumbnailSrc="https://images.unsplash.com/photo-1544717305-2782549b5136?w=1920&h=1080&fit=crop"
@@ -492,7 +492,7 @@ const CTASection = () => {
           onClick={() =>
             navigate({ to: "/dashboard", search: { tab: "career-hub" } })
           }
-          className="px-8 py-4 bg-primary text-white rounded-full font-bold text-lg shadow-xl hover:bg-primary/90 transition-all hover:scale-105"
+          className="px-8 py-4 bg-primary text-white rounded-full font-bold text-lg shadow-md hover:bg-primary/90 transition-colors duration-200"
         >
           {t("parent.cta.explore")}
         </button>

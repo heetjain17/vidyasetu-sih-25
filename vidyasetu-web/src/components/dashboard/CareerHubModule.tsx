@@ -414,7 +414,7 @@ function RoadmapsSection({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
-            className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all"
+            className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-200"
           >
             {/* Header with Course Name */}
             <div className={`${colors.light} border-b-2 ${colors.border} p-4`}>

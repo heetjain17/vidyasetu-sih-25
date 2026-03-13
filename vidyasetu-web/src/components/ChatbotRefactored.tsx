@@ -54,7 +54,7 @@ export function Chatbot() {
     <>
       <FloatingButton onClick={() => setIsOpen(false)} isOpen={true} />
 
-      <div className="fixed bottom-[100px] right-6 w-[420px] max-w-[calc(100vw-48px)] h-[650px] max-h-[calc(100vh-150px)] bg-white dark:bg-slate-900 rounded-[20px] shadow-xl flex flex-col overflow-hidden z-[999]">
+      <div className="fixed bottom-[100px] right-6 w-[420px] max-w-[calc(100vw-48px)] h-[650px] max-h-[calc(100vh-150px)] bg-white dark:bg-slate-900 rounded-[20px] shadow-md flex flex-col overflow-hidden z-[999]">
         <ChatHeader
           onClose={() => setIsOpen(false)}
           onClearChat={handleClearChat}

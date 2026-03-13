@@ -125,7 +125,7 @@ export const DiscussionListModule: React.FC<DiscussionListModuleProps> = ({
         </div>
         <button
           onClick={onCreateDiscussion}
-          className="flex items-center gap-2 px-6 py-3 bg-primary text-text font-bold rounded-xl hover:scale-105 transition-transform shadow-lg shadow-primary/20"
+          className="flex items-center gap-2 px-6 py-3 bg-primary text-text font-bold rounded-xl hover:opacity-90 transition-transform shadow-lg shadow-primary/20"
         >
           <Plus size={20} />
           New Discussion

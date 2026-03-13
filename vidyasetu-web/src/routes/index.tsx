@@ -1,20 +1,20 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Hero } from "../components/landing/HeroSection";
-import { Navbar } from "../components/landing/Navbar";
-import { ValueProps } from "../components/landing/ValueProps";
-import { DemoSection } from "../components/landing/DemoSection";
-import { TargetAudience } from "../components/landing/TargetAudience";
-import { Architecture } from "../components/landing/Architecture";
-import { Testimonials } from "../components/landing/Testimonals";
-import { Footer } from "../components/landing/Footer";
-import { SampleReport } from "../components/landing/SampleReport";
-import { BackgroundEffects } from "../components/landing/BackgroundEffects";
+import { createFileRoute } from "@tanstack/react-router"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { Hero } from "../components/landing/HeroSection"
+import { Navbar } from "../components/landing/Navbar"
+import { ValueProps } from "../components/landing/ValueProps"
+import { DemoSection } from "../components/landing/DemoSection"
+import { TargetAudience } from "../components/landing/TargetAudience"
+import { Architecture } from "../components/landing/Architecture"
+import { Testimonials } from "../components/landing/Testimonals"
+import { Footer } from "../components/landing/Footer"
+import { SampleReport } from "../components/landing/SampleReport"
+import { BackgroundEffects } from "../components/landing/BackgroundEffects"
 
 export const Route = createFileRoute("/")({
   component: Index,
-});
+})
 
 type BackgroundEffect =
   | "none"
@@ -26,39 +26,39 @@ type BackgroundEffect =
   | "hexagon"
   | "spotlight"
   | "waves"
-  | "combined";
+  | "combined"
 
 function Index() {
   const [theme, setTheme] = useState<string>(() => {
-    return localStorage.getItem("theme") || "dark";
-  });
+    return localStorage.getItem("theme") || "dark"
+  })
 
-  const [backgroundEffect] = useState<BackgroundEffect>("dot-grid");
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [backgroundEffect] = useState<BackgroundEffect>("dot-grid")
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     // Apply theme on mount
     if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add("dark")
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("dark")
     }
-  }, [theme]);
+  }, [theme])
 
   // Track mouse position for spotlight effect
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+      setMousePos({ x: e.clientX, y: e.clientY })
+    }
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
+    const newTheme = theme === "dark" ? "light" : "dark"
+    setTheme(newTheme)
+    localStorage.setItem("theme", newTheme)
+  }
 
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
@@ -70,33 +70,6 @@ function Index() {
 
       {/* Main Content - Max Width Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Relative Glowing Blobs - Flow with content */}
-        <div className="relative pointer-events-none">
-          <motion.div
-            animate={{
-              x: [0, 50, 0],
-              y: [0, -50, 0],
-              scale: [1, 1.15, 1],
-            }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-40 right-10 w-[350px] h-[350px] bg-primary/30 rounded-full blur-[120px]"
-          ></motion.div>
-
-          <motion.div
-            animate={{
-              x: [0, -40, 0],
-              y: [0, 30, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 14,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-            className="absolute top-[600px] left-0 w-[300px] h-[300px] bg-secondary/20 rounded-full blur-[100px]"
-          ></motion.div>
-        </div>
         <div className="pt-30" />
         <Hero />
         <div className="max-w-6xl mx-auto">
@@ -115,5 +88,5 @@ function Index() {
       <div className="pt-20" />
       <Footer />
     </div>
-  );
+  )
 }

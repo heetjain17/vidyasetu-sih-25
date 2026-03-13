@@ -1,34 +1,27 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  ArrowLeft,
-  Plus,
-  X,
-  CheckCircle2,
-  Users,
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { createFileRoute, useNavigate } from "@tanstack/react-router"
+import { ArrowRight, ArrowLeft, Plus, X, CheckCircle2, Users } from "lucide-react"
+import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+import { useForm } from "react-hook-form"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/select"
 
 // API URL with fallback
-const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
-import { Input } from "@/components/ui/cutomInput";
-import { Slider } from "@/components/ui/slider";
-import { useProfileStore } from "@/store/profileStore";
-import { useAuthStore } from "@/store/authStore";
-import { Button } from "@/components/ui/button";
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"
+import { Input } from "@/components/ui/cutomInput"
+import { Slider } from "@/components/ui/slider"
+import { useProfileStore } from "@/store/profileStore"
+import { useAuthStore } from "@/store/authStore"
+import { Button } from "@/components/ui/button"
 
 export const Route = createFileRoute("/auth/profile")({
   component: RouteComponent,
-});
+})
 
 // J&K localities for dropdown
 const LOCALITIES = [
@@ -52,7 +45,7 @@ const LOCALITIES = [
   "Samba",
   "Poonch",
   "Rajouri",
-];
+]
 
 // Parent awareness quiz questions
 const PARENT_QUIZ_QUESTIONS = [
@@ -86,43 +79,39 @@ const PARENT_QUIZ_QUESTIONS = [
     text: "How confident are you in guiding your child toward the right academic and career path?",
     options: ["Very confident", "Somewhat", "Not very", "Not confident"],
   },
-];
+]
 
 type ProfileFormData = {
-  fullName: string;
-  gender: string;
-  locality: string;
-  category: string;
-  budget: number;
-  grade?: string;
-  board?: string;
-};
+  fullName: string
+  gender: string
+  locality: string
+  category: string
+  budget: number
+  grade?: string
+  board?: string
+}
 
 function RouteComponent() {
-  const navigate = useNavigate();
-  const { isAuthenticated, role, accessToken } = useAuthStore();
-  const { profile, updateProfile, markProfileComplete } = useProfileStore();
-  const [step, setStep] = useState(1);
+  const navigate = useNavigate()
+  const { isAuthenticated, role, accessToken } = useAuthStore()
+  const { profile, updateProfile, markProfileComplete } = useProfileStore()
+  const [step, setStep] = useState(1)
 
   // Parent quiz state
-  const [parentAnswers, setParentAnswers] = useState<Record<number, string>>(
-    {}
-  );
-  const [isSavingParent, setIsSavingParent] = useState(false);
+  const [parentAnswers, setParentAnswers] = useState<Record<number, string>>({})
+  const [isSavingParent, setIsSavingParent] = useState(false)
 
   // College profile state
-  const [collegeName, setCollegeName] = useState("");
-  const [aisheCode, setAisheCode] = useState("");
-  const [contactPerson, setContactPerson] = useState("");
-  const [isSavingCollege, setIsSavingCollege] = useState(false);
+  const [collegeName, setCollegeName] = useState("")
+  const [aisheCode, setAisheCode] = useState("")
+  const [contactPerson, setContactPerson] = useState("")
+  const [isSavingCollege, setIsSavingCollege] = useState(false)
 
   // Temporary state for arrays (student)
-  const [extracurriculars, setExtracurriculars] = useState<string[]>(
-    profile.extracurriculars || []
-  );
-  const [hobbies, setHobbies] = useState<string[]>(profile.hobbies || []);
-  const [newExtra, setNewExtra] = useState("");
-  const [newHobby, setNewHobby] = useState("");
+  const [extracurriculars, setExtracurriculars] = useState<string[]>(profile.extracurriculars || [])
+  const [hobbies, setHobbies] = useState<string[]>(profile.hobbies || [])
+  const [newExtra, setNewExtra] = useState("")
+  const [newHobby, setNewHobby] = useState("")
 
   // Preferences state (student)
   const [preferences, setPreferences] = useState({
@@ -131,7 +120,7 @@ function RouteComponent() {
     eligibility: profile.importanceEligibility || 3,
     eventsHobbies: profile.importanceEventsHobbies || 3,
     quality: profile.importanceQuality || 3,
-  });
+  })
 
   const {
     register,
@@ -150,47 +139,36 @@ function RouteComponent() {
       board: profile.board || "",
     },
     mode: "onChange",
-  });
+  })
 
-  const formValues = watch();
+  const formValues = watch()
 
   // Auth check
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate({ to: "/auth" });
+      navigate({ to: "/auth" })
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate])
 
   // Register select fields
   useEffect(() => {
-    register("gender", { required: true });
-    register("locality", { required: true });
-    register("category", { required: true });
-    register("grade");
-    register("board");
+    register("gender", { required: true })
+    register("locality", { required: true })
+    register("category", { required: true })
+    register("grade")
+    register("board")
 
-    if (profile.gender) setValue("gender", profile.gender);
-    if (profile.locality) setValue("locality", profile.locality);
-    if (profile.category) setValue("category", profile.category);
-    if (profile.grade) setValue("grade", profile.grade);
-    if (profile.board) setValue("board", profile.board);
-  }, [register, profile, setValue]);
+    if (profile.gender) setValue("gender", profile.gender)
+    if (profile.locality) setValue("locality", profile.locality)
+    if (profile.category) setValue("category", profile.category)
+    if (profile.grade) setValue("grade", profile.grade)
+    if (profile.board) setValue("board", profile.board)
+  }, [register, profile, setValue])
 
   // Step 1: Basic Info
   const onSubmitStep1 = async () => {
-    const isValid = await trigger([
-      "fullName",
-      "gender",
-      "locality",
-      "category",
-      "budget",
-    ]);
-    if (
-      isValid &&
-      formValues.gender &&
-      formValues.locality &&
-      formValues.category
-    ) {
+    const isValid = await trigger(["fullName", "gender", "locality", "category", "budget"])
+    if (isValid && formValues.gender && formValues.locality && formValues.category) {
       updateProfile({
         fullName: formValues.fullName,
         gender: formValues.gender,
@@ -199,19 +177,19 @@ function RouteComponent() {
         budget: formValues.budget,
         grade: formValues.grade,
         board: formValues.board,
-      });
-      setStep(2);
+      })
+      setStep(2)
     }
-  };
+  }
 
   // Step 2: Extracurriculars & Hobbies
   const onSubmitStep2 = () => {
     updateProfile({
       extracurriculars,
       hobbies,
-    });
-    setStep(3);
-  };
+    })
+    setStep(3)
+  }
 
   // Step 3: Preferences - Final Submit (saves to database)
   const onSubmitStep3 = async () => {
@@ -222,7 +200,7 @@ function RouteComponent() {
       importanceEligibility: preferences.eligibility,
       importanceEventsHobbies: preferences.eventsHobbies,
       importanceQuality: preferences.quality,
-    });
+    })
 
     // Save to database
     try {
@@ -248,36 +226,36 @@ function RouteComponent() {
           importance_events_hobbies: preferences.eventsHobbies,
           importance_quality: preferences.quality,
         }),
-      });
+      })
     } catch (error) {
-      console.error("Failed to save profile to database:", error);
+      console.error("Failed to save profile to database:", error)
     }
 
-    markProfileComplete();
-    navigate({ to: "/assessment/quiz" });
-  };
+    markProfileComplete()
+    navigate({ to: "/assessment/quiz" })
+  }
 
   const addExtra = () => {
     if (newExtra.trim() && !extracurriculars.includes(newExtra.trim())) {
-      setExtracurriculars([...extracurriculars, newExtra.trim()]);
-      setNewExtra("");
+      setExtracurriculars([...extracurriculars, newExtra.trim()])
+      setNewExtra("")
     }
-  };
+  }
 
   const removeExtra = (item: string) => {
-    setExtracurriculars(extracurriculars.filter((e) => e !== item));
-  };
+    setExtracurriculars(extracurriculars.filter((e) => e !== item))
+  }
 
   const addHobby = () => {
     if (newHobby.trim() && !hobbies.includes(newHobby.trim())) {
-      setHobbies([...hobbies, newHobby.trim()]);
-      setNewHobby("");
+      setHobbies([...hobbies, newHobby.trim()])
+      setNewHobby("")
     }
-  };
+  }
 
   const removeHobby = (item: string) => {
-    setHobbies(hobbies.filter((h) => h !== item));
-  };
+    setHobbies(hobbies.filter((h) => h !== item))
+  }
 
   const preferenceLabels = {
     locality: "How important is college location to you?",
@@ -285,11 +263,11 @@ function RouteComponent() {
     eligibility: "How important is seat availability for your category?",
     eventsHobbies: "How important are cultural events & activities?",
     quality: "How important is placement & infrastructure quality?",
-  };
+  }
 
   // Parent quiz submit handler
   const handleParentSubmit = async () => {
-    setIsSavingParent(true);
+    setIsSavingParent(true)
     try {
       // Save parent profile with quiz answers to backend
       await fetch(`${API_URL}/profile/parent`, {
@@ -301,22 +279,22 @@ function RouteComponent() {
         body: JSON.stringify({
           awareness_quiz: parentAnswers,
         }),
-      });
+      })
 
-      markProfileComplete();
-      navigate({ to: "/dashboard", search: { tab: undefined } });
+      markProfileComplete()
+      navigate({ to: "/dashboard", search: { tab: undefined } })
     } catch (error) {
-      console.error("Failed to save parent profile:", error);
+      console.error("Failed to save parent profile:", error)
     } finally {
-      setIsSavingParent(false);
+      setIsSavingParent(false)
     }
-  };
+  }
 
   // College profile submit handler
   const handleCollegeSubmit = async () => {
-    if (!collegeName.trim()) return;
+    if (!collegeName.trim()) return
 
-    setIsSavingCollege(true);
+    setIsSavingCollege(true)
     try {
       await fetch(`${API_URL}/profile/college`, {
         method: "PUT",
@@ -329,40 +307,35 @@ function RouteComponent() {
           aishe_code: aisheCode,
           contact_person: contactPerson,
         }),
-      });
+      })
 
-      markProfileComplete();
-      navigate({ to: "/dashboard", search: { tab: undefined } });
+      markProfileComplete()
+      navigate({ to: "/dashboard", search: { tab: undefined } })
     } catch (error) {
-      console.error("Failed to save college profile:", error);
+      console.error("Failed to save college profile:", error)
     } finally {
-      setIsSavingCollege(false);
+      setIsSavingCollege(false)
     }
-  };
+  }
 
   // ========== PARENT PROFILE SETUP ==========
   if (role === "PARENT") {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden p-4">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3"></div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-lg bg-card border border-border rounded-2xl shadow-2xl overflow-hidden relative z-10"
+          className="w-full max-w-lg bg-card border border-border rounded-2xl shadow-lg overflow-hidden relative z-10"
         >
           <div className="p-6">
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold text-text mb-2">
-                Parent Awareness Quiz
-              </h1>
+              <h1 className="text-2xl font-bold text-text mb-2">Parent Awareness Quiz</h1>
               <p className="text-sm text-text-secondary">
-                Help us understand your involvement in your child's career
-                journey
+                Help us understand your involvement in your child's career journey
               </p>
             </div>
 
@@ -377,9 +350,7 @@ function RouteComponent() {
                       <button
                         key={opt}
                         type="button"
-                        onClick={() =>
-                          setParentAnswers({ ...parentAnswers, [q.id]: opt })
-                        }
+                        onClick={() => setParentAnswers({ ...parentAnswers, [q.id]: opt })}
                         className={`px-4 py-2 text-sm rounded-lg border-2 transition-all ${
                           parentAnswers[q.id] === opt
                             ? "border-primary bg-primary/10 text-primary"
@@ -398,10 +369,9 @@ function RouteComponent() {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleParentSubmit}
                 disabled={
-                  Object.keys(parentAnswers).length <
-                    PARENT_QUIZ_QUESTIONS.length || isSavingParent
+                  Object.keys(parentAnswers).length < PARENT_QUIZ_QUESTIONS.length || isSavingParent
                 }
-                className="w-full bg-primary hover:bg-primary/90 text-white text-sm font-bold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary hover:bg-primary/90 text-white text-sm font-bold py-3 rounded-lg shadow-lg hover:shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSavingParent ? "Saving..." : "Continue to Dashboard"}
                 <ArrowRight size={16} />
@@ -410,29 +380,25 @@ function RouteComponent() {
           </div>
         </motion.div>
       </div>
-    );
+    )
   }
 
   // ========== COLLEGE PROFILE SETUP ==========
   if (role === "COLLEGE") {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden p-4">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3"></div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-lg bg-card border border-border rounded-2xl shadow-2xl overflow-hidden relative z-10"
+          className="w-full max-w-lg bg-card border border-border rounded-2xl shadow-lg overflow-hidden relative z-10"
         >
           <div className="p-6">
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="w-8 h-8 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold text-text mb-2">
-                College Profile
-              </h1>
+              <h1 className="text-2xl font-bold text-text mb-2">College Profile</h1>
               <p className="text-sm text-text-secondary">
                 Complete your college profile to get started
               </p>
@@ -453,9 +419,7 @@ function RouteComponent() {
               </div>
 
               <div>
-                <label className="text-xs font-semibold text-text block mb-1.5">
-                  AISHE Code
-                </label>
+                <label className="text-xs font-semibold text-text block mb-1.5">AISHE Code</label>
                 <input
                   type="text"
                   value={aisheCode}
@@ -483,7 +447,7 @@ function RouteComponent() {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleCollegeSubmit}
                 disabled={!collegeName.trim() || isSavingCollege}
-                className="w-full bg-primary hover:bg-primary/90 text-white text-sm font-bold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary hover:bg-primary/90 text-white text-sm font-bold py-3 rounded-lg shadow-lg hover:shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSavingCollege ? "Saving..." : "Continue to Dashboard"}
                 <ArrowRight size={16} />
@@ -492,33 +456,24 @@ function RouteComponent() {
           </div>
         </motion.div>
       </div>
-    );
+    )
   }
 
   // ========== STUDENT PROFILE SETUP (Original) ==========
   return (
     <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden p-4">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3"></div>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-lg bg-card border border-border rounded-2xl shadow-2xl overflow-hidden relative z-10"
+        className="w-full max-w-lg bg-card border border-border rounded-2xl shadow-lg overflow-hidden relative z-10"
       >
         <div className="p-6">
           {/* Progress */}
           <div className="mb-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-text">
-                Step {step} of 3
-              </span>
+              <span className="text-xs font-semibold text-text">Step {step} of 3</span>
               <span className="text-xs text-text-secondary">
-                {step === 1
-                  ? "Basic Info"
-                  : step === 2
-                    ? "Interests"
-                    : "Preferences"}
+                {step === 1 ? "Basic Info" : step === 2 ? "Interests" : "Preferences"}
               </span>
             </div>
             <div className="w-full bg-surface rounded-full h-1.5">
@@ -549,13 +504,8 @@ function RouteComponent() {
               />
 
               <div>
-                <label className="text-xs font-semibold text-text block mb-1.5">
-                  Gender *
-                </label>
-                <Select
-                  value={formValues.gender}
-                  onValueChange={(v) => setValue("gender", v)}
-                >
+                <label className="text-xs font-semibold text-text block mb-1.5">Gender *</label>
+                <Select value={formValues.gender} onValueChange={(v) => setValue("gender", v)}>
                   <SelectTrigger className="w-full h-9 bg-surface text-sm">
                     <SelectValue placeholder="Select gender" />
                   </SelectTrigger>
@@ -570,10 +520,7 @@ function RouteComponent() {
                 <label className="text-xs font-semibold text-text block mb-1.5">
                   Your City/District *
                 </label>
-                <Select
-                  value={formValues.locality}
-                  onValueChange={(v) => setValue("locality", v)}
-                >
+                <Select value={formValues.locality} onValueChange={(v) => setValue("locality", v)}>
                   <SelectTrigger className="w-full h-9 bg-surface text-sm">
                     <SelectValue placeholder="Select your location" />
                   </SelectTrigger>
@@ -588,13 +535,8 @@ function RouteComponent() {
               </div>
 
               <div>
-                <label className="text-xs font-semibold text-text block mb-1.5">
-                  Category *
-                </label>
-                <Select
-                  value={formValues.category}
-                  onValueChange={(v) => setValue("category", v)}
-                >
+                <label className="text-xs font-semibold text-text block mb-1.5">Category *</label>
+                <Select value={formValues.category} onValueChange={(v) => setValue("category", v)}>
                   <SelectTrigger className="w-full h-9 bg-surface text-sm">
                     <SelectValue placeholder="Select category" />
                   </SelectTrigger>
@@ -647,9 +589,7 @@ function RouteComponent() {
                     value={newExtra}
                     onChange={(e) => setNewExtra(e.target.value)}
                     placeholder="e.g., coding, debate"
-                    onKeyDown={(e) =>
-                      e.key === "Enter" && (e.preventDefault(), addExtra())
-                    }
+                    onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addExtra())}
                   />
                   <Button onClick={addExtra} variant="secondary" size="sm">
                     <Plus size={16} />
@@ -672,17 +612,13 @@ function RouteComponent() {
 
               {/* Hobbies */}
               <div>
-                <label className="text-xs font-semibold text-text block mb-2">
-                  Hobbies
-                </label>
+                <label className="text-xs font-semibold text-text block mb-2">Hobbies</label>
                 <div className="flex gap-2 mb-2">
                   <Input
                     value={newHobby}
                     onChange={(e) => setNewHobby(e.target.value)}
                     placeholder="e.g., reading, gaming"
-                    onKeyDown={(e) =>
-                      e.key === "Enter" && (e.preventDefault(), addHobby())
-                    }
+                    onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addHobby())}
                   />
                   <Button onClick={addHobby} variant="secondary" size="sm">
                     <Plus size={16} />
@@ -704,8 +640,7 @@ function RouteComponent() {
               </div>
 
               <p className="text-xs text-text-secondary">
-                These help us match you with colleges that have relevant clubs
-                and events.
+                These help us match you with colleges that have relevant clubs and events.
               </p>
             </motion.div>
           )}
@@ -723,26 +658,20 @@ function RouteComponent() {
                 Rate each factor from 1 (not important) to 5 (very important)
               </p>
 
-              {(
-                Object.keys(preferenceLabels) as Array<keyof typeof preferences>
-              ).map((key) => (
+              {(Object.keys(preferenceLabels) as Array<keyof typeof preferences>).map((key) => (
                 <div key={key}>
                   <div className="flex justify-between mb-2">
                     <label className="text-xs font-semibold text-text">
                       {preferenceLabels[key]}
                     </label>
-                    <span className="text-xs font-bold text-primary">
-                      {preferences[key]}/5
-                    </span>
+                    <span className="text-xs font-bold text-primary">{preferences[key]}/5</span>
                   </div>
                   <Slider
                     min={1}
                     max={5}
                     step={1}
                     value={[preferences[key]]}
-                    onValueChange={(v) =>
-                      setPreferences({ ...preferences, [key]: v[0] })
-                    }
+                    onValueChange={(v) => setPreferences({ ...preferences, [key]: v[0] })}
                     className="w-full"
                   />
                 </div>
@@ -766,14 +695,8 @@ function RouteComponent() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={
-                step === 1
-                  ? onSubmitStep1
-                  : step === 2
-                    ? onSubmitStep2
-                    : onSubmitStep3
-              }
-              className="flex-1 bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+              onClick={step === 1 ? onSubmitStep1 : step === 2 ? onSubmitStep2 : onSubmitStep3}
+              className="flex-1 bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2.5 rounded-lg shadow-lg hover:shadow-md transition-all flex items-center justify-center gap-2"
             >
               {step === 3 ? "Start Assessment" : "Next"}
               <ArrowRight size={16} />
@@ -782,5 +705,5 @@ function RouteComponent() {
         </div>
       </motion.div>
     </div>
-  );
+  )
 }

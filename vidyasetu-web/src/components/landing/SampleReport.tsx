@@ -102,7 +102,7 @@ export const SampleReport: React.FC = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="relative bg-card rounded-2xl border border-border shadow-2xl overflow-hidden">
+          <div className="relative bg-card rounded-2xl border border-border shadow-lg overflow-hidden">
             {/* Card Header */}
             <div className="bg-gradient-to-r from-primary/10 to-secondary/10 px-6 py-4 border-b border-border flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -280,7 +280,7 @@ export const SampleReport: React.FC = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-card rounded-2xl border border-border shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+              className="bg-card rounded-2xl border border-border shadow-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto"
             >
               {/* Modal Header */}
               <div className="sticky top-0 bg-card px-6 py-4 border-b border-border flex items-center justify-between z-10">

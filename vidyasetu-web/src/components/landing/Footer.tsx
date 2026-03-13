@@ -1,55 +1,51 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Twitter, Instagram, Linkedin, Mail } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { useNavigate } from "@tanstack/react-router";
+import React from "react"
+import { motion } from "framer-motion"
+import { Twitter, Instagram, Linkedin, Mail } from "lucide-react"
+import { useTranslation } from "react-i18next"
+import { useNavigate } from "@tanstack/react-router"
 
 export const Footer: React.FC = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { t } = useTranslation()
+  const navigate = useNavigate()
 
   const socialIconVariants = {
     hover: { y: -3, scale: 1.1, color: "var(--color-primary)" },
     tap: { scale: 0.9 },
-  };
+  }
 
   const linkVariants = {
     hover: { x: 5, color: "var(--color-text)" },
-  };
+  }
 
   const platformLinks = [
     t("landing.footer.features"),
     t("landing.footer.assessment"),
     t("landing.footer.pricing"),
     t("landing.footer.forSchools"),
-  ];
+  ]
 
   const companyLinks = [
     t("landing.footer.aboutUs"),
     t("landing.footer.careers"),
     t("landing.footer.blog"),
     t("landing.footer.press"),
-  ];
+  ]
 
   const supportLinks = [
     t("landing.footer.helpCenter"),
     t("landing.footer.terms"),
     t("landing.footer.privacy"),
     t("landing.footer.contact"),
-  ];
+  ]
 
   return (
-    <footer className="bg-text dark:bg-black text-background dark:text-gray-300 pt-20 pb-10 transition-colors duration-300">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-gray-100 dark:text-gray-300 pt-20 pb-10 transition-colors duration-300">
       <div className="container mx-auto px-6">
         {/* CTA Section */}
         <div className="flex flex-col md:flex-row items-center justify-between border-b border-gray-700 pb-16 mb-12 gap-8">
           <div>
-            <h2 className="text-3xl font-bold mb-2">
-              {t("landing.footer.ctaTitle")}
-            </h2>
-            <p className="text-gray-400 dark:text-gray-400">
-              {t("landing.footer.ctaSubtitle")}
-            </p>
+            <h2 className="text-3xl font-bold mb-2">{t("landing.footer.ctaTitle")}</h2>
+            <p className="text-gray-400 dark:text-gray-400">{t("landing.footer.ctaSubtitle")}</p>
           </div>
           <div className="flex gap-4">
             <motion.button
@@ -88,9 +84,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-primary">
-              {t("landing.footer.platform")}
-            </h4>
+            <h4 className="font-bold mb-6 text-primary">{t("landing.footer.platform")}</h4>
             <ul className="space-y-3 text-gray-400 dark:text-gray-400 text-sm">
               {platformLinks.map((item) => (
                 <li key={item}>
@@ -108,9 +102,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-primary">
-              {t("landing.footer.company")}
-            </h4>
+            <h4 className="font-bold mb-6 text-primary">{t("landing.footer.company")}</h4>
             <ul className="space-y-3 text-gray-400 dark:text-gray-400 text-sm">
               {companyLinks.map((item) => (
                 <li key={item}>
@@ -128,9 +120,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-primary">
-              {t("landing.footer.support")}
-            </h4>
+            <h4 className="font-bold mb-6 text-primary">{t("landing.footer.support")}</h4>
             <ul className="space-y-3 text-gray-400 dark:text-gray-400 text-sm">
               {supportLinks.map((item) => (
                 <li key={item}>
@@ -194,5 +184,5 @@ export const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}

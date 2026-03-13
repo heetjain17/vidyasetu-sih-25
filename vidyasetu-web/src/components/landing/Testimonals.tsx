@@ -58,7 +58,7 @@ export const Testimonials: React.FC = () => {
                 <img
                   src={review.img}
                   alt={review.author}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:opacity-90"
                 />
               </div>
               <div className="mb-6 relative">

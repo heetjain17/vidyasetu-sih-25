@@ -6,6 +6,23 @@ interface ChatMessageProps {
   message: ChatMessageType
 }
 
+function formatMessage(content: string) {
+  // Convert markdown-style formatting to HTML
+  let formatted = content
+    // Bold text: **text** -> <strong>text</strong>
+    .replace(/\*\*([^*]+)\*\*/g, '<strong class="font-bold">$1</strong>')
+    // Bullet points: • or - at start of line
+    .replace(
+      /^[•\-]\s+(.+)$/gm,
+      '<div class="flex gap-2 my-1"><span class="text-primary">•</span><span>$1</span></div>'
+    )
+    // Line breaks
+    .replace(/\n\n/g, '<div class="h-3"></div>')
+    .replace(/\n/g, "<br/>")
+
+  return formatted
+}
+
 export function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === "user"
 
@@ -27,7 +44,14 @@ export function ChatMessage({ message }: ChatMessageProps) {
             : "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white"
         )}
       >
-        <p className="text-sm whitespace-pre-wrap wrap-break-word">{message.content}</p>
+        {isUser ? (
+          <p className="text-sm whitespace-pre-wrap wrap-break-word">{message.content}</p>
+        ) : (
+          <div
+            className="text-sm leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
+          />
+        )}
       </div>
     </div>
   )

@@ -33,7 +33,7 @@ load_dotenv()
 # --- Configuration ---
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-COLLECTION = os.getenv("QDRANT_COLLECTION_NAME", "college_career_knowledge_openai")
+COLLECTION = os.getenv("QDRANT_COLLECTION_NAME", "college_career_knowledge_gemini")
 
 # --- Clients Initialization ---
 _qdrant_client = None
@@ -192,7 +192,16 @@ async def rag_answer_stream(question: str) -> AsyncGenerator[Dict[str, Any], Non
         matches = search_vectors(vec)
         context, sources = build_context(matches, question)
 
-        prompt = f"Context:\n{context}\n\nQuestion: {question}\n\nAssistant (use only context):"
+        prompt = f"""Context:
+{context}
+
+Question: {question}
+
+Instructions: Answer the question using ONLY the provided context. Format your response with:
+- Use **bold** for important terms and headings
+- Use bullet points (•) for lists
+- Use proper line breaks between sections
+- Keep responses clear and well-structured"""
 
         if async_gemini_client:
             response = await async_gemini_client.chat.completions.create(
@@ -225,7 +234,16 @@ def rag_answer(question: str) -> Tuple[Dict[str, Any], List[Dict]]:
         vec = embed_query(expanded)
         matches = search_vectors(vec)
         context, sources = build_context(matches, question)
-        prompt = f"Context:\n{context}\n\nQuestion: {question}\n\nAssistant:"
+        prompt = f"""Context:
+{context}
+
+Question: {question}
+
+Instructions: Answer the question using ONLY the provided context. Format your response with:
+- Use **bold** for important terms and headings
+- Use bullet points (•) for lists
+- Use proper line breaks between sections
+- Keep responses clear and well-structured"""
 
         if gemini_client:
             resp = gemini_client.chat.completions.create(

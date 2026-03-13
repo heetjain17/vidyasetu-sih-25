@@ -235,7 +235,7 @@ export const Architecture: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="w-full max-w-2xl bg-card border-2 border-primary/30 rounded-2xl p-8 relative shadow-2xl overflow-hidden"
+                className="w-full max-w-2xl bg-card border-2 border-primary/30 rounded-2xl p-8 relative shadow-lg overflow-hidden"
               >
                 {/* Charging energy background */}
                 <motion.div

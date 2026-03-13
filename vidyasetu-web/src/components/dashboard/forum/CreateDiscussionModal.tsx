@@ -75,7 +75,7 @@ export const CreateDiscussionModal: React.FC<CreateDiscussionModalProps> = ({
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="bg-card w-full max-w-lg rounded-xl border border-border shadow-2xl overflow-hidden relative z-10"
+          className="bg-card w-full max-w-lg rounded-xl border border-border shadow-lg overflow-hidden relative z-10"
         >
           <div className="p-4 border-b border-border flex justify-between items-center">
             <h2 className="text-lg font-bold">Start a New Discussion</h2>
@@ -168,7 +168,7 @@ export const CreateDiscussionModal: React.FC<CreateDiscussionModalProps> = ({
               disabled={
                 createMutation.isPending || !title.trim() || !content.trim()
               }
-              className="px-6 py-2 bg-primary text-text text-sm font-bold rounded-lg disabled:opacity-50 flex items-center gap-2 shadow-md hover:scale-105 transition-transform"
+              className="px-6 py-2 bg-primary text-text text-sm font-bold rounded-lg disabled:opacity-50 flex items-center gap-2 shadow-md hover:opacity-90 transition-transform"
             >
               {createMutation.isPending ? (
                 <Loader2 className="animate-spin" size={16} />

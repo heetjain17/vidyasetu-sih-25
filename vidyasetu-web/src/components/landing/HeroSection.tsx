@@ -113,7 +113,7 @@ export const Hero: React.FC = () => {
           <motion.div
             whileHover={{ rotateY: -5, rotateX: 5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="absolute top-10 right-0 w-[90%] rounded-xl shadow-2xl border border-border overflow-hidden bg-card z-20"
+            className="absolute top-10 right-0 w-[90%] rounded-xl shadow-lg border border-border overflow-hidden bg-card z-20"
           >
             <div className="h-8 bg-surface border-b border-border flex items-center px-4 gap-2">
               <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -134,7 +134,7 @@ export const Hero: React.FC = () => {
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            className="absolute bottom-20 left-0 w-[180px] rounded-[2rem] shadow-2xl border-[8px] border-text bg-background z-30 overflow-hidden"
+            className="absolute bottom-20 left-0 w-[180px] rounded-[2rem] shadow-lg border-[8px] border-text bg-background z-30 overflow-hidden"
           >
             <img
               src={mobileImage}

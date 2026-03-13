@@ -1,28 +1,25 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-bold transition-all disabled:pointer-events-none disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-2",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-bold transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 focus:outline-none focus:ring-2",
   {
     variants: {
       variant: {
         // Primary - Main action button
-        primary:
-          "bg-primary text-text hover:bg-primary/90 shadow-md hover:shadow-lg focus:ring-primary/20",
+        primary: "bg-primary text-text hover:bg-primary/90 shadow-sm focus:ring-primary/20",
 
-        // Secondary - Less prominent actions
+        // Secondary - Less prominent actions (outlined)
         secondary:
-          "bg-surface text-text border-2 border-border hover:border-primary hover:text-primary focus:ring-primary/20",
+          "bg-transparent text-text border-2 border-border hover:border-primary hover:text-primary focus:ring-primary/20",
 
         // Ghost - Minimal style for subtle actions
-        ghost:
-          "text-text-secondary hover:bg-surface hover:text-text focus:ring-primary/10",
+        ghost: "text-text-secondary hover:bg-surface hover:text-text focus:ring-primary/10",
 
         // Danger - Destructive actions
-        danger:
-          "bg-red-500 text-white hover:bg-red-600 shadow-md hover:shadow-lg focus:ring-red-500/20",
+        danger: "bg-red-500 text-white hover:bg-red-600 shadow-sm focus:ring-red-500/20",
 
         // Link - Text-only button
         link: "text-primary hover:underline underline-offset-4 focus:ring-0",
@@ -39,31 +36,17 @@ const buttonVariants = cva(
       size: "default",
     },
   }
-);
+)
 
 export interface ButtonProps
-  extends
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-  loading?: boolean;
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+  loading?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      variant,
-      size,
-      asChild = false,
-      loading,
-      children,
-      disabled,
-      ...props
-    },
-    ref
-  ) => {
-    const Comp = asChild ? Slot : "button";
+  ({ className, variant, size, asChild = false, loading, children, disabled, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
 
     const content = (
       <>
@@ -91,7 +74,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         {children}
       </>
-    );
+    )
 
     return (
       <Comp
@@ -102,10 +85,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {content}
       </Comp>
-    );
+    )
   }
-);
+)
 
-Button.displayName = "Button";
+Button.displayName = "Button"
 
-export { Button, buttonVariants };
+export { Button, buttonVariants }

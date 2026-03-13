@@ -134,19 +134,9 @@
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Utility Classes */
-.glowing-grid {
-  background-size: 40px 40px;
-  background-image: linear-gradient(
-      to right,
-      var(--color-border) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
-  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 @layer base {

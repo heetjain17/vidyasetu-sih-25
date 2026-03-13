@@ -281,7 +281,7 @@ export const DiscussionThreadModule: React.FC<DiscussionThreadModuleProps> = ({
               })
             }
             disabled={commentMutation.isPending || !newComment.trim()}
-            className="px-6 py-3 bg-primary text-text font-bold rounded-xl disabled:opacity-50 flex items-center gap-2 h-fit hover:scale-105 transition-transform shadow-lg shadow-primary/20"
+            className="px-6 py-3 bg-primary text-text font-bold rounded-xl disabled:opacity-50 flex items-center gap-2 h-fit hover:opacity-90 transition-transform shadow-lg shadow-primary/20"
           >
             {commentMutation.isPending ? (
               <Loader2 className="animate-spin" size={20} />

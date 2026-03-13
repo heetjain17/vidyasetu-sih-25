@@ -1,22 +1,22 @@
-import { CareerHubModule } from "@/components/dashboard/CareerHubModule";
-import darkBgLogo from "@/assets/darkbg_icon.png";
-import lightBgLogo from "@/assets/lightbg_icon.png";
-import { TimelineModule } from "@/components/dashboard/TimelineModule";
-import { RecommendationsModule } from "@/components/dashboard/RecommendationsModule";
-import { ParentRecommendationsModule } from "@/components/dashboard/ParentRecommendationsModule";
-import { AssessmentModule } from "@/components/dashboard/AssessmentModule";
-import { CollegesModule } from "@/components/dashboard/CollegesModule";
-import { ParentDashboardModule } from "@/components/dashboard/ParentDashboard";
-import { ParentDashboardModule as AwarenessModule } from "@/components/dashboard/Awareness";
-import { CollegeDashboard } from "@/components/dashboard/CollegeDashboard";
-import { DiscussionsModule } from "@/components/dashboard/DiscussionsModule";
-import { SandboxModule } from "@/components/dashboard/SandboxModule";
-import { ChatbotModule } from "@/components/dashboard/ChatbotModule";
-import { StudentDashboard } from "@/components/dashboard/StudentDashboard";
-import { StudentProfileModule } from "@/components/dashboard/StudentProfileModule";
-import { FeedbackModule } from "@/components/dashboard/FeedbackModule";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { motion, AnimatePresence } from "framer-motion";
+import { CareerHubModule } from "@/components/dashboard/CareerHubModule"
+import darkBgLogo from "@/assets/darkbg_icon.png"
+import lightBgLogo from "@/assets/lightbg_icon.png"
+import { TimelineModule } from "@/components/dashboard/TimelineModule"
+import { RecommendationsModule } from "@/components/dashboard/RecommendationsModule"
+import { ParentRecommendationsModule } from "@/components/dashboard/ParentRecommendationsModule"
+import { AssessmentModule } from "@/components/dashboard/AssessmentModule"
+import { CollegesModule } from "@/components/dashboard/CollegesModule"
+import { ParentDashboardModule } from "@/components/dashboard/ParentDashboard"
+import { ParentDashboardModule as AwarenessModule } from "@/components/dashboard/Awareness"
+import { CollegeDashboard } from "@/components/dashboard/CollegeDashboard"
+import { DiscussionsModule } from "@/components/dashboard/DiscussionsModule"
+import { SandboxModule } from "@/components/dashboard/SandboxModule"
+import { ChatbotModule } from "@/components/dashboard/ChatbotModule"
+import { StudentDashboard } from "@/components/dashboard/StudentDashboard"
+import { StudentProfileModule } from "@/components/dashboard/StudentProfileModule"
+import { FeedbackModule } from "@/components/dashboard/FeedbackModule"
+import { createFileRoute, useNavigate } from "@tanstack/react-router"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   Bell,
   BookOpen,
@@ -37,155 +37,145 @@ import {
   Wrench,
   X,
   ClipboardCheck,
-} from "lucide-react";
-import { useState, useEffect, useRef } from "react";
-import { useAuthStore } from "@/store/authStore";
-import { useProfileStore } from "@/store/profileStore";
-import { useQuizStore } from "@/store/quizStore";
-import { useNotificationStore } from "@/store/notificationStore";
-import { useSignout } from "@/hooks/useAuth";
-import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+} from "lucide-react"
+import { useState, useEffect, useRef } from "react"
+import { useAuthStore } from "@/store/authStore"
+import { useProfileStore } from "@/store/profileStore"
+import { useQuizStore } from "@/store/quizStore"
+import { useNotificationStore } from "@/store/notificationStore"
+import { useSignout } from "@/hooks/useAuth"
+import { useTranslation } from "react-i18next"
+import LanguageSwitcher from "@/components/LanguageSwitcher"
 
 export const Route = createFileRoute("/dashboard/")({
   component: RouteComponent,
   validateSearch: (search: Record<string, unknown>) => {
     return {
       tab: (search.tab as string) || undefined,
-    };
+    }
   },
-});
+})
 
 function RouteComponent() {
-  const navigate = useNavigate();
-  const { tab } = Route.useSearch();
-  const [activeTab, setActiveTab] = useState(tab || "dashboard");
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate()
+  const { tab } = Route.useSearch()
+  const [activeTab, setActiveTab] = useState(tab || "dashboard")
+  const [isSidebarOpen, setSidebarOpen] = useState(false)
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     // Initialize theme from localStorage or system preference
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("theme") as "light" | "dark" | null;
-      if (saved) return saved;
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-        return "dark";
+      const saved = localStorage.getItem("theme") as "light" | "dark" | null
+      if (saved) return saved
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark"
     }
-    return "light";
-  });
+    return "light"
+  })
 
   // Stores
-  const { isAuthenticated, logout, role } = useAuthStore();
-  const { t } = useTranslation();
-  const { profile } = useProfileStore();
-  const { isQuizComplete, recommendations } = useQuizStore();
-  const { notifications, markAsRead, markAllAsRead, getUnreadCount } =
-    useNotificationStore();
-  const signoutMutation = useSignout();
+  const { isAuthenticated, logout, role } = useAuthStore()
+  const { t } = useTranslation()
+  const { profile } = useProfileStore()
+  const { isQuizComplete, recommendations } = useQuizStore()
+  const { notifications, markAsRead, markAllAsRead, getUnreadCount } = useNotificationStore()
+  const signoutMutation = useSignout()
 
   // Notification dropdown
-  const [showNotifications, setShowNotifications] = useState(false);
-  const unreadCount = getUnreadCount();
-  const notificationRef = useRef<HTMLDivElement>(null);
+  const [showNotifications, setShowNotifications] = useState(false)
+  const unreadCount = getUnreadCount()
+  const notificationRef = useRef<HTMLDivElement>(null)
 
   // User dropdown
-  const [showUserDropdown, setShowUserDropdown] = useState(false);
-  const userDropdownRef = useRef<HTMLDivElement>(null);
+  const [showUserDropdown, setShowUserDropdown] = useState(false)
+  const userDropdownRef = useRef<HTMLDivElement>(null)
 
   // Invite code state for parent linking
-  const [inviteCode, setInviteCode] = useState<string | null>(null);
-  const [inviteCodeExpires, setInviteCodeExpires] = useState<string | null>(
-    null
-  );
-  const [isGeneratingCode, setIsGeneratingCode] = useState(false);
-  const { accessToken } = useAuthStore();
+  const [inviteCode, setInviteCode] = useState<string | null>(null)
+  const [inviteCodeExpires, setInviteCodeExpires] = useState<string | null>(null)
+  const [isGeneratingCode, setIsGeneratingCode] = useState(false)
+  const { accessToken } = useAuthStore()
 
   // Initialize theme on mount
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }, []);
+    document.documentElement.classList.toggle("dark", theme === "dark")
+  }, [])
 
   // Close notification dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        notificationRef.current &&
-        !notificationRef.current.contains(event.target as Node)
-      ) {
-        setShowNotifications(false);
+      if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
+        setShowNotifications(false)
       }
-    };
+    }
 
     if (showNotifications) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside)
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showNotifications]);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [showNotifications])
 
   // Close user dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        userDropdownRef.current &&
-        !userDropdownRef.current.contains(event.target as Node)
-      ) {
-        setShowUserDropdown(false);
+      if (userDropdownRef.current && !userDropdownRef.current.contains(event.target as Node)) {
+        setShowUserDropdown(false)
       }
-    };
+    }
 
     if (showUserDropdown) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside)
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showUserDropdown]);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [showUserDropdown])
 
   // Handle tab from URL search param
   useEffect(() => {
     if (tab) {
-      setActiveTab(tab);
+      setActiveTab(tab)
     }
-  }, [tab]);
+  }, [tab])
 
   // Auth check - redirect if not authenticated
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate({ to: "/auth" });
+      navigate({ to: "/auth" })
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate])
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-    localStorage.setItem("theme", newTheme);
-  };
+    const newTheme = theme === "light" ? "dark" : "light"
+    setTheme(newTheme)
+    document.documentElement.classList.toggle("dark", newTheme === "dark")
+    localStorage.setItem("theme", newTheme)
+  }
 
   const handleLogout = () => {
     // Sign out from backend
-    signoutMutation.mutate();
+    signoutMutation.mutate()
     // Clear auth store
-    logout();
+    logout()
     // Clear profile store
-    useProfileStore.getState().clearProfile();
+    useProfileStore.getState().clearProfile()
     // Clear quiz store
-    useQuizStore.getState().clearQuiz();
+    useQuizStore.getState().clearQuiz()
     // Clear sessionStorage to ensure fresh state
-    sessionStorage.removeItem("auth-storage");
-    sessionStorage.removeItem("profile-storage");
-    sessionStorage.removeItem("quiz-storage");
+    sessionStorage.removeItem("auth-storage")
+    sessionStorage.removeItem("profile-storage")
+    sessionStorage.removeItem("quiz-storage")
     // Navigate to auth page
-    navigate({ to: "/auth" });
-  };
+    navigate({ to: "/auth" })
+  }
 
   // Generate invite code for parent linking
-  const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+  const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"
 
   const generateInviteCode = async () => {
-    setIsGeneratingCode(true);
+    setIsGeneratingCode(true)
     try {
       const response = await fetch(`${API_URL}/profile/student/invite-code`, {
         method: "POST",
@@ -193,24 +183,23 @@ function RouteComponent() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
         },
-      });
+      })
 
-      if (!response.ok) throw new Error("Failed to generate code");
+      if (!response.ok) throw new Error("Failed to generate code")
 
-      const data = await response.json();
-      setInviteCode(data.invite_code);
-      setInviteCodeExpires(data.expires_at);
+      const data = await response.json()
+      setInviteCode(data.invite_code)
+      setInviteCodeExpires(data.expires_at)
     } catch (error) {
-      console.error("Failed to generate invite code:", error);
+      console.error("Failed to generate invite code:", error)
     } finally {
-      setIsGeneratingCode(false);
+      setIsGeneratingCode(false)
     }
-  };
+  }
 
   // Calculate stats from store data
-  const careerMatches = recommendations?.top_careers?.length || 0;
-  const collegesShortlisted =
-    recommendations?.recommended_colleges?.length || 0;
+  const careerMatches = recommendations?.top_careers?.length || 0
+  const collegesShortlisted = recommendations?.recommended_colleges?.length || 0
 
   // Role-based sidebar items
   const studentSidebarItems = [
@@ -255,7 +244,7 @@ function RouteComponent() {
       label: t("dashboard.sidebar.feedback"),
       icon: ClipboardCheck,
     },
-  ];
+  ]
 
   const parentSidebarItems = [
     {
@@ -294,7 +283,7 @@ function RouteComponent() {
       label: t("dashboard.sidebar.feedback"),
       icon: ClipboardCheck,
     },
-  ];
+  ]
 
   const collegeSidebarItems = [
     {
@@ -307,7 +296,7 @@ function RouteComponent() {
       label: t("dashboard.sidebar.feedback"),
       icon: ClipboardCheck, // Using ClipboardCheck as defined in imports
     },
-  ];
+  ]
 
   // Select sidebar items based on role
   const sidebarItems =
@@ -315,61 +304,10 @@ function RouteComponent() {
       ? parentSidebarItems
       : role === "COLLEGE"
         ? collegeSidebarItems
-        : studentSidebarItems;
+        : studentSidebarItems
 
   return (
     <div className="min-h-screen bg-background flex relative overflow-hidden">
-      {/* Dynamic Background Based on Active Tab */}
-      <div className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-700">
-        {/* Dashboard Tab - Warm gradient */}
-        {activeTab === "dashboard" && (
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/5" />
-            <motion.div
-              animate={{ x: [0, 50, 0], y: [0, -30, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 15, repeat: Infinity }}
-              className="absolute top-20 right-20 w-96 h-96 bg-primary/15 rounded-full blur-[120px]"
-            />
-          </div>
-        )}
-
-        {/* Career Hub - Professional blue/teal */}
-        {activeTab === "career-hub" && (
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-background to-primary/5" />
-            <motion.div
-              animate={{ x: [0, -40, 0], y: [0, 40, 0] }}
-              transition={{ duration: 18, repeat: Infinity }}
-              className="absolute bottom-20 left-20 w-96 h-96 bg-secondary/15 rounded-full blur-[120px]"
-            />
-          </div>
-        )}
-
-        {/* Timeline - Purple/gradient */}
-        {activeTab === "timeline" && (
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-primary/5" />
-          </div>
-        )}
-
-        {/* Default for other tabs */}
-        {!["dashboard", "career-hub", "timeline"].includes(activeTab) && (
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-background" />
-            <div className="absolute top-40 right-40 w-80 h-80 bg-primary/10 rounded-full blur-[100px]" />
-          </div>
-        )}
-
-        {/* Dot grid overlay - consistent across all tabs */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-            backgroundSize: "30px 30px",
-          }}
-        />
-      </div>
-
       {/* Mobile Sidebar Overlay */}
       <AnimatePresence>
         {isSidebarOpen && (
@@ -385,7 +323,7 @@ function RouteComponent() {
 
       {/* Sidebar */}
       <motion.aside
-        className={`fixed top-0 left-0 h-screen w-64 bg-card/95 backdrop-blur-sm border-r border-border z-50 flex flex-col transition-transform duration-300 shadow-xl ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
+        className={`fixed top-0 left-0 h-screen w-64 bg-card/95 backdrop-blur-sm border-r border-border z-50 flex flex-col transition-transform duration-300 shadow-md ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
       >
         <div className="p-6 border-b border-border flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -405,9 +343,9 @@ function RouteComponent() {
             <button
               key={item.id}
               onClick={() => {
-                setActiveTab(item.id);
-                setSidebarOpen(false);
-                navigate({ to: "/dashboard", search: { tab: item.id } });
+                setActiveTab(item.id)
+                setSidebarOpen(false)
+                navigate({ to: "/dashboard", search: { tab: item.id } })
               }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all ${
                 activeTab === item.id
@@ -465,11 +403,7 @@ function RouteComponent() {
               whileTap={{ scale: 0.9 }}
               className="p-2 rounded-full hover:bg-surface transition-colors focus:outline-none"
             >
-              {theme === "dark" ? (
-                <Sun size={20} className="text-primary" />
-              ) : (
-                <Moon size={20} />
-              )}
+              {theme === "dark" ? <Sun size={20} className="text-primary" /> : <Moon size={20} />}
             </motion.button>
 
             {/* Language Switcher */}
@@ -493,12 +427,10 @@ function RouteComponent() {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute right-0 top-12 w-80 bg-card border border-border rounded-xl shadow-2xl z-50 overflow-hidden"
+                    className="absolute right-0 top-12 w-80 bg-card border border-border rounded-xl shadow-lg z-50 overflow-hidden"
                   >
                     <div className="p-4 border-b border-border flex justify-between items-center">
-                      <h3 className="font-bold">
-                        {t("dashboard.notifications.title")}
-                      </h3>
+                      <h3 className="font-bold">{t("dashboard.notifications.title")}</h3>
                       {unreadCount > 0 && (
                         <button
                           onClick={() => markAllAsRead()}
@@ -519,9 +451,9 @@ function RouteComponent() {
                           <div
                             key={notif.id}
                             onClick={() => {
-                              markAsRead(notif.id);
-                              setActiveTab("timeline");
-                              setShowNotifications(false);
+                              markAsRead(notif.id)
+                              setActiveTab("timeline")
+                              setShowNotifications(false)
                             }}
                             className={`p-4 border-b border-border cursor-pointer hover:bg-surface transition-colors ${
                               !notif.read ? "bg-primary/5" : ""
@@ -532,16 +464,10 @@ function RouteComponent() {
                                 <span className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0"></span>
                               )}
                               <div className={notif.read ? "ml-5" : ""}>
-                                <p className="font-medium text-sm">
-                                  {notif.examName}
-                                </p>
-                                <p className="text-xs text-text-secondary mt-1">
-                                  {notif.message}
-                                </p>
+                                <p className="font-medium text-sm">{notif.examName}</p>
+                                <p className="text-xs text-text-secondary mt-1">{notif.message}</p>
                                 <p className="text-xs text-text-secondary mt-2">
-                                  {new Date(
-                                    notif.createdAt
-                                  ).toLocaleDateString()}
+                                  {new Date(notif.createdAt).toLocaleDateString()}
                                 </p>
                               </div>
                             </div>
@@ -569,25 +495,23 @@ function RouteComponent() {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute right-0 top-12 w-56 bg-card border border-border rounded-xl shadow-2xl z-50 overflow-hidden"
+                    className="absolute right-0 top-12 w-56 bg-card border border-border rounded-xl shadow-lg z-50 overflow-hidden"
                   >
                     <div className="p-3 border-b border-border">
                       <p className="font-medium text-sm truncate">
                         {profile.fullName || "Student"}
                       </p>
-                      <p className="text-xs text-text-secondary truncate">
-                        {role}
-                      </p>
+                      <p className="text-xs text-text-secondary truncate">{role}</p>
                     </div>
                     <div className="p-2">
                       <button
                         onClick={() => {
-                          setActiveTab("profile");
-                          setShowUserDropdown(false);
+                          setActiveTab("profile")
+                          setShowUserDropdown(false)
                           navigate({
                             to: "/dashboard",
                             search: { tab: "profile" },
-                          });
+                          })
                         }}
                         className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-surface transition-colors"
                       >
@@ -596,8 +520,8 @@ function RouteComponent() {
                       </button>
                       <button
                         onClick={() => {
-                          handleLogout();
-                          setShowUserDropdown(false);
+                          handleLogout()
+                          setShowUserDropdown(false)
                         }}
                         className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                       >
@@ -621,19 +545,13 @@ function RouteComponent() {
             transition={{ duration: 0.3 }}
             className="max-w-6xl mx-auto"
           >
-            {activeTab === "dashboard" && role === "PARENT" && (
-              <ParentDashboardModule />
-            )}
+            {activeTab === "dashboard" && role === "PARENT" && <ParentDashboardModule />}
 
-            {activeTab === "dashboard" && role === "COLLEGE" && (
-              <CollegeDashboard />
-            )}
+            {activeTab === "dashboard" && role === "COLLEGE" && <CollegeDashboard />}
 
-            {activeTab === "dashboard" &&
-              role !== "PARENT" &&
-              role !== "COLLEGE" && (
-                <StudentDashboard onTabChange={setActiveTab} />
-              )}
+            {activeTab === "dashboard" && role !== "PARENT" && role !== "COLLEGE" && (
+              <StudentDashboard onTabChange={setActiveTab} />
+            )}
 
             {activeTab === "career-hub" && <CareerHubModule />}
 
@@ -643,9 +561,7 @@ function RouteComponent() {
               <ParentRecommendationsModule />
             )}
 
-            {activeTab === "recommendations" && role !== "PARENT" && (
-              <RecommendationsModule />
-            )}
+            {activeTab === "recommendations" && role !== "PARENT" && <RecommendationsModule />}
 
             {activeTab === "assessment" && <AssessmentModule />}
 
@@ -682,9 +598,7 @@ function RouteComponent() {
                   <div className="w-24 h-24 bg-surface rounded-full flex items-center justify-center mb-6">
                     <Wrench size={40} className="text-text-secondary" />
                   </div>
-                  <h2 className="text-2xl font-bold mb-2">
-                    {t("dashboard.construction.title")}
-                  </h2>
+                  <h2 className="text-2xl font-bold mb-2">{t("dashboard.construction.title")}</h2>
                   <p className="text-text-secondary max-w-md">
                     {t("dashboard.construction.message")}
                   </p>
@@ -694,5 +608,5 @@ function RouteComponent() {
         </main>
       </div>
     </div>
-  );
+  )
 }

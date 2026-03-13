@@ -1,6 +1,6 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { createFileRoute, useNavigate } from "@tanstack/react-router"
+import { useEffect, useRef } from "react"
+import { motion } from "framer-motion"
 import {
   ArrowRight,
   Briefcase,
@@ -9,19 +9,19 @@ import {
   RefreshCcw,
   Sparkles,
   CheckCircle,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useQuizStore, getTopCareers, getTopColleges } from "@/store/quizStore";
-import { useProfileStore } from "@/store/profileStore";
-import { useAuthenticatedRecommendation } from "@/hooks/useRecommendation";
-import { buildRecommenderRequest } from "@/lib/quiz";
+} from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useQuizStore, getTopCareers, getTopColleges } from "@/store/quizStore"
+import { useProfileStore } from "@/store/profileStore"
+import { useAuthenticatedRecommendation } from "@/hooks/useRecommendation"
+import { buildRecommenderRequest } from "@/lib/quiz"
 
 export const Route = createFileRoute("/assessment/results")({
   component: ResultsComponent,
-});
+})
 
 function ResultsComponent() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   // Quiz store
   const {
@@ -33,56 +33,51 @@ function ResultsComponent() {
     setRecommendations,
     setLoadingRecommendations,
     reset,
-  } = useQuizStore();
+  } = useQuizStore()
 
   // Profile store
-  const { getStudentActual, getStudentPreferences } = useProfileStore();
+  const { getStudentActual, getStudentPreferences } = useProfileStore()
 
   // Recommendation mutation (uses authenticated endpoint to save to DB)
-  const recommendMutation = useAuthenticatedRecommendation();
+  const recommendMutation = useAuthenticatedRecommendation()
 
   // Track if we've already triggered the API call
-  const hasTriggeredRef = useRef(false);
+  const hasTriggeredRef = useRef(false)
 
   // Auto-trigger recommendations when quiz is complete
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme")
     if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add("dark")
     }
 
     if (isQuizComplete && !finalScores) {
-      computeScores();
+      computeScores()
     }
 
-    if (
-      finalScores &&
-      !recommendations &&
-      !isLoadingRecommendations &&
-      !hasTriggeredRef.current
-    ) {
-      hasTriggeredRef.current = true;
-      setLoadingRecommendations(true);
+    if (finalScores && !recommendations && !isLoadingRecommendations && !hasTriggeredRef.current) {
+      hasTriggeredRef.current = true
+      setLoadingRecommendations(true)
 
       const request = buildRecommenderRequest(
         finalScores,
         getStudentActual(),
         getStudentPreferences()
-      );
+      )
 
-      console.log("🚀 Sending recommendation request:", request);
+      console.log("🚀 Sending recommendation request:", request)
 
       recommendMutation.mutate(request, {
         onSuccess: (data) => {
-          console.log("✅ Recommendations received:", data);
-          setRecommendations(data);
+          console.log("✅ Recommendations received:", data)
+          setRecommendations(data)
         },
         onError: (error) => {
-          console.error("❌ Failed to fetch recommendations:", error);
-          setLoadingRecommendations(false);
-          hasTriggeredRef.current = false;
+          console.error("❌ Failed to fetch recommendations:", error)
+          setLoadingRecommendations(false)
+          hasTriggeredRef.current = false
         },
-      });
+      })
     }
   }, [
     isQuizComplete,
@@ -94,11 +89,11 @@ function ResultsComponent() {
     setLoadingRecommendations,
     getStudentActual,
     getStudentPreferences,
-  ]);
+  ])
 
   // Get top 3 for summary
-  const topCareers = getTopCareers(recommendations, 3);
-  const topColleges = getTopColleges(recommendations, 3);
+  const topCareers = getTopCareers(recommendations, 3)
+  const topColleges = getTopColleges(recommendations, 3)
 
   // Loading state
   if (isLoadingRecommendations || recommendMutation.isPending) {
@@ -128,7 +123,7 @@ function ResultsComponent() {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   // No quiz completed
@@ -143,38 +138,25 @@ function ResultsComponent() {
           <p className="text-text-secondary mb-6">
             Complete the aptitude assessment to receive your recommendations.
           </p>
-          <Button
-            onClick={() => navigate({ to: "/assessment" })}
-            variant="primary"
-          >
+          <Button onClick={() => navigate({ to: "/assessment" })} variant="primary">
             Start Assessment
           </Button>
         </div>
       </div>
-    );
+    )
   }
 
   const handleRetake = () => {
-    reset();
-    navigate({ to: "/assessment/quiz" });
-  };
+    reset()
+    navigate({ to: "/assessment/quiz" })
+  }
 
   const handleViewDetails = () => {
-    navigate({ to: "/dashboard", search: { tab: "recommendations" } });
-  };
+    navigate({ to: "/dashboard", search: { tab: "recommendations" } })
+  }
 
   return (
     <div className="min-h-screen bg-background p-4 relative overflow-hidden">
-      {/* Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
-        <motion.div
-          animate={{ x: [0, 50, 0], y: [0, -30, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute top-20 right-20 w-96 h-96 bg-primary/15 rounded-full blur-[120px]"
-        />
-      </div>
-
       {/* Content */}
       <div className="max-w-2xl mx-auto relative z-10 py-12">
         {/* Success Animation */}
@@ -187,12 +169,10 @@ function ResultsComponent() {
           <div className="w-24 h-24 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-12 h-12 text-green-500" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">
-            Assessment Complete! 🎉
-          </h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">Assessment Complete! 🎉</h1>
           <p className="text-text-secondary max-w-md mx-auto">
-            We've analyzed your responses and generated personalized career and
-            college recommendations.
+            We've analyzed your responses and generated personalized career and college
+            recommendations.
           </p>
         </motion.div>
 
@@ -233,16 +213,11 @@ function ResultsComponent() {
             </div>
             <ul className="space-y-2">
               {topColleges.map((college, i) => (
-                <li
-                  key={college.name}
-                  className="flex items-center gap-2 text-sm"
-                >
+                <li key={college.name} className="flex items-center gap-2 text-sm">
                   <span className="w-5 h-5 bg-secondary/20 text-secondary rounded-full flex items-center justify-center text-xs font-bold">
                     {i + 1}
                   </span>
-                  <span className="text-text-secondary truncate">
-                    {college.name}
-                  </span>
+                  <span className="text-text-secondary truncate">{college.name}</span>
                 </li>
               ))}
             </ul>
@@ -256,12 +231,7 @@ function ResultsComponent() {
           transition={{ delay: 0.5 }}
           className="flex flex-col gap-3"
         >
-          <Button
-            onClick={handleViewDetails}
-            variant="primary"
-            size="lg"
-            className="w-full gap-2"
-          >
+          <Button onClick={handleViewDetails} variant="primary" size="lg" className="w-full gap-2">
             See Detailed Report
             <ArrowRight size={18} />
           </Button>
@@ -277,5 +247,5 @@ function ResultsComponent() {
         </motion.div>
       </div>
     </div>
-  );
+  )
 }

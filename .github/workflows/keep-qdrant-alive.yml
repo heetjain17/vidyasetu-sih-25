@@ -1,0 +1,70 @@
+name: Keep Qdrant Cluster Alive
+
+on:
+  schedule:
+    # Run every 6 hours to keep the cluster active
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  ping-qdrant:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Ping Qdrant Cluster
+        run: |
+          echo "Pinging Qdrant cluster to keep it alive..."
+          
+          # Health check endpoint
+          response=$(curl -s -w "\n%{http_code}" "${{ secrets.QDRANT_URL }}/health" \
+            -H "api-key: ${{ secrets.QDRANT_API_KEY }}")
+          
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | head -n-1)
+          
+          echo "HTTP Status: $http_code"
+          echo "Response: $body"
+          
+          if [ "$http_code" -eq 200 ]; then
+            echo "✅ Qdrant cluster is alive and healthy"
+          else
+            echo "⚠️ Qdrant cluster returned status $http_code"
+            exit 1
+          fi
+      
+      - name: Get Collections Info
+        run: |
+          echo "Fetching collections information..."
+          
+          curl -s "${{ secrets.QDRANT_URL }}/collections" \
+            -H "api-key: ${{ secrets.QDRANT_API_KEY }}" \
+            | jq '.result.collections[] | {name: .name, points_count: .points_count}'
+          
+          echo "✅ Collections fetched successfully"
+      
+      - name: Verify Embeddings Collection
+        run: |
+          echo "Checking college_career_knowledge_gemini collection..."
+          
+          response=$(curl -s "${{ secrets.QDRANT_URL }}/collections/college_career_knowledge_gemini" \
+            -H "api-key: ${{ secrets.QDRANT_API_KEY }}")
+          
+          echo "$response" | jq '{
+            name: .result.config.params.vectors.size,
+            points_count: .result.points_count,
+            status: .result.status
+          }'
+          
+          echo "✅ Collection verified"
+      
+      - name: Send Success Notification
+        if: success()
+        run: |
+          echo "🎉 Qdrant cluster ping successful at $(date)"
+          echo "Cluster is active and all collections are accessible"
+      
+      - name: Send Failure Notification
+        if: failure()
+        run: |
+          echo "❌ Qdrant cluster ping failed at $(date)"
+          echo "Please check the cluster status manually"

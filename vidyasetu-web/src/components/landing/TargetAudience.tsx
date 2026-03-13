@@ -1,74 +1,25 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { User, Users, Check, ArrowRight } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import React from "react"
+import { motion } from "framer-motion"
+import { User, Users, Check, ArrowRight } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export const TargetAudience: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const studentPoints = [
     t("landing.audience.studentPoint1"),
     t("landing.audience.studentPoint2"),
     t("landing.audience.studentPoint3"),
-  ];
+  ]
 
   const parentPoints = [
     t("landing.audience.parentPoint1"),
     t("landing.audience.parentPoint2"),
     t("landing.audience.parentPoint3"),
-  ];
+  ]
 
   return (
     <section className="relative ">
-      {/* Animated Glowing Blobs Background */}
-      <div className="absolute inset-0 pointer-events-none -z-10">
-        {/* Top Right Glow */}
-        <motion.div
-          animate={{
-            x: [0, 40, 0],
-            y: [0, -40, 0],
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-20 right-10 w-[400px] h-[400px] bg-secondary/15 rounded-full blur-[120px]"
-        />
-
-        {/* Bottom Left Glow */}
-        <motion.div
-          animate={{
-            x: [0, -30, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-primary/10 rounded-full blur-[100px]"
-        />
-
-        {/* Center Accent Glow */}
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[150px]"
-        />
-      </div>
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <motion.span
@@ -100,10 +51,10 @@ export const TargetAudience: React.FC = () => {
             className="group relative"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-            <div className="relative bg-card rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="relative bg-card rounded-3xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
               {/* Icon Badge */}
               <div className="absolute -top-6 left-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:opacity-90 transition-transform duration-300">
                   <User size={28} className="text-background" />
                 </div>
               </div>
@@ -126,16 +77,10 @@ export const TargetAudience: React.FC = () => {
                     >
                       <div className="mt-1 shrink-0">
                         <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                          <Check
-                            size={12}
-                            className="text-primary"
-                            strokeWidth={3}
-                          />
+                          <Check size={12} className="text-primary" strokeWidth={3} />
                         </div>
                       </div>
-                      <p className="text-text-secondary leading-relaxed">
-                        {item}
-                      </p>
+                      <p className="text-text-secondary leading-relaxed">{item}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -166,10 +111,10 @@ export const TargetAudience: React.FC = () => {
             className="group relative"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-secondary to-accent rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-            <div className="relative bg-card rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="relative bg-card rounded-3xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
               {/* Icon Badge */}
               <div className="absolute -top-6 left-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/70 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/70 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:opacity-90 transition-transform duration-300">
                   <Users size={28} className="text-background" />
                 </div>
               </div>
@@ -192,16 +137,10 @@ export const TargetAudience: React.FC = () => {
                     >
                       <div className="mt-1 shrink-0">
                         <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">
-                          <Check
-                            size={12}
-                            className="text-secondary"
-                            strokeWidth={3}
-                          />
+                          <Check size={12} className="text-secondary" strokeWidth={3} />
                         </div>
                       </div>
-                      <p className="text-text-secondary leading-relaxed">
-                        {item}
-                      </p>
+                      <p className="text-text-secondary leading-relaxed">{item}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -225,5 +164,5 @@ export const TargetAudience: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

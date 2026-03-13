@@ -111,7 +111,7 @@ export const ValueProps: React.FC = () => {
 
             {/* Card */}
             <div
-              className={`relative h-full bg-card rounded-2xl border border-border p-6 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
+              className={`relative h-full bg-card rounded-2xl border border-border p-6 shadow-lg hover:shadow-md transition-all duration-300 overflow-hidden`}
             >
               {/* Background gradient */}
               <div
@@ -122,7 +122,7 @@ export const ValueProps: React.FC = () => {
               <div className="relative z-10">
                 {/* Icon */}
                 <div
-                  className={`w-14 h-14 ${feature.iconBg} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-14 h-14 ${feature.iconBg} rounded-xl flex items-center justify-center mb-5 group-hover:opacity-90 transition-transform duration-300`}
                 >
                   <feature.Icon className={`w-7 h-7 ${feature.iconColor}`} />
                 </div>
