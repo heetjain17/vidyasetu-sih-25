@@ -10,13 +10,21 @@ if not dotenv_path:
     dotenv_path = pathlib.Path(__file__).resolve().parents[1] / ".env"
 load_dotenv(dotenv_path)
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.openapi.utils import get_openapi
-from app.routers import predict, health, recommend, colleges, roadmaps, timeline, discussion_forum
+import traceback
+import logging
+
+from app.routers import health, recommend, colleges, roadmaps, timeline, discussion_forum
 from app.routers import users, data
 from app.routers import profiles, links, college_admin, chatbot, career_hub, feedback  # New routers
 from app.auth.router import router as auth_router
 from app.dependencies.cors import configure_cors
+
+# Setup basic logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # ============================================================
 # FastAPI App with Swagger UI Auth Configuration
@@ -57,6 +65,24 @@ app = FastAPI(
 # Configure CORS
 configure_cors(app)
 
+
+# ============================================================
+# Global Exception Handler (Catch-All for 500 Errors)
+# ============================================================
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    """
+    Catches unhandled exceptions that would normally result in a silent 500 error in production.
+    Logs the full stack trace and returns a JSON response.
+    """
+    error_msg = f"Unhandled exception on {request.method} {request.url}\n"
+    error_msg += "".join(traceback.format_exception(type(exc), exc, exc.__traceback__))
+    logger.error(error_msg)
+    
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal Server Error", "message": str(exc)}
+    )
 
 # ============================================================
 # Custom OpenAPI Schema with JWT Bearer Auth
@@ -107,7 +133,6 @@ app.include_router(links.router, prefix="/links", tags=["🔗 Parent-Student Lin
 # Existing routes
 app.include_router(users.router, prefix="/users", tags=["users"])
 app.include_router(data.router, prefix="/data", tags=["data"])
-app.include_router(predict.router, prefix="/predict", tags=["predict"])
 app.include_router(recommend.router, prefix="/recommend", tags=["🎯 Recommendations"])
 app.include_router(colleges.router, tags=["🏫 Colleges"])
 app.include_router(roadmaps.router, tags=["roadmaps"])

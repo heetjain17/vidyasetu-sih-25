@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks
 from typing import List, Optional
 from app.dependencies.auth_dependency import get_current_user
-from app.routers.discussion_forum_schemas import (
+from app.schemas.discussion_forum import (
     DiscussionCreate, DiscussionOut, DiscussionDetail,
     CommentCreate, CommentOut, VoteCreate, VoteResult
 )
@@ -9,8 +9,7 @@ import app.services.discussion_forum_service as service
 from app.services.chatbot_service import rag_answer
 
 router = APIRouter(
-    prefix="/forum",
-    tags=["Discussion Forum"]
+    prefix="/forum"
 )
 
 

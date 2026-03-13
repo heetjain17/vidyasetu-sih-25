@@ -6,7 +6,7 @@ from app.schemas.college_admin import (
     ProfileUpdate, CollegeUpdate, LinkCollegeRequest, AddCourseRequest, FacilitiesUpdate
 )
 
-router = APIRouter(prefix="/college-admin", tags=["🏫 College Admin"])
+router = APIRouter(prefix="/college-admin")
 
 
 # ============================================================

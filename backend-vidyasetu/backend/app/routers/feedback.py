@@ -10,7 +10,7 @@ from app.dependencies.db_dependency import get_supabase_client
 from app.dependencies.auth_dependency import get_current_user, CurrentUser
 from app.schemas.feedback import FeedbackCreate
 
-router = APIRouter(prefix="/feedback", tags=["feedback"])
+router = APIRouter(prefix="/feedback")
 
 
 @router.post("/", summary="Submit feedback")

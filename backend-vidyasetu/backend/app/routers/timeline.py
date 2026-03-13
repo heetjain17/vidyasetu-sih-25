@@ -4,7 +4,7 @@ import requests
 import os
 from app.schemas.timeline import WhatsAppSyncRequest, CalendarSyncRequest
 
-router = APIRouter(prefix="/timeline", tags=["Timeline"])
+router = APIRouter(prefix="/timeline")
 
 # --- Helper Functions ---
 

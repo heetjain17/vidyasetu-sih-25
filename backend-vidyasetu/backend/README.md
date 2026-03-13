@@ -1,115 +1,90 @@
-# 🎓 Margadarshaka API: Comprehensive Career Guidance Platform
+# 🎓 Margadarshaka Backend API
+> **Robust, AI-driven career and college counseling engine tailored for J&K students.**
 
-Margadarshaka is a state-of-the-art career guidance and college recommendation platform designed for students in Jammu & Kashmir. It leverages psychometric assessments (RIASEC), machine learning-based matching, and an AI-powered RAG chatbot to provide personalized academic pathways.
+The Margadarshaka backend is a **FastAPI** application designed to power a highly complex recommendation pipeline, matching student psychological profiles (RIASEC) and preferences to the most suitable career pathways and colleges.
 
 ---
 
-## 🏗️ System Architecture
+## 🚀 Quick Start (Development)
 
-### 📁 Core Directory Structure
+1. **Activate the Conda Environment**
+   ```bash
+   conda activate vidyasetu-backend
+   ```
+2. **Setup your environment variables**
+   Ensure your `.env` file is populated (see the **Environment Variables** section below).
+3. **Run the server**
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+   > The API will be available at `http://localhost:8000`. Swagger API docs are at `http://localhost:8000/docs`.
+
+---
+
+## 🛠️ System Architecture & Features
+
+### 1. 🎯 Recommender Engine (`/recommend`)
+- Calculates a 6-dimensional **RIASEC** psychological profile based on a 7-section aptitude test.
+- Computes cosine similarity to score 100+ mapped careers.
+- Filters and ranks colleges using a multi-factor weighting algorithm:
+  - **Locality**: Proximity matching.
+  - **Financial**: Budget constraints vs annual fees.
+  - **Eligibility**: Stream constraints (Arts/Science/Commerce) vs College offerings.
+  - **Cultural**: Hobby alignment using NLP text embeddings over college facility tags.
+  - **Quality**: Heuristic ranking.
+- Generates localized, AI-driven friendly explanations explaining *why* a college/career is a fit, available in English, Hindi, Urdu, and Kashmiri.
+
+### 2. 💬 AI Chatbot & RAG System (`/chatbot`)
+- A production-grade **Retrieval-Augmented Generation (RAG)** system using **Qdrant** as the vector database.
+- Has an automated fallback mechanism: defaults to **OpenAI (GPT-4o-mini)** for high-quality generations, but gracefully degrades to local **Ollama** if API keys are missing or limits are hit.
+- Answers hyper-local academic and college-specific queries by searching indexed J&K institutional data.
+- Includes a **Futuristic Career Generator** predicting emerging roles (Next 5-20 years) based on current student skills and hobbies.
+
+### 3. 👤 Role-Based Authorization
+- Backed by **Supabase Auth**. Profiles are separated structurally:
+  - **Student**: Core users taking assessments.
+  - **Parent**: Guardian accounts; features a dedicated *Link system* to track multiple children.
+  - **College Admin**: Institutional dashboards to broadcast events, update campus placement data, and respond to facility queries.
+
+### 4. 📚 Community & Forums
+- Interactive **Discussion Forums** with voting mechanics and predefined administrative tags.
+- Built-in bot logic where `@AI` mentions trigger background tasks to Auto-Reply using the RAG knowledge base.
+- Comprehensive **Career Hub** hosting study materials, scholarships, and career roadmap templates.
+
+---
+
+## ⚙️ Environment Variables (`.env`)
+
+The backend requires a configured `.env` file located in the `backend/` root directory.
+
+| Variable | Description | Default / Example |
+|----------|-------------|---------|
+| `SUPABASE_URL` | Your Supabase Project URL. | `https://xxxx.supabase.co` |
+| `SUPABASE_KEY` | Supabase Anon / Service Role Key. | `eyJh...` |
+| `OPENAI_API_KEY` | Used for LLM Explanations, RAG, and Embeddings. | `sk-proj-...` |
+| `OPENAI_MODEL` | The LLM model routing. | `gpt-4o-mini` |
+| `ALLOWED_ORIGINS` | Comma-separated CORS origins for production security. | `http://localhost:3000,https://app.com` |
+| `QDRANT_URL` | URL to the vector database. | `http://localhost:6333` |
+
+---
+
+## 🧪 Testing
+
+The system enforces rigorous automated testing via `pytest`. The test suite uses a mocked Supabase layer where required to ensure fast, offline validation of models and business logic.
+
+```bash
+conda activate vidyasetu-backend
+pytest tests/ -q
 ```
-backend/
-├── app/
-│   ├── main.py                 # FastAPI Entry Point (Routes & Middleware)
-│   ├── auth/                   # JWT & Role-Based Access Control (RBAC)
-│   ├── routers/                # API Endpoints (Profiles, Forum, Career Hub, etc.)
-│   ├── services/               # Unified Business Logic
-│   │   ├── recommender_db.py   # Consolidated RIASEC & Matching Engine
-│   │   ├── chatbot_service.py  # Unified RAG Chatbot (OpenAI + Ollama Fallback)
-│   │   └── db_service.py       # Supabase CRUD Layer
-│   ├── utils/                  # Refined Utility Architecture
-│   │   ├── scoring_logic.py    # Eligibility, Quality & Locality Scoring
-│   │   ├── embedding_utils.py  # Vector Embedding & Geo-Caching
-│   │   ├── riasec_utils.py     # Aptitude to RIASEC Mapping
-│   │   └── math_utils.py       # Haversine & Cosine Similarity
-│   ├── dependencies/           # Auth & DB Injection
-│   └── schemas/                # Pydantic Structural Models
-├── .env                        # System Configurations
-└── requirements.txt            # Python Ecosystem
-```
 
 ---
 
-## 🚀 Key Modules & Features
+## 📂 Project Structure
 
-### 🎯 1. Smart Recommendation Engine
-Uses a 3-stage pipeline to find the perfect career and college:
-1.  **Aptitude Mapping**: Converts raw test scores into a normalized RIASEC vector (Realistic, Investigative, Artistic, Social, Enterprising, Conventional).
-2.  **Career Correlation**: Maps RIASEC profiles to high-demand careers using vector similarity.
-3.  **Heuristic College Scoring**: Scores colleges across 5 dimensions:
-    - **Locality**: Haversine distance-based matching (Prefers closer schools/hostels).
-    - **Financial**: Budget vs. Effective Fee (Fee - Scholarship).
-    - **Eligibility**: Category-based seat availability and gender-specific filtering.
-    - **Quality**: Placement rates, package averages, and infrastructure facilities.
-    - **Cultural**: Hobby & Extra-curricular matching.
-
-### 💬 2. Unified RAG Chatbot
-A resilient AI assistant capable of answering complex academic queries.
--   **Dual-Provider Strategy**: Automatically uses OpenAI (GPT-4o-mini) with a fallback to local Ollama (Llama 3).
--   **Semantic Search**: Uses Qdrant vector database to retrieve hyper-local knowledge about J&K colleges.
--   **Guardrails**: Built-in validation to prevent hallucinations and ensure pedagogical safety.
-
-### 📚 3. Career Hub & Forum
--   **Career Roadmaps**: Detailed academic paths including industry trends and government exams.
--   **Study Materials**: Curated resources for various competitive paths.
--   **Discussion Forum**: Community-driven Q&A with integrated AI support for unanswered questions.
-
----
-
-## 🔐 Security & Roles
-
-Margadarshaka uses **JWT Bearer Authentication** with strict Role-Based Access Control:
-
-| Role | Permissions |
-| :--- | :--- |
-| **`STUDENT`** | Take assessments, get recs, post in forum, manage profile. |
-| **`PARENT`** | Link to multiple student accounts, monitor performance/recommendations. |
-| **`COLLEGE`** | Update college facilities, placement data, and event flags. |
-
----
-
-## 🔐 API Quick Reference
-
-### 🔑 Authentication
-- `POST /auth/register` - Create a new account.
-- `POST /auth/login` - Obtain access token.
-
-### 🎯 Recommendations
-- `POST /recommend/` - Public matching (Input: Quiz scores).
-- `POST /recommend/full` - Authenticated matching (Saves results to DB).
-- `GET /recommend/saved` - Retrieve history.
-
-### 💬 Chatbot
-- `WS /chatbot/ws` - WebSocket real-time streaming RAG.
-- `POST /chatbot/` - Non-streaming REST fallback.
-
-### 👤 Profiles & Links
-- `GET /profile/me` - Auto-detect role and return data.
-- `POST /profile/student/invite-code` - Generate code for parent linking.
-- `POST /links/connect` - Link parent to student.
-
----
-
-## 🛠️ Local Setup
-
-1.  **Clone & Navigate**:
-    ```bash
-    cd backend
-    ```
-2.  **Environment Setup**:
-    Create a `.env` file from the following template:
-    ```env
-    SUPABASE_URL=...
-    SUPABASE_KEY=...
-    OPENAI_API_KEY=...
-    QDRANT_URL=...
-    QDRANT_API_KEY=...
-    ```
-3.  **Run Development Server**:
-    ```bash
-    uvicorn app.main:app --reload
-    ```
-    Access Interactive Docs at: `http://localhost:8000/docs`
-
----
-*© 2024 Margadarshaka - Empowering the Youth of J&K.*
+- `app/main.py`: The ASGI FastAPI application entry point. Includes global Exception Handlers.
+- `app/routers/`: All API endpoints, grouped by domain (`colleges.py`, `recommend.py`, `chatbot.py`, etc.).
+- `app/services/`: Core business logic (Recommender Engines, LLM orchestration, RAG).
+- `app/schemas/`: Pydantic Data Models enforcing strict request/response validation.
+- `app/utils/`: Math functions, scoring logic, language translation utilities.
+- `scripts/`: Standalone utilities (`create_embeddings.py` for Qdrant seeding, `populate_data.py`). See `scripts/README.md`.
+- `tests/`: Extensive PyTest directory verifying endpoints and schemas.

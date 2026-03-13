@@ -14,7 +14,7 @@ from app.services.db_service import (
 )
 from app.dependencies.db_dependency import get_supabase_client
 
-router = APIRouter(prefix="/career-hub", tags=["career-hub"])
+router = APIRouter(prefix="/career-hub")
 
 
 # ============================================================
