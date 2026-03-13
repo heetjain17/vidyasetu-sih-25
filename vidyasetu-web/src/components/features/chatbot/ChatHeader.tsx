@@ -1,11 +1,11 @@
-import { X, Trash2, Rocket, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { X, Trash2, Rocket, Sparkles, MessageCircle } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface ChatHeaderProps {
-  onClose: () => void;
-  onClearChat: () => void;
-  isFuturisticMode: boolean;
-  onToggleFuturisticMode: () => void;
+  onClose: () => void
+  onClearChat: () => void
+  isFuturisticMode: boolean
+  onToggleFuturisticMode: () => void
 }
 
 export function ChatHeader({
@@ -36,11 +36,7 @@ export function ChatHeader({
           )}
           title={isFuturisticMode ? "Normal Mode" : "Futuristic Careers Mode"}
         >
-          {isFuturisticMode ? (
-            <Sparkles className="h-4 w-4" />
-          ) : (
-            <Rocket className="h-4 w-4" />
-          )}
+          {isFuturisticMode ? <Sparkles className="h-4 w-4" /> : <Rocket className="h-4 w-4" />}
         </button>
         <button
           onClick={onClearChat}
@@ -58,7 +54,5 @@ export function ChatHeader({
         </button>
       </div>
     </div>
-  );
+  )
 }
-
-import { MessageCircle } from "lucide-react";
