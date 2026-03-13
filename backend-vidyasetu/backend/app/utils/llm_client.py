@@ -1,67 +1,51 @@
 """
-LLM Client — Unified AI Provider
-Supports OpenAI (primary) and falls back to local Ollama if OpenAI key is not set.
+LLM Client — Unified AI Provider using Gemini
+Uses Google's Gemini API via OpenAI SDK for compatibility.
 """
-import os
-from typing import List
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
-OPENAI_EMBED_MODEL = os.getenv("OPENAI_EMBED_MODEL", "text-embedding-3-small")
+from typing import List, Optional
+from app.utils.gemini_client import (
+    generate_text as gemini_generate_text,
+    get_embedding as gemini_get_embedding,
+    get_gemini_client,
+    GEMINI_MODEL,
+)
 
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3:instruct")
-OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
 
-# Initialize OpenAI client if key is available
-_openai = None
-if OPENAI_API_KEY:
+def generate_text(prompt: str, model: Optional[str] = None) -> str:
+    """
+    Generate text using Gemini API.
+
+    Args:
+        prompt: The input prompt
+        model: Model to use (defaults to GEMINI_MODEL)
+
+    Returns:
+        Generated text string
+    """
     try:
-        from openai import OpenAI
-        _openai = OpenAI(api_key=OPENAI_API_KEY)
-    except ImportError:
-        pass
-
-
-def generate_text(prompt: str, model: str = None) -> str:
-    """Generate text using OpenAI (preferred) or Ollama (fallback)."""
-    if _openai:
-        try:
-            resp = _openai.chat.completions.create(
-                model=model or OPENAI_MODEL,
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=1024
-            )
-            return resp.choices[0].message.content.strip()
-        except Exception as e:
-            print(f"⚠ OpenAI generate_text failed: {e}")
-
-    # Fallback to Ollama
-    try:
-        import ollama
-        response = ollama.chat(model=model or OLLAMA_MODEL, messages=[{"role": "user", "content": prompt}])
-        return response["message"]["content"]
+        return gemini_generate_text(prompt, model=model)
     except Exception as e:
-        print(f"❌ Ollama generate_text failed: {e}")
+        print(f"❌ Gemini generate_text failed: {e}")
         return ""
 
 
-def get_embedding(text: str, model: str = None) -> List[float]:
-    """Get vector embedding using OpenAI (preferred) or Ollama (fallback)."""
+def get_embedding(text: str, model: Optional[str] = None) -> List[float]:
+    """
+    Get vector embedding using Gemini API.
+
+    Args:
+        text: Text to embed
+        model: Embedding model to use
+
+    Returns:
+        List of embedding values
+    """
     if not text:
-        return [0.0] * 1536
+        return [0.0] * 768
 
-    if _openai:
-        try:
-            resp = _openai.embeddings.create(model=model or OPENAI_EMBED_MODEL, input=text)
-            return resp.data[0].embedding
-        except Exception as e:
-            print(f"⚠ OpenAI embedding failed: {e}")
-
-    # Fallback to Ollama
     try:
-        import ollama
-        response = ollama.embeddings(model=model or OLLAMA_EMBED_MODEL, prompt=text)
-        return response["embedding"]
+        return gemini_get_embedding(text, model=model)
     except Exception as e:
-        print(f"❌ Ollama embedding failed: {e}")
+        print(f"❌ Gemini embedding failed: {e}")
         return [0.0] * 768
