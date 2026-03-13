@@ -112,7 +112,7 @@ async def generate_text_async(
 
 def get_embedding(text: str, model: Optional[str] = None) -> List[float]:
     """
-    Get text embedding using Gemini API.
+    Get text embedding using Gemini API (native SDK).
 
     Args:
         text: Text to embed
@@ -124,14 +124,16 @@ def get_embedding(text: str, model: Optional[str] = None) -> List[float]:
     if not text:
         return [0.0] * 768  # Default embedding dimension
 
-    if not gemini_client:
+    if not genai_configured:
         raise ValueError("Gemini client not initialized. Check GEMINI_API_KEY.")
 
     try:
-        response = gemini_client.embeddings.create(
-            model=model or GEMINI_EMBED_MODEL, input=text
+        result = genai.embed_content(
+            model=model or GEMINI_EMBED_MODEL,
+            content=text,
+            task_type="retrieval_document",
         )
-        return response.data[0].embedding
+        return result["embedding"]
     except Exception as e:
         raise Exception(f"Gemini embedding failed: {str(e)}")
 
