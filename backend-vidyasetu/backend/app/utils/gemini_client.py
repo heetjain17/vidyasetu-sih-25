@@ -1,12 +1,13 @@
 """
-Gemini Client using OpenAI SDK
-Uses the OpenAI Python SDK to connect to Google's Gemini API.
+Gemini Client using OpenAI SDK for chat and native SDK for embeddings
+Uses the OpenAI Python SDK for chat completions and Google's native SDK for embeddings.
 """
 
 import os
 from typing import List, Optional
 from dotenv import load_dotenv
 from openai import OpenAI, AsyncOpenAI
+import google.generativeai as genai
 
 # Load environment variables
 load_dotenv()
@@ -14,21 +15,28 @@ load_dotenv()
 # Gemini API Configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
-GEMINI_EMBED_MODEL = os.getenv("GEMINI_EMBED_MODEL", "text-embedding-004")
+GEMINI_EMBED_MODEL = os.getenv("GEMINI_EMBED_MODEL", "models/text-embedding-004")
 
-# Gemini API base URL for OpenAI SDK compatibility
+# Gemini API base URL for OpenAI SDK compatibility (chat only)
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 
-# Initialize Gemini clients using OpenAI SDK
+# Initialize Gemini clients
 gemini_client: Optional[OpenAI] = None
 async_gemini_client: Optional[AsyncOpenAI] = None
+genai_configured = False
 
 if GEMINI_API_KEY:
     try:
+        # OpenAI SDK client for chat completions
         gemini_client = OpenAI(api_key=GEMINI_API_KEY, base_url=GEMINI_BASE_URL)
         async_gemini_client = AsyncOpenAI(
             api_key=GEMINI_API_KEY, base_url=GEMINI_BASE_URL
         )
+
+        # Native Google SDK for embeddings
+        genai.configure(api_key=GEMINI_API_KEY)
+        genai_configured = True
+
         print("✅ Gemini client initialized successfully")
     except Exception as e:
         print(f"⚠ Failed to initialize Gemini client: {e}")
@@ -131,7 +139,7 @@ def get_embedding(text: str, model: Optional[str] = None) -> List[float]:
 def check_health() -> dict:
     """Check if Gemini client is properly configured."""
     return {
-        "gemini_configured": gemini_client is not None,
+        "gemini_configured": gemini_client is not None and genai_configured,
         "model": GEMINI_MODEL,
         "embed_model": GEMINI_EMBED_MODEL,
     }
