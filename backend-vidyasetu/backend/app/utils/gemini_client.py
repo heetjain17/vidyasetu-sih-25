@@ -15,7 +15,7 @@ load_dotenv()
 # Gemini API Configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
-GEMINI_EMBED_MODEL = os.getenv("GEMINI_EMBED_MODEL", "models/embedding-001")
+GEMINI_EMBED_MODEL = os.getenv("GEMINI_EMBED_MODEL", "models/gemini-embedding-001")
 
 # Gemini API base URL for OpenAI SDK compatibility (chat only)
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
