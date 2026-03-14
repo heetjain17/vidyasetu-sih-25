@@ -10,14 +10,36 @@ function formatMessage(content: string) {
   // Convert markdown-style formatting to HTML
   let formatted = content
     // Bold text: **text** -> <strong>text</strong>
-    .replace(/\*\*([^*]+)\*\*/g, '<strong class="font-bold">$1</strong>')
-    // Bullet points: • or - at start of line
+    .replace(/\*\*([^*]+)\*\*/g, '<strong class="font-bold text-primary">$1</strong>')
+    // Handle incomplete bold markers at end
+    .replace(/\*\*([^*]+)$/g, '<strong class="font-bold text-primary">$1</strong>')
+    // Italic text: *text* -> <em>text</em>
+    .replace(/\*([^*]+)\*/g, '<em class="italic">$1</em>')
+    // Headers: ### Text
+    .replace(/^###\s+(.+)$/gm, '<h3 class="text-lg font-bold mt-4 mb-2">$1</h3>')
+    .replace(/^##\s+(.+)$/gm, '<h2 class="text-xl font-bold mt-4 mb-2">$1</h2>')
+    .replace(/^#\s+(.+)$/gm, '<h1 class="text-2xl font-bold mt-4 mb-2">$1</h1>')
+    // Numbered lists: 1. Text or 1) Text
     .replace(
-      /^[•\-]\s+(.+)$/gm,
+      /^(\d+)[.)]\s+(.+)$/gm,
+      '<div class="flex gap-2 my-1 ml-4"><span class="font-semibold text-primary">$1.</span><span>$2</span></div>'
+    )
+    // Bullet points with nested indentation
+    .replace(
+      /^    [•\-\*]\s+(.+)$/gm,
+      '<div class="flex gap-2 my-1 ml-8"><span class="text-primary text-xs">◦</span><span class="text-sm">$1</span></div>'
+    )
+    .replace(
+      /^  [•\-\*]\s+(.+)$/gm,
+      '<div class="flex gap-2 my-1 ml-4"><span class="text-primary">•</span><span>$1</span></div>'
+    )
+    .replace(
+      /^[•\-\*]\s+(.+)$/gm,
       '<div class="flex gap-2 my-1"><span class="text-primary">•</span><span>$1</span></div>'
     )
-    // Line breaks
+    // Paragraphs (double line breaks)
     .replace(/\n\n/g, '<div class="h-3"></div>')
+    // Single line breaks
     .replace(/\n/g, "<br/>")
 
   return formatted
