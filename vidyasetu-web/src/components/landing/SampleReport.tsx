@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   Briefcase,
   GraduationCap,
@@ -9,8 +9,8 @@ import {
   TrendingUp,
   X,
   Sparkles,
-} from "lucide-react";
-import { useTranslation } from "react-i18next";
+} from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 // Sample data for the report preview
 const sampleCareers = [
@@ -32,7 +32,7 @@ const sampleCareers = [
     trait: "Creativity",
     color: "from-orange-500 to-amber-500",
   },
-];
+]
 
 const sampleColleges = [
   {
@@ -53,12 +53,12 @@ const sampleColleges = [
     score: 84,
     type: "Government",
   },
-];
+]
 
 export const SampleReport: React.FC = () => {
-  const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<"careers" | "colleges">("careers");
+  const { t } = useTranslation()
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState<"careers" | "colleges">("careers")
 
   return (
     <section className="py-20 relative">
@@ -114,10 +114,7 @@ export const SampleReport: React.FC = () => {
                     {t("landing.report.cardTitle", "Sample Career Report")}
                   </h3>
                   <p className="text-sm text-text-secondary">
-                    {t(
-                      "landing.report.cardSubtitle",
-                      "Preview of your results"
-                    )}
+                    {t("landing.report.cardSubtitle", "Preview of your results")}
                   </p>
                 </div>
               </div>
@@ -188,14 +185,11 @@ export const SampleReport: React.FC = () => {
                           </h4>
                           <p className="text-sm text-text-secondary flex items-center gap-1">
                             <TrendingUp size={14} className="text-green-500" />
-                            {t("landing.report.topTrait", "Top trait:")}{" "}
-                            {career.trait}
+                            {t("landing.report.topTrait", "Top trait:")} {career.trait}
                           </p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-primary">
-                            {career.match}%
-                          </div>
+                          <div className="text-2xl font-bold text-primary">{career.match}%</div>
                           <div className="text-xs text-text-secondary">
                             {t("landing.report.match", "match")}
                           </div>
@@ -272,7 +266,7 @@ export const SampleReport: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
             onClick={() => setIsOpen(false)}
           >
             <motion.div
@@ -289,10 +283,7 @@ export const SampleReport: React.FC = () => {
                     {t("landing.report.modalTitle", "Sample Report Preview")}
                   </h3>
                   <p className="text-sm text-text-secondary">
-                    {t(
-                      "landing.report.modalSubtitle",
-                      "This is what your report will look like"
-                    )}
+                    {t("landing.report.modalSubtitle", "This is what your report will look like")}
                   </p>
                 </div>
                 <button
@@ -355,9 +346,7 @@ export const SampleReport: React.FC = () => {
                             {college.location} • {college.type}
                           </p>
                         </div>
-                        <div className="font-bold text-secondary">
-                          {college.score}%
-                        </div>
+                        <div className="font-bold text-secondary">{college.score}%</div>
                       </div>
                     ))}
                   </div>
@@ -380,5 +369,5 @@ export const SampleReport: React.FC = () => {
         )}
       </AnimatePresence>
     </section>
-  );
-};
+  )
+}
