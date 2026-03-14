@@ -17,6 +17,7 @@ import {
   Rocket, // NEW: For Futuristic Mode
   Sparkles, // NEW: For Futuristic UI
 } from "lucide-react"
+import { color } from "framer-motion"
 
 // Styles for the chatbot
 const styles = {
@@ -583,7 +584,7 @@ function Message({ message }: { message: ChatMessage }) {
       {/* Futuristic Cards (NEW) */}
       {message.futuristicCareers && message.futuristicCareers.length > 0 && (
         <div style={styles.cardsContainer}>
-          <div style={styles.cardsHeader} style={{ color: "#7c3aed" }}>
+          <div style={{ ...styles.cardsHeader, color: "#7c3aed" }}>
             <Rocket size={14} />
             Future Careers
           </div>
