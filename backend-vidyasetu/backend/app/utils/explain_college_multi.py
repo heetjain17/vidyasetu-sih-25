@@ -1,14 +1,15 @@
-from .explain_college_helper import get_top_preferences, get_top_college_strengths   
+from .explain_college_helper import get_top_preferences, get_top_college_strengths
 from .llm_client import generate_text
 
+
 def explain_multiple_colleges_with_llm(
-    top_colleges: list,             
+    top_colleges: list,
     student_actual_vector: dict,
     students_will_vector: dict,
-    college_match_score: dict   
+    college_match_score: dict,
 ):
     """
-    Generates explanations for 3 colleges in ONE LLM call.
+    Generates explanations for multiple colleges (up to 5) in ONE LLM call.
     Returns dict: { college_name: explanation_text }
     """
 
@@ -32,7 +33,7 @@ def explain_multiple_colleges_with_llm(
     prompt = f"""
 You are an expert educational counselor.
 
-A recommendation engine selected the following colleges for the student IN ORDER (do NOT change ranking):
+A recommendation engine selected the following {len(top_colleges)} colleges for the student IN ORDER (do NOT change ranking):
 
 Student details:
 - Locality: {student_loc}
@@ -44,18 +45,19 @@ The student's top 3 preferences:
 - {prefs[1] if len(prefs)>1 else ""}
 - {prefs[2] if len(prefs)>2 else ""}
 
-Now explain each college in 3–5 sentences.
+Now explain EACH AND EVERY college listed below in 3–5 sentences.
 IMPORTANT RULES:
 - Keep a friendly motivational tone
 - No numeric scores
 - No algorithm or technical terms
 - Explain WHY each college matches the student
+- YOU MUST provide explanations for ALL {len(top_colleges)} colleges listed
 - Write every explanation under its college name exactly in this format:
 
 College: <name>
 Explanation: <text>
 ---
-(Repeat for all colleges)
+(Repeat for ALL {len(top_colleges)} colleges)
     
 Colleges and their strengths:
 {chr(10).join(summary_blocks)}
