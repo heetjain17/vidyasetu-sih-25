@@ -10,7 +10,7 @@ services:
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.12.0
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_KEY
@@ -28,6 +28,6 @@ services:
       - key: N8N_WHATSAPP_WEBHOOK
         sync: false
       - key: GOOGLE_APPLICATION_CREDENTIALS
-        value: /opt/render/project/src/service_account.json
+        value: /opt/render/project/src/backend-vidyasetu/backend/service_account.json
     healthCheckPath: /health
     autoDeploy: true
