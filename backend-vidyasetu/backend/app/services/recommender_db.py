@@ -201,7 +201,9 @@ async def run_recommender_db(
             for c in top_careers[:5]
         ]
     except Exception as e:
-        print(f"❌ Career explanation AI failed: {e}")
+        import logging
+
+        logging.error(f"Career explanation AI failed: {e}")
         career_exps = [
             {"career": c, "explanation": "Explanation unavailable"}
             for c in top_careers[:5]
@@ -220,7 +222,9 @@ async def run_recommender_db(
             for c in top_college_names
         }
     except Exception as e:
-        print(f"❌ College explanation AI failed: {e}")
+        import logging
+
+        logging.error(f"College explanation AI failed: {e}")
         college_exps = {c: "Explanation unavailable" for c in top_college_names}
 
     return {

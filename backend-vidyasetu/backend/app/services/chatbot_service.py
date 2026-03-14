@@ -61,7 +61,9 @@ def embed_query(question: str) -> List[float]:
         try:
             return gemini_get_embedding(question)
         except Exception as e:
-            print(f"⚠ Gemini embedding failed: {e}")
+            import logging
+
+            logging.warning(f"Gemini embedding failed: {e}")
 
     # Simple fallback embedding (random/seeded) if no provider available
     random.seed(question)
@@ -163,11 +165,13 @@ def build_context(matches: List[Any], question: str) -> Tuple[str, List[Dict]]:
 
         text = ""
         if dtype in ["college", "college_info"]:
-            text = f"**{name}** | Location: {p.get('district', 'J&K')} | Fees: {p.get('fees', 'N/A')} | Hostel: {p.get('hostel', 'N/A')}"
+            text = f"{name} | Location: {p.get('district', 'J&K')} | Fees: {p.get('fees', 'N/A')} | Hostel: {p.get('hostel', 'N/A')}"
         elif dtype == "course":
-            text = f"**Course: {name}** | Stream: {p.get('stream', 'N/A')}"
+            text = f"Course: {name} | Stream: {p.get('stream', 'N/A')}"
         elif dtype == "career_to_course":
-            text = f"**Career: {name}** | Recommended: {', '.join(p.get('courses', [])[:5])}"
+            text = (
+                f"Career: {name} | Recommended: {', '.join(p.get('courses', [])[:5])}"
+            )
         else:
             text = f"{name}: {str(p)[:100]}"
 
@@ -197,8 +201,9 @@ async def rag_answer_stream(question: str) -> AsyncGenerator[Dict[str, Any], Non
 
 Question: {question}
 
-Instructions: Answer the question using ONLY the provided context. Format your response with:
-- Use **bold** for important terms and headings
+Instructions: Answer the question using ONLY the provided context. 
+
+CRITICAL FORMATTING RULES:
 - Use bullet points (•) for lists
 - Use proper line breaks between sections
 - Keep responses clear and well-structured"""
@@ -239,8 +244,9 @@ def rag_answer(question: str) -> Tuple[Dict[str, Any], List[Dict]]:
 
 Question: {question}
 
-Instructions: Answer the question using ONLY the provided context. Format your response with:
-- Use **bold** for important terms and headings
+Instructions: Answer the question using ONLY the provided context. 
+
+CRITICAL FORMATTING RULES:
 - Use bullet points (•) for lists
 - Use proper line breaks between sections
 - Keep responses clear and well-structured"""

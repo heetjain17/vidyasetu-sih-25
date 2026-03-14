@@ -1,38 +1,32 @@
-import { useCallback } from "react";
-import { handleError, getErrorMessage, isNetworkError } from "@/utils/errorHandler";
-import { useToast } from "@/hooks/use-toast";
+import { useCallback } from "react"
+import { handleError, getErrorMessage, isNetworkError } from "@/utils/errorHandler"
 
+/**
+ * Hook for consistent error handling across the app
+ * Note: Currently uses console logging. Integrate with toast library when available.
+ */
 export function useErrorHandler() {
-  const { toast } = useToast();
+  const showError = useCallback((error: unknown, context?: string) => {
+    const errorMessage = getErrorMessage(error)
+    const isNetwork = isNetworkError(error)
 
-  const showError = useCallback(
-    (error: unknown, context?: string) => {
-      const errorMessage = getErrorMessage(error);
-      const isNetwork = isNetworkError(error);
+    // Log to console
+    console.error(`${isNetwork ? "Connection Error" : "Error"}: ${errorMessage}`)
 
-      toast({
-        variant: "destructive",
-        title: isNetwork ? "Connection Error" : "Error",
-        description: errorMessage,
-        duration: 5000,
-      });
+    // TODO: Replace with toast notification when toast library is integrated
+    // For now, show browser alert for critical errors
+    if (isNetwork) {
+      alert(`Connection Error: ${errorMessage}`)
+    }
 
-      // Log error
-      handleError(error, { context });
-    },
-    [toast]
-  );
+    // Log error with context
+    handleError(error, { context })
+  }, [])
 
-  const showSuccess = useCallback(
-    (message: string) => {
-      toast({
-        title: "Success",
-        description: message,
-        duration: 3000,
-      });
-    },
-    [toast]
-  );
+  const showSuccess = useCallback((message: string) => {
+    console.log(`Success: ${message}`)
+    // TODO: Replace with toast notification when toast library is integrated
+  }, [])
 
-  return { showError, showSuccess };
+  return { showError, showSuccess }
 }

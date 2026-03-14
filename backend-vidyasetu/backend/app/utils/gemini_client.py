@@ -37,11 +37,17 @@ if GEMINI_API_KEY:
         genai.configure(api_key=GEMINI_API_KEY)
         genai_configured = True
 
-        print("✅ Gemini client initialized successfully")
+        import logging
+
+        logging.info("Gemini client initialized successfully")
     except Exception as e:
-        print(f"⚠ Failed to initialize Gemini client: {e}")
+        import logging
+
+        logging.warning(f"Failed to initialize Gemini client: {e}")
 else:
-    print("⚠ GEMINI_API_KEY not found in environment variables")
+    import logging
+
+    logging.warning("GEMINI_API_KEY not found in environment variables")
 
 
 def get_gemini_client() -> Optional[OpenAI]:

@@ -9,7 +9,7 @@ __pycache__/
 # IDE
 .vscode/
 .idea/
-
+service_account.json
 # OS
 .DS_Store
 Thumbs.db

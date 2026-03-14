@@ -26,7 +26,9 @@ def generate_text(prompt: str, model: Optional[str] = None) -> str:
     try:
         return gemini_generate_text(prompt, model=model)
     except Exception as e:
-        print(f"❌ Gemini generate_text failed: {e}")
+        import logging
+
+        logging.error(f"Gemini generate_text failed: {e}")
         return ""
 
 
@@ -47,5 +49,7 @@ def get_embedding(text: str, model: Optional[str] = None) -> List[float]:
     try:
         return gemini_get_embedding(text, model=model)
     except Exception as e:
-        print(f"❌ Gemini embedding failed: {e}")
+        import logging
+
+        logging.error(f"Gemini embedding failed: {e}")
         return [0.0] * 768

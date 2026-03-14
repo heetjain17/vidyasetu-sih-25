@@ -1,48 +1,49 @@
 import { User, Bot } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { ChatMessage as ChatMessageType } from "@/hooks/useChatbot"
+import { marked } from "marked"
+import DOMPurify from "dompurify"
+
+// Configure marked for better formatting
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+})
 
 interface ChatMessageProps {
   message: ChatMessageType
 }
 
-function formatMessage(content: string) {
-  // Convert markdown-style formatting to HTML
-  let formatted = content
-    // Bold text: **text** -> <strong>text</strong>
-    .replace(/\*\*([^*]+)\*\*/g, '<strong class="font-bold text-primary">$1</strong>')
-    // Handle incomplete bold markers at end
-    .replace(/\*\*([^*]+)$/g, '<strong class="font-bold text-primary">$1</strong>')
-    // Italic text: *text* -> <em>text</em>
-    .replace(/\*([^*]+)\*/g, '<em class="italic">$1</em>')
-    // Headers: ### Text
-    .replace(/^###\s+(.+)$/gm, '<h3 class="text-lg font-bold mt-4 mb-2">$1</h3>')
-    .replace(/^##\s+(.+)$/gm, '<h2 class="text-xl font-bold mt-4 mb-2">$1</h2>')
-    .replace(/^#\s+(.+)$/gm, '<h1 class="text-2xl font-bold mt-4 mb-2">$1</h1>')
-    // Numbered lists: 1. Text or 1) Text
-    .replace(
-      /^(\d+)[.)]\s+(.+)$/gm,
-      '<div class="flex gap-2 my-1 ml-4"><span class="font-semibold text-primary">$1.</span><span>$2</span></div>'
-    )
-    // Bullet points with nested indentation
-    .replace(
-      /^    [•\-\*]\s+(.+)$/gm,
-      '<div class="flex gap-2 my-1 ml-8"><span class="text-primary text-xs">◦</span><span class="text-sm">$1</span></div>'
-    )
-    .replace(
-      /^  [•\-\*]\s+(.+)$/gm,
-      '<div class="flex gap-2 my-1 ml-4"><span class="text-primary">•</span><span>$1</span></div>'
-    )
-    .replace(
-      /^[•\-\*]\s+(.+)$/gm,
-      '<div class="flex gap-2 my-1"><span class="text-primary">•</span><span>$1</span></div>'
-    )
-    // Paragraphs (double line breaks)
-    .replace(/\n\n/g, '<div class="h-3"></div>')
-    // Single line breaks
-    .replace(/\n/g, "<br/>")
+function formatMessage(content: string): string {
+  // Parse markdown to HTML using marked
+  const rawHtml = marked.parse(content) as string
 
-  return formatted
+  // Sanitize HTML to prevent XSS attacks
+  const cleanHtml = DOMPurify.sanitize(rawHtml, {
+    ALLOWED_TAGS: [
+      "p",
+      "br",
+      "strong",
+      "em",
+      "u",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "ul",
+      "ol",
+      "li",
+      "a",
+      "code",
+      "pre",
+      "blockquote",
+    ],
+    ALLOWED_ATTR: ["href", "target", "rel", "class"],
+  })
+
+  return cleanHtml
 }
 
 export function ChatMessage({ message }: ChatMessageProps) {
@@ -70,7 +71,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
           <p className="text-sm whitespace-pre-wrap wrap-break-word">{message.content}</p>
         ) : (
           <div
-            className="text-sm leading-relaxed"
+            className="text-sm leading-relaxed prose prose-sm dark:prose-invert max-w-none prose-p:my-1 prose-ul:my-1 prose-li:my-0.5 prose-strong:text-primary prose-strong:font-bold prose-headings:text-foreground"
             dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
           />
         )}
