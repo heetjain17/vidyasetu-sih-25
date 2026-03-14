@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
-import { useChatbot, type ChatMessage } from "../hooks/useChatbot";
-import { useTranslation } from "react-i18next";
-import { translateText } from "@/api/recommendApi";
+import { useState, useRef, useEffect } from "react"
+import { useChatbot, type ChatMessage } from "../hooks/useChatbot"
+import { useTranslation } from "react-i18next"
+import { translateText } from "@/api/recommendApi"
 import {
   MessageCircle,
   X,
@@ -16,7 +16,7 @@ import {
   Building,
   Rocket, // NEW: For Futuristic Mode
   Sparkles, // NEW: For Futuristic UI
-} from "lucide-react";
+} from "lucide-react"
 
 // Styles for the chatbot
 const styles = {
@@ -346,10 +346,10 @@ const styles = {
   messageContent: {
     whiteSpace: "pre-wrap" as const,
   },
-};
+}
 
 // Add CSS animation for streaming dot and input focus
-const styleSheet = document.createElement("style");
+const styleSheet = document.createElement("style")
 styleSheet.textContent = `
   @keyframes pulse {
     0%, 100% { opacity: 1; }
@@ -366,12 +366,12 @@ styleSheet.textContent = `
     border-color: #8b5cf6 !important;
     box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2) !important;
   }
-`;
-document.head.appendChild(styleSheet);
+`
+document.head.appendChild(styleSheet)
 
 // Format message content with better line breaks
 function formatContent(content: string): string {
-  return content.replace(/\n\n/g, "\n").replace(/\* /g, "• ").trim();
+  return content.replace(/\n\n/g, "\n").replace(/\* /g, "• ").trim()
 }
 
 // College Card Component
@@ -379,12 +379,12 @@ function CollegeCardDisplay({
   college,
 }: {
   college: {
-    college: string;
-    district?: string;
-    course?: string;
-    hostel?: string;
-    fees?: string;
-  };
+    college: string
+    district?: string
+    course?: string
+    hostel?: string
+    fees?: string
+  }
 }) {
   return (
     <div style={styles.collegeCard}>
@@ -413,14 +413,14 @@ function CollegeCardDisplay({
         )}
       </div>
     </div>
-  );
+  )
 }
 
 // Career Card Component
 function CareerCardDisplay({
   career,
 }: {
-  career: { career: string; courses: string[]; colleges: string[] };
+  career: { career: string; courses: string[]; colleges: string[] }
 }) {
   return (
     <div style={styles.careerCard}>
@@ -455,7 +455,7 @@ function CareerCardDisplay({
         </div>
       )}
     </div>
-  );
+  )
 }
 
 // Futuristic Career Card (NEW)
@@ -487,24 +487,24 @@ function FuturisticCardDisplay({ career }: { career: any }) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 // Message Component with Translation
 function Message({ message }: { message: ChatMessage }) {
-  const isUser = message.role === "user";
-  const { i18n } = useTranslation();
-  const [translatedContent, setTranslatedContent] = useState(message.content);
-  const [isTranslating, setIsTranslating] = useState(false);
+  const isUser = message.role === "user"
+  const { i18n } = useTranslation()
+  const [translatedContent, setTranslatedContent] = useState(message.content)
+  const [isTranslating, setIsTranslating] = useState(false)
 
   // Translate assistant messages when language changes
   useEffect(() => {
-    const currentLang = i18n.language || "en";
+    const currentLang = i18n.language || "en"
 
     // Only translate assistant messages, skip if English or streaming
     if (isUser || currentLang === "en" || message.isStreaming) {
-      setTranslatedContent(message.content);
-      return;
+      setTranslatedContent(message.content)
+      return
     }
 
     // Language mapping for backend API
@@ -513,30 +513,29 @@ function Message({ message }: { message: ChatMessage }) {
       ur: "urdu",
       ks: "kashmiri",
       doi: "dogri",
-    };
+    }
 
-    const apiLang = langMap[currentLang];
+    const apiLang = langMap[currentLang]
     if (!apiLang) {
-      setTranslatedContent(message.content);
-      return;
+      setTranslatedContent(message.content)
+      return
     }
 
     // Translate the message using backend API
     const doTranslate = async () => {
-      setIsTranslating(true);
+      setIsTranslating(true)
       try {
-        const translated = await translateText(message.content, apiLang);
-        setTranslatedContent(translated);
+        const translated = await translateText(message.content, apiLang)
+        setTranslatedContent(translated)
       } catch (error) {
-        console.error("Chat translation error:", error);
-        setTranslatedContent(message.content);
+        setTranslatedContent(message.content)
       } finally {
-        setIsTranslating(false);
+        setIsTranslating(false)
       }
-    };
+    }
 
-    doTranslate();
-  }, [i18n.language, message.content, message.isStreaming, isUser]);
+    doTranslate()
+  }, [i18n.language, message.content, message.isStreaming, isUser])
 
   return (
     <div
@@ -594,37 +593,37 @@ function Message({ message }: { message: ChatMessage }) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 // Main Chatbot Component
 export function Chatbot() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [isHovered, setIsHovered] = useState(false);
-  const [isSandboxMode, setIsSandboxMode] = useState(false); // NEW: Sandbox Mode State
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false)
+  const [inputValue, setInputValue] = useState("")
+  const [isHovered, setIsHovered] = useState(false)
+  const [isSandboxMode, setIsSandboxMode] = useState(false) // NEW: Sandbox Mode State
+  const messagesEndRef = useRef<HTMLDivElement>(null)
 
-  const { messages, isLoading, sendMessage, clearMessages } = useChatbot();
+  const { messages, isLoading, sendMessage, clearMessages } = useChatbot()
 
   // Auto-scroll to bottom
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages])
 
   const handleSend = () => {
     if (inputValue.trim() && !isLoading) {
-      sendMessage(inputValue.trim(), isSandboxMode); // Pass mode
-      setInputValue("");
+      sendMessage(inputValue.trim(), isSandboxMode) // Pass mode
+      setInputValue("")
     }
-  };
+  }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
+      e.preventDefault()
+      handleSend()
     }
-  };
+  }
 
   return (
     <>
@@ -656,17 +655,11 @@ export function Chatbot() {
           <div
             style={{
               ...styles.header,
-              background: isSandboxMode
-                ? "linear-gradient(to right, #4c1d95, #7c3aed)"
-                : "#1e293b",
+              background: isSandboxMode ? "linear-gradient(to right, #4c1d95, #7c3aed)" : "#1e293b",
             }}
           >
             <h3 style={styles.headerTitle}>
-              {isSandboxMode ? (
-                <Rocket size={22} />
-              ) : (
-                <GraduationCap size={22} />
-              )}
+              {isSandboxMode ? <Rocket size={22} /> : <GraduationCap size={22} />}
               {isSandboxMode ? "Future Guide" : "Career Guide"}
             </h3>
             <div style={styles.headerButtons}>
@@ -692,10 +685,7 @@ export function Chatbot() {
           {/* Sandbox Toggle (NEW) */}
           <div style={styles.sandboxToggle}>
             <div style={styles.toggleLabel}>
-              <Sparkles
-                size={16}
-                color={isSandboxMode ? "#7c3aed" : "#64748b"}
-              />
+              <Sparkles size={16} color={isSandboxMode ? "#7c3aed" : "#64748b"} />
               Sandbox Mode
             </div>
             <div
@@ -743,9 +733,7 @@ export function Chatbot() {
                     fontSize: "16px",
                   }}
                 >
-                  {isSandboxMode
-                    ? "Welcome to the Future! 🚀"
-                    : "Hi! I'm your Career Guide 👋"}
+                  {isSandboxMode ? "Welcome to the Future! 🚀" : "Hi! I'm your Career Guide 👋"}
                 </p>
                 <p
                   style={{
@@ -768,23 +756,17 @@ export function Chatbot() {
                 >
                   {(isSandboxMode
                     ? ["🚀 Space Careers", "🤖 AI Jobs", "🧬 Biotech future"]
-                    : [
-                        "🏫 Engineering colleges",
-                        "💼 Career in IT",
-                        "📚 BCA courses",
-                      ]
+                    : ["🏫 Engineering colleges", "💼 Career in IT", "📚 BCA courses"]
                   ).map((suggestion) => (
                     <button
                       key={suggestion}
                       onClick={() => {
-                        const query = suggestion.replace(/^[^\s]+\s/, "");
-                        sendMessage(query, isSandboxMode);
+                        const query = suggestion.replace(/^[^\s]+\s/, "")
+                        sendMessage(query, isSandboxMode)
                       }}
                       style={{
                         background: isSandboxMode ? "#f3e8ff" : "#f1f5f9",
-                        border: isSandboxMode
-                          ? "1px solid #d8b4fe"
-                          : "1px solid #e2e8f0",
+                        border: isSandboxMode ? "1px solid #d8b4fe" : "1px solid #e2e8f0",
                         borderRadius: "20px",
                         padding: "8px 14px",
                         fontSize: "12px",
@@ -809,9 +791,7 @@ export function Chatbot() {
             <input
               type="text"
               placeholder={
-                isSandboxMode
-                  ? "Ask about future careers..."
-                  : "Ask about colleges or careers..."
+                isSandboxMode ? "Ask about future careers..." : "Ask about colleges or careers..."
               }
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
@@ -831,10 +811,7 @@ export function Chatbot() {
               disabled={isLoading || !inputValue.trim()}
             >
               {isLoading ? (
-                <Loader2
-                  size={20}
-                  style={{ animation: "spin 1s linear infinite" }}
-                />
+                <Loader2 size={20} style={{ animation: "spin 1s linear infinite" }} />
               ) : (
                 <Send size={20} />
               )}
@@ -843,7 +820,7 @@ export function Chatbot() {
         </div>
       )}
     </>
-  );
+  )
 }
 
-export default Chatbot;
+export default Chatbot

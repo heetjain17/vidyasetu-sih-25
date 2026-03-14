@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: vidyasetu-backend
+    runtime: python
+    region: singapore
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: SUPABASE_JWT_SECRET
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: QDRANT_COLLECTION_NAME
+        value: college_career_knowledge_gemini
+      - key: N8N_WHATSAPP_WEBHOOK
+        sync: false
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        value: /opt/render/project/src/service_account.json
+    healthCheckPath: /health
+    autoDeploy: true

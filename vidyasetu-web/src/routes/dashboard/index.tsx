@@ -191,7 +191,7 @@ function RouteComponent() {
       setInviteCode(data.invite_code)
       setInviteCodeExpires(data.expires_at)
     } catch (error) {
-      console.error("Failed to generate invite code:", error)
+      // Failed to generate invite code
     } finally {
       setIsGeneratingCode(false)
     }

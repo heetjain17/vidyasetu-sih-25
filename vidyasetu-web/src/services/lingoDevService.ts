@@ -1,37 +1,37 @@
-import { LingoDotDevEngine } from "lingo.dev/sdk";
+import { LingoDotDevEngine } from "lingo.dev/sdk"
 
 // Types
 interface CacheEntry {
-  text: string;
-  timestamp: number;
+  text: string
+  timestamp: number
 }
 
 interface TranslationCache {
-  [key: string]: CacheEntry;
+  [key: string]: CacheEntry
 }
 
 // Cache configuration
-const CACHE_KEY_PREFIX = "lingo_cache_";
-const CACHE_EXPIRY_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+const CACHE_KEY_PREFIX = "lingo_cache_"
+const CACHE_EXPIRY_MS = 7 * 24 * 60 * 60 * 1000 // 7 days
 
 // In-memory cache for instant access
-const memoryCache: TranslationCache = {};
+const memoryCache: TranslationCache = {}
 
 // Initialize SDK (lazy)
-let engine: LingoDotDevEngine | null = null;
+let engine: LingoDotDevEngine | null = null
 
 const getEngine = (): LingoDotDevEngine => {
   if (!engine) {
-    const apiKey = import.meta.env.VITE_LINGODOTDEV_API_KEY;
+    const apiKey = import.meta.env.VITE_LINGODOTDEV_API_KEY
     if (!apiKey || apiKey === "your_api_key_here") {
       throw new Error(
         "VITE_LINGODOTDEV_API_KEY is not set. Please add your API key from lingo.dev to the .env file."
-      );
+      )
     }
-    engine = new LingoDotDevEngine({ apiKey });
+    engine = new LingoDotDevEngine({ apiKey })
   }
-  return engine;
-};
+  return engine
+}
 
 // Generate cache key
 const getCacheKey = (text: string, targetLocale: string): string => {
@@ -39,37 +39,37 @@ const getCacheKey = (text: string, targetLocale: string): string => {
   const hash = text
     .slice(0, 100)
     .replace(/\s+/g, "_")
-    .replace(/[^a-zA-Z0-9_]/g, "");
-  return `${CACHE_KEY_PREFIX}${targetLocale}_${hash}_${text.length}`;
-};
+    .replace(/[^a-zA-Z0-9_]/g, "")
+  return `${CACHE_KEY_PREFIX}${targetLocale}_${hash}_${text.length}`
+}
 
 // Load from localStorage
 const loadFromStorage = (key: string): CacheEntry | null => {
   try {
-    const stored = localStorage.getItem(key);
-    if (!stored) return null;
+    const stored = localStorage.getItem(key)
+    if (!stored) return null
 
-    const entry: CacheEntry = JSON.parse(stored);
+    const entry: CacheEntry = JSON.parse(stored)
     if (Date.now() - entry.timestamp > CACHE_EXPIRY_MS) {
-      localStorage.removeItem(key);
-      return null;
+      localStorage.removeItem(key)
+      return null
     }
-    return entry;
+    return entry
   } catch {
-    return null;
+    return null
   }
-};
+}
 
 // Save to localStorage
 const saveToStorage = (key: string, text: string): void => {
   try {
-    const entry: CacheEntry = { text, timestamp: Date.now() };
-    localStorage.setItem(key, JSON.stringify(entry));
-    memoryCache[key] = entry;
+    const entry: CacheEntry = { text, timestamp: Date.now() }
+    localStorage.setItem(key, JSON.stringify(entry))
+    memoryCache[key] = entry
   } catch (e) {
-    console.warn("Cache storage failed:", e);
+    // Cache storage failed
   }
-};
+}
 
 // Main translation function
 export const translateText = async (
@@ -79,41 +79,38 @@ export const translateText = async (
 ): Promise<string> => {
   // Skip if target is same as source or text is empty
   if (targetLocale === sourceLocale || !text.trim()) {
-    return text;
+    return text
   }
 
-  const cacheKey = getCacheKey(text, targetLocale);
+  const cacheKey = getCacheKey(text, targetLocale)
 
   // Check memory cache first
   if (memoryCache[cacheKey]) {
-    console.debug("[LingoCache] Memory cache hit:", cacheKey.slice(0, 50));
-    return memoryCache[cacheKey].text;
+    return memoryCache[cacheKey].text
   }
 
   // Check localStorage
-  const storedEntry = loadFromStorage(cacheKey);
+  const storedEntry = loadFromStorage(cacheKey)
   if (storedEntry) {
-    console.debug("[LingoCache] Storage cache hit:", cacheKey.slice(0, 50));
-    memoryCache[cacheKey] = storedEntry;
-    return storedEntry.text;
+    memoryCache[cacheKey] = storedEntry
+    return storedEntry.text
   }
 
   // Call Lingo.dev API
   try {
-    console.debug("[LingoAPI] Translating:", text.slice(0, 50) + "...");
-    const lingoDev = getEngine();
+    const lingoDev = getEngine()
     const translated = await lingoDev.localizeText(text, {
       sourceLocale,
       targetLocale,
-    });
+    })
 
-    saveToStorage(cacheKey, translated);
-    return translated;
+    saveToStorage(cacheKey, translated)
+    return translated
   } catch (error) {
-    console.error("Translation failed:", error);
-    return text; // Fallback to original
+    console.error("Translation failed:", error)
+    return text // Fallback to original
   }
-};
+}
 
 // Batch translate multiple texts
 export const translateBatch = async (
@@ -122,66 +119,64 @@ export const translateBatch = async (
   sourceLocale: string = "en"
 ): Promise<string[]> => {
   if (targetLocale === sourceLocale) {
-    return texts;
+    return texts
   }
 
-  const results: string[] = new Array(texts.length);
-  const toTranslate: { index: number; text: string }[] = [];
+  const results: string[] = new Array(texts.length)
+  const toTranslate: { index: number; text: string }[] = []
 
   // Check cache for each text
   for (let i = 0; i < texts.length; i++) {
-    const text = texts[i];
+    const text = texts[i]
     if (!text.trim()) {
-      results[i] = text;
-      continue;
+      results[i] = text
+      continue
     }
 
-    const cacheKey = getCacheKey(text, targetLocale);
+    const cacheKey = getCacheKey(text, targetLocale)
 
     if (memoryCache[cacheKey]) {
-      results[i] = memoryCache[cacheKey].text;
+      results[i] = memoryCache[cacheKey].text
     } else {
-      const stored = loadFromStorage(cacheKey);
+      const stored = loadFromStorage(cacheKey)
       if (stored) {
-        memoryCache[cacheKey] = stored;
-        results[i] = stored.text;
+        memoryCache[cacheKey] = stored
+        results[i] = stored.text
       } else {
-        toTranslate.push({ index: i, text });
+        toTranslate.push({ index: i, text })
       }
     }
   }
 
-  console.debug(
-    `[LingoCache] Batch: ${texts.length - toTranslate.length} cached, ${toTranslate.length} to translate`
-  );
+  // Batch translation: some cached, some to translate
 
   // Translate uncached texts
   if (toTranslate.length > 0) {
     try {
-      const lingoDev = getEngine();
+      const lingoDev = getEngine()
 
       // Translate one by one (SDK doesn't have multi-text single-locale batch)
       for (let i = 0; i < toTranslate.length; i++) {
-        const { index, text } = toTranslate[i];
+        const { index, text } = toTranslate[i]
         const translated = await lingoDev.localizeText(text, {
           sourceLocale,
           targetLocale,
-        });
+        })
 
-        saveToStorage(getCacheKey(text, targetLocale), translated);
-        results[index] = translated;
+        saveToStorage(getCacheKey(text, targetLocale), translated)
+        results[index] = translated
       }
     } catch (error) {
-      console.error("Batch translation failed:", error);
+      console.error("Batch translation failed:", error)
       // Fill remaining with original texts
       for (const { index, text } of toTranslate) {
-        if (!results[index]) results[index] = text;
+        if (!results[index]) results[index] = text
       }
     }
   }
 
-  return results;
-};
+  return results
+}
 
 // Translate an object's string values
 export const translateObject = async <T extends Record<string, unknown>>(
@@ -189,75 +184,69 @@ export const translateObject = async <T extends Record<string, unknown>>(
   targetLocale: string,
   sourceLocale: string = "en"
 ): Promise<T> => {
-  if (targetLocale === sourceLocale) return obj;
+  if (targetLocale === sourceLocale) return obj
 
-  const cacheKey = getCacheKey(JSON.stringify(obj), targetLocale);
+  const cacheKey = getCacheKey(JSON.stringify(obj), targetLocale)
 
   // Check cache
-  const stored = loadFromStorage(cacheKey);
+  const stored = loadFromStorage(cacheKey)
   if (stored) {
     try {
-      return JSON.parse(stored.text) as T;
+      return JSON.parse(stored.text) as T
     } catch {
       // Invalid cache, continue to translate
     }
   }
 
   try {
-    const lingoDev = getEngine();
+    const lingoDev = getEngine()
     const translated = await lingoDev.localizeObject(obj, {
       sourceLocale,
       targetLocale,
-    });
+    })
 
-    saveToStorage(cacheKey, JSON.stringify(translated));
-    return translated as T;
+    saveToStorage(cacheKey, JSON.stringify(translated))
+    return translated as T
   } catch (error) {
-    console.error("Object translation failed:", error);
-    return obj;
+    console.error("Object translation failed:", error)
+    return obj
   }
-};
+}
 
 // Clear expired cache entries
 export const clearExpiredCache = (): void => {
-  const keys = Object.keys(localStorage).filter((k) =>
-    k.startsWith(CACHE_KEY_PREFIX)
-  );
+  const keys = Object.keys(localStorage).filter((k) => k.startsWith(CACHE_KEY_PREFIX))
 
-  let cleared = 0;
+  let cleared = 0
   for (const key of keys) {
-    const result = loadFromStorage(key); // This auto-removes expired entries
-    if (!result) cleared++;
+    const result = loadFromStorage(key) // This auto-removes expired entries
+    if (!result) cleared++
   }
 
-  console.debug(`[LingoCache] Cleared ${cleared} expired entries`);
-};
+  // Cleared expired entries
+}
 
 // Clear all translation cache
 export const clearTranslationCache = (): void => {
-  const keys = Object.keys(localStorage).filter((k) =>
-    k.startsWith(CACHE_KEY_PREFIX)
-  );
+  const keys = Object.keys(localStorage).filter((k) => k.startsWith(CACHE_KEY_PREFIX))
 
   for (const key of keys) {
-    localStorage.removeItem(key);
+    localStorage.removeItem(key)
   }
 
-  Object.keys(memoryCache).forEach((k) => delete memoryCache[k]);
-  console.debug(`[LingoCache] Cleared all ${keys.length} cache entries`);
-};
+  Object.keys(memoryCache).forEach((k) => delete memoryCache[k])
+  // Cleared all cache entries
+}
 
 // Get cache stats
 export const getCacheStats = (): {
-  memoryEntries: number;
-  storageEntries: number;
+  memoryEntries: number
+  storageEntries: number
 } => {
-  const storageKeys = Object.keys(localStorage).filter((k) =>
-    k.startsWith(CACHE_KEY_PREFIX)
-  );
+  const storageKeys = Object.keys(localStorage).filter((k) => k.startsWith(CACHE_KEY_PREFIX))
 
   return {
     memoryEntries: Object.keys(memoryCache).length,
     storageEntries: storageKeys.length,
-  };
-};
+  }
+}

@@ -65,15 +65,12 @@ function ResultsComponent() {
         getStudentPreferences()
       )
 
-      console.log("🚀 Sending recommendation request:", request)
-
       recommendMutation.mutate(request, {
         onSuccess: (data) => {
-          console.log("✅ Recommendations received:", data)
           setRecommendations(data)
         },
         onError: (error) => {
-          console.error("❌ Failed to fetch recommendations:", error)
+          // Failed to fetch recommendations
           setLoadingRecommendations(false)
           hasTriggeredRef.current = false
         },

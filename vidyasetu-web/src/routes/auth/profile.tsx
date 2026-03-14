@@ -228,7 +228,7 @@ function RouteComponent() {
         }),
       })
     } catch (error) {
-      console.error("Failed to save profile to database:", error)
+      // Failed to save profile to database
     }
 
     markProfileComplete()
@@ -284,7 +284,7 @@ function RouteComponent() {
       markProfileComplete()
       navigate({ to: "/dashboard", search: { tab: undefined } })
     } catch (error) {
-      console.error("Failed to save parent profile:", error)
+      // Failed to save parent profile
     } finally {
       setIsSavingParent(false)
     }
@@ -312,7 +312,7 @@ function RouteComponent() {
       markProfileComplete()
       navigate({ to: "/dashboard", search: { tab: undefined } })
     } catch (error) {
-      console.error("Failed to save college profile:", error)
+      // Failed to save college profile
     } finally {
       setIsSavingCollege(false)
     }
@@ -322,7 +322,6 @@ function RouteComponent() {
   if (role === "PARENT") {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden p-4">
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -387,7 +386,6 @@ function RouteComponent() {
   if (role === "COLLEGE") {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden p-4">
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
