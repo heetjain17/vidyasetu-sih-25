@@ -1,11 +1,12 @@
-import { useState, KeyboardEvent } from "react";
-import { Send, Loader2 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useState } from "react"
+import type { KeyboardEvent } from "react"
+import { Send, Loader2 } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface ChatInputProps {
-  onSend: (message: string) => void;
-  disabled?: boolean;
-  placeholder?: string;
+  onSend: (message: string) => void
+  disabled?: boolean
+  placeholder?: string
 }
 
 export function ChatInput({
@@ -13,21 +14,21 @@ export function ChatInput({
   disabled = false,
   placeholder = "Type your message...",
 }: ChatInputProps) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("")
 
   const handleSend = () => {
     if (input.trim() && !disabled) {
-      onSend(input.trim());
-      setInput("");
+      onSend(input.trim())
+      setInput("")
     }
-  };
+  }
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
+      e.preventDefault()
+      handleSend()
     }
-  };
+  }
 
   return (
     <div className="p-4 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
@@ -56,13 +57,9 @@ export function ChatInput({
             "flex items-center justify-center"
           )}
         >
-          {disabled ? (
-            <Loader2 className="h-5 w-5 animate-spin" />
-          ) : (
-            <Send className="h-5 w-5" />
-          )}
+          {disabled ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
         </button>
       </div>
     </div>
-  );
+  )
 }

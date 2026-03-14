@@ -69,7 +69,7 @@ function ResultsComponent() {
         onSuccess: (data) => {
           setRecommendations(data)
         },
-        onError: (error) => {
+        onError: () => {
           // Failed to fetch recommendations
           setLoadingRecommendations(false)
           hasTriggeredRef.current = false

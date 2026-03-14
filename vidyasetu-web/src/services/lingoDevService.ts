@@ -1,4 +1,5 @@
-import { LingoDotDevEngine } from "lingo.dev/sdk"
+// import { LingoDotDevEngine } from "lingo.dev/sdk"
+// Translation service disabled - package not installed
 
 // Types
 interface CacheEntry {
@@ -17,20 +18,12 @@ const CACHE_EXPIRY_MS = 7 * 24 * 60 * 60 * 1000 // 7 days
 // In-memory cache for instant access
 const memoryCache: TranslationCache = {}
 
-// Initialize SDK (lazy)
-let engine: LingoDotDevEngine | null = null
+// Initialize SDK (lazy) - DISABLED
+// let engine: LingoDotDevEngine | null = null
 
-const getEngine = (): LingoDotDevEngine => {
-  if (!engine) {
-    const apiKey = import.meta.env.VITE_LINGODOTDEV_API_KEY
-    if (!apiKey || apiKey === "your_api_key_here") {
-      throw new Error(
-        "VITE_LINGODOTDEV_API_KEY is not set. Please add your API key from lingo.dev to the .env file."
-      )
-    }
-    engine = new LingoDotDevEngine({ apiKey })
-  }
-  return engine
+const getEngine = (): any => {
+  // Translation disabled - package not installed
+  return null
 }
 
 // Generate cache key
@@ -96,16 +89,18 @@ export const translateText = async (
     return storedEntry.text
   }
 
-  // Call Lingo.dev API
+  // Call Lingo.dev API - disabled since package not installed
   try {
-    const lingoDev = getEngine()
-    const translated = await lingoDev.localizeText(text, {
-      sourceLocale,
-      targetLocale,
-    })
+    // const lingoDev = getEngine()
+    // const translated = await lingoDev.localizeText(text, {
+    //   sourceLocale,
+    //   targetLocale,
+    // })
+    // saveToStorage(cacheKey, translated)
+    // return translated
 
-    saveToStorage(cacheKey, translated)
-    return translated
+    // Return original text since translation is disabled
+    return text
   } catch (error) {
     console.error("Translation failed:", error)
     return text // Fallback to original
@@ -199,14 +194,8 @@ export const translateObject = async <T extends Record<string, unknown>>(
   }
 
   try {
-    const lingoDev = getEngine()
-    const translated = await lingoDev.localizeObject(obj, {
-      sourceLocale,
-      targetLocale,
-    })
-
-    saveToStorage(cacheKey, JSON.stringify(translated))
-    return translated as T
+    // Translation disabled - return original object
+    return obj
   } catch (error) {
     console.error("Object translation failed:", error)
     return obj

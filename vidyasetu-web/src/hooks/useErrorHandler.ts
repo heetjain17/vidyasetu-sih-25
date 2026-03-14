@@ -19,9 +19,8 @@ export function useErrorHandler() {
     handleError(error, { context })
   }, [])
 
-  const showSuccess = useCallback((message: string) => {
+  const showSuccess = useCallback((_message: string) => {
     // TODO: Replace with toast notification when toast library is integrated
-    // Success message: {message}
   }, [])
 
   return { showError, showSuccess }

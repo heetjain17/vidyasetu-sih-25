@@ -17,7 +17,6 @@ import {
   Rocket, // NEW: For Futuristic Mode
   Sparkles, // NEW: For Futuristic UI
 } from "lucide-react"
-import { color } from "framer-motion"
 
 // Styles for the chatbot
 const styles = {

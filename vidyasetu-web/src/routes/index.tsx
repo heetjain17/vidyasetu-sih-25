@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { Hero } from "../components/landing/HeroSection"
 import { Navbar } from "../components/landing/Navbar"
 import { ValueProps } from "../components/landing/ValueProps"

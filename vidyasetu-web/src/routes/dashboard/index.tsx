@@ -196,11 +196,6 @@ function RouteComponent() {
       setIsGeneratingCode(false)
     }
   }
-
-  // Calculate stats from store data
-  const careerMatches = recommendations?.top_careers?.length || 0
-  const collegesShortlisted = recommendations?.recommended_colleges?.length || 0
-
   // Role-based sidebar items
   const studentSidebarItems = [
     {
