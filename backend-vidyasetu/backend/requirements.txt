@@ -91,7 +91,6 @@ itemadapter==0.11.0
 guardrails-ai
 openai>=1.109.1
 orjson==3.10.18
-ormsgpack==1.10.0
 packaging==24.2
 pandas==2.3.0
 parso==0.8.5
